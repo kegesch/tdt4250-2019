@@ -7,6 +7,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ShortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" eType="#//Course"
         eOpposite="#//Course/department"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="employees" upperBound="-1"
+        eType="#//Instructor" eOpposite="#//Instructor/department"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Course">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -17,6 +19,8 @@
         containment="true" eOpposite="#//Department/courses"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="instructor" eType="#//Instructor"
         eOpposite="#//Instructor/lecturedCourses"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="yearReference" upperBound="-1"
+        eType="#//YearCourseReference" eOpposite="#//YearCourseReference/course"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="FirstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -25,21 +29,39 @@
   <eClassifiers xsi:type="ecore:EClass" name="Instructor" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lecturedCourses" upperBound="-1"
         eType="#//Course" eOpposite="#//Course/instructor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="department" eType="#//Department"
+        eOpposite="#//Department/employees"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
+        eType="#//Specialization" eOpposite="#//Specialization/specializesIn"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYears" upperBound="-1"
+        eType="#//ProgrammeYear" eOpposite="#//ProgrammeYear/programme"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ESemester">
+    <eLiterals name="Autumn"/>
+    <eLiterals name="Spring" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Specialization" eSuperTypes="#//Programme">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specializesIn" eType="#//Programme"
+        containment="true" eOpposite="#//Programme/specializations"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chosenIn" lowerBound="1"
+        eType="#//ProgrammeYear"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProgrammeYear">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="YearNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYears" eType="#//Programme"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programme" lowerBound="1"
+        eType="#//Programme" eOpposite="#//Programme/programmeYears"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseReferences" upperBound="-1"
+        eType="#//YearCourseReference" eOpposite="#//YearCourseReference/programmeYear"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="YearInProgramme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeYearCourseReference">
+  <eClassifiers xsi:type="ecore:EClass" name="YearCourseReference">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="IsMandatory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="course" eType="#//Course"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" eType="#//ProgrammeYear"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeSpecialization">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" lowerBound="1"
+        eType="#//ProgrammeYear" eOpposite="#//ProgrammeYear/courseReferences"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="course" lowerBound="1"
+        eType="#//Course" eOpposite="#//Course/yearReference"/>
   </eClassifiers>
 </ecore:EPackage>
