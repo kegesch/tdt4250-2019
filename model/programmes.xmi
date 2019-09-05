@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ra:Department xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ra="platform:/plugin/no.tdt4250.model/model/ra.ecore" xsi:schemaLocation="platform:/plugin/no.tdt4250.model/model/ra.ecore ra.ecore"/>
+<programmes:Department
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:programmes="platform:/plugin/no.tdt4250.model/model/programmes.ecore"
+    xsi:schemaLocation="platform:/plugin/no.tdt4250.model/model/programmes.ecore programmes.ecore"
+    name="Department of Computer Science"
+    shortName="IDI"/>
