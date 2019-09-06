@@ -5,6 +5,7 @@ package programmes;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -653,13 +654,22 @@ public interface ProgrammesPackage extends EPackage {
 	int SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT = 1;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = 0;
+
+	/**
 	 * The number of operations of the '<em>Semester Course Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_COURSE_CONSTRAINT_OPERATION_COUNT = 0;
+	int SEMESTER_COURSE_CONSTRAINT_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link programmes.impl.ProgrammeCourseGroupImpl <em>Programme Course Group</em>}' class.
@@ -736,6 +746,15 @@ public interface ProgrammesPackage extends EPackage {
 	int MANDATORY_COURSE_CONSTRAINT_FEATURE_COUNT = SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANDATORY_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
+
+	/**
 	 * The number of operations of the '<em>Mandatory Course Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -773,6 +792,15 @@ public interface ProgrammesPackage extends EPackage {
 	int ELECTIVE_COURSE_CONSTRAINT_FEATURE_COUNT = SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELECTIVE_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
+
+	/**
 	 * The number of operations of the '<em>Elective Course Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -808,6 +836,15 @@ public interface ProgrammesPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMBINED_COURSE_CONSTRAINT_FEATURE_COUNT = SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMBINED_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
 
 	/**
 	 * The number of operations of the '<em>Combined Course Constraint</em>' class.
@@ -863,6 +900,15 @@ public interface ProgrammesPackage extends EPackage {
 	 * @ordered
 	 */
 	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT_FEATURE_COUNT = COMBINED_COURSE_CONSTRAINT_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Validate</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = COMBINED_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
 
 	/**
 	 * The number of operations of the '<em>Amount Course Out Group Constraint</em>' class.
@@ -1048,13 +1094,22 @@ public interface ProgrammesPackage extends EPackage {
 	int PROGRAMME_INSTANCE__PROGRAMME_YEARS = 1;
 
 	/**
+	 * The feature id for the '<em><b>Starting Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME_INSTANCE__STARTING_YEAR = 2;
+
+	/**
 	 * The number of structural features of the '<em>Programme Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_INSTANCE_FEATURE_COUNT = 2;
+	int PROGRAMME_INSTANCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Programme Instance</em>' class.
@@ -1564,6 +1619,16 @@ public interface ProgrammesPackage extends EPackage {
 	EAttribute getSemesterCourseConstraint_ShortName();
 
 	/**
+	 * Returns the meta object for the '{@link programmes.SemesterCourseConstraint#validate(programmes.ProgrammeInstance) <em>Validate</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Validate</em>' operation.
+	 * @see programmes.SemesterCourseConstraint#validate(programmes.ProgrammeInstance)
+	 * @generated
+	 */
+	EOperation getSemesterCourseConstraint__Validate__ProgrammeInstance();
+
+	/**
 	 * Returns the meta object for class '{@link programmes.ProgrammeCourseGroup <em>Programme Course Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1785,6 +1850,17 @@ public interface ProgrammesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getProgrammeInstance_ProgrammeYears();
+
+	/**
+	 * Returns the meta object for the attribute '{@link programmes.ProgrammeInstance#getStartingYear <em>Starting Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Starting Year</em>'.
+	 * @see programmes.ProgrammeInstance#getStartingYear()
+	 * @see #getProgrammeInstance()
+	 * @generated
+	 */
+	EAttribute getProgrammeInstance_StartingYear();
 
 	/**
 	 * Returns the meta object for class '{@link programmes.ProgrammeYearInstance <em>Programme Year Instance</em>}'.
@@ -2200,6 +2276,14 @@ public interface ProgrammesPackage extends EPackage {
 		EAttribute SEMESTER_COURSE_CONSTRAINT__SHORT_NAME = eINSTANCE.getSemesterCourseConstraint_ShortName();
 
 		/**
+		 * The meta object literal for the '<em><b>Validate</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = eINSTANCE.getSemesterCourseConstraint__Validate__ProgrammeInstance();
+
+		/**
 		 * The meta object literal for the '{@link programmes.impl.ProgrammeCourseGroupImpl <em>Programme Course Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2382,6 +2466,14 @@ public interface ProgrammesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROGRAMME_INSTANCE__PROGRAMME_YEARS = eINSTANCE.getProgrammeInstance_ProgrammeYears();
+
+		/**
+		 * The meta object literal for the '<em><b>Starting Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME_INSTANCE__STARTING_YEAR = eINSTANCE.getProgrammeInstance_StartingYear();
 
 		/**
 		 * The meta object literal for the '{@link programmes.impl.ProgrammeYearInstanceImpl <em>Programme Year Instance</em>}' class.

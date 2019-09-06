@@ -43,4 +43,12 @@ public interface SemesterCourseConstraint extends EObject {
 	 */
 	void setShortName(String value);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean validate(ProgrammeInstance programmeInstance);
+
 } // SemesterCourseConstraint

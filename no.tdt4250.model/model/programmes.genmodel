@@ -66,6 +66,9 @@
     </genClasses>
     <genClasses ecoreClass="programmes.ecore#//SemesterCourseConstraint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute programmes.ecore#//SemesterCourseConstraint/shortName"/>
+      <genOperations ecoreOperation="programmes.ecore#//SemesterCourseConstraint/validate">
+        <genParameters ecoreParameter="programmes.ecore#//SemesterCourseConstraint/validate/programmeInstance"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="programmes.ecore#//ProgrammeCourseGroup">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute programmes.ecore#//ProgrammeCourseGroup/name"/>
@@ -92,6 +95,7 @@
     <genClasses ecoreClass="programmes.ecore#//ProgrammeInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference programmes.ecore#//ProgrammeInstance/programme"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference programmes.ecore#//ProgrammeInstance/programmeYears"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute programmes.ecore#//ProgrammeInstance/startingYear"/>
     </genClasses>
     <genClasses ecoreClass="programmes.ecore#//ProgrammeYearInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference programmes.ecore#//ProgrammeYearInstance/programmeYear"/>

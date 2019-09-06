@@ -123,6 +123,8 @@
         eType="#//Programme"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYears" upperBound="-1"
         eType="#//ProgrammeYearInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startingYear" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProgrammeYearInstance">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">

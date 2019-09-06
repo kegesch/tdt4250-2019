@@ -2,13 +2,16 @@
  */
 package programmes.impl;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import programmes.ProgrammeInstance;
 import programmes.ProgrammesPackage;
 import programmes.SemesterCourseConstraint;
 
@@ -94,6 +97,18 @@ public class SemesterCourseConstraintImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	@Override
+	public boolean validate(ProgrammeInstance programmeInstance) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ProgrammesPackage.SEMESTER_COURSE_CONSTRAINT__SHORT_NAME:
@@ -144,6 +159,20 @@ public class SemesterCourseConstraintImpl extends MinimalEObjectImpl.Container i
 				return SHORT_NAME_EDEFAULT == null ? shortName != null : !SHORT_NAME_EDEFAULT.equals(shortName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case ProgrammesPackage.SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE:
+				return validate((ProgrammeInstance)arguments.get(0));
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

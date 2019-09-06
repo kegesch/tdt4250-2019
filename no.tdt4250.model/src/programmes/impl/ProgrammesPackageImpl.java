@@ -5,6 +5,7 @@ package programmes.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -659,6 +660,16 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
+	public EOperation getSemesterCourseConstraint__Validate__ProgrammeInstance() {
+		return semesterCourseConstraintEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProgrammeCourseGroup() {
 		return programmeCourseGroupEClass;
 	}
@@ -869,6 +880,16 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProgrammeInstance_StartingYear() {
+		return (EAttribute)programmeInstanceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProgrammeYearInstance() {
 		return programmeYearInstanceEClass;
 	}
@@ -990,6 +1011,7 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 
 		semesterCourseConstraintEClass = createEClass(SEMESTER_COURSE_CONSTRAINT);
 		createEAttribute(semesterCourseConstraintEClass, SEMESTER_COURSE_CONSTRAINT__SHORT_NAME);
+		createEOperation(semesterCourseConstraintEClass, SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE);
 
 		programmeCourseGroupEClass = createEClass(PROGRAMME_COURSE_GROUP);
 		createEAttribute(programmeCourseGroupEClass, PROGRAMME_COURSE_GROUP__NAME);
@@ -1019,6 +1041,7 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		programmeInstanceEClass = createEClass(PROGRAMME_INSTANCE);
 		createEReference(programmeInstanceEClass, PROGRAMME_INSTANCE__PROGRAMME);
 		createEReference(programmeInstanceEClass, PROGRAMME_INSTANCE__PROGRAMME_YEARS);
+		createEAttribute(programmeInstanceEClass, PROGRAMME_INSTANCE__STARTING_YEAR);
 
 		programmeYearInstanceEClass = createEClass(PROGRAMME_YEAR_INSTANCE);
 		createEReference(programmeYearInstanceEClass, PROGRAMME_YEAR_INSTANCE__PROGRAMME_YEAR);
@@ -1115,6 +1138,9 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		initEClass(semesterCourseConstraintEClass, SemesterCourseConstraint.class, "SemesterCourseConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSemesterCourseConstraint_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, SemesterCourseConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = initEOperation(getSemesterCourseConstraint__Validate__ProgrammeInstance(), ecorePackage.getEBoolean(), "validate", 1, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getProgrammeInstance(), "programmeInstance", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(programmeCourseGroupEClass, ProgrammeCourseGroup.class, "ProgrammeCourseGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProgrammeCourseGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProgrammeCourseGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgrammeCourseGroup_Courses(), this.getCourse(), null, "courses", null, 0, -1, ProgrammeCourseGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1143,6 +1169,7 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		initEClass(programmeInstanceEClass, ProgrammeInstance.class, "ProgrammeInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProgrammeInstance_Programme(), this.getProgramme(), null, "programme", null, 1, 1, ProgrammeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgrammeInstance_ProgrammeYears(), this.getProgrammeYearInstance(), null, "programmeYears", null, 0, -1, ProgrammeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgrammeInstance_StartingYear(), ecorePackage.getEShort(), "startingYear", null, 1, 1, ProgrammeInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(programmeYearInstanceEClass, ProgrammeYearInstance.class, "ProgrammeYearInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProgrammeYearInstance_ProgrammeYear(), this.getProgrammeYear(), null, "programmeYear", null, 1, 1, ProgrammeYearInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

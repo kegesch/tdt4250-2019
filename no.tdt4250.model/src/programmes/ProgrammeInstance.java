@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link programmes.ProgrammeInstance#getProgramme <em>Programme</em>}</li>
  *   <li>{@link programmes.ProgrammeInstance#getProgrammeYears <em>Programme Years</em>}</li>
+ *   <li>{@link programmes.ProgrammeInstance#getStartingYear <em>Starting Year</em>}</li>
  * </ul>
  *
  * @see programmes.ProgrammesPackage#getProgrammeInstance()
@@ -56,5 +57,27 @@ public interface ProgrammeInstance extends EObject {
 	 * @generated
 	 */
 	EList<ProgrammeYearInstance> getProgrammeYears();
+
+	/**
+	 * Returns the value of the '<em><b>Starting Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Starting Year</em>' attribute.
+	 * @see #setStartingYear(short)
+	 * @see programmes.ProgrammesPackage#getProgrammeInstance_StartingYear()
+	 * @model required="true"
+	 * @generated
+	 */
+	short getStartingYear();
+
+	/**
+	 * Sets the value of the '{@link programmes.ProgrammeInstance#getStartingYear <em>Starting Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Starting Year</em>' attribute.
+	 * @see #getStartingYear()
+	 * @generated
+	 */
+	void setStartingYear(short value);
 
 } // ProgrammeInstance

@@ -28,6 +28,7 @@ import programmes.ProgrammesPackage;
  * <ul>
  *   <li>{@link programmes.impl.ProgrammeInstanceImpl#getProgramme <em>Programme</em>}</li>
  *   <li>{@link programmes.impl.ProgrammeInstanceImpl#getProgrammeYears <em>Programme Years</em>}</li>
+ *   <li>{@link programmes.impl.ProgrammeInstanceImpl#getStartingYear <em>Starting Year</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +53,26 @@ public class ProgrammeInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<ProgrammeYearInstance> programmeYears;
+
+	/**
+	 * The default value of the '{@link #getStartingYear() <em>Starting Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartingYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final short STARTING_YEAR_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getStartingYear() <em>Starting Year</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStartingYear()
+	 * @generated
+	 * @ordered
+	 */
+	protected short startingYear = STARTING_YEAR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,6 +152,29 @@ public class ProgrammeInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	@Override
+	public short getStartingYear() {
+		return startingYear;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStartingYear(short newStartingYear) {
+		short oldStartingYear = startingYear;
+		startingYear = newStartingYear;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.PROGRAMME_INSTANCE__STARTING_YEAR, oldStartingYear, startingYear));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ProgrammesPackage.PROGRAMME_INSTANCE__PROGRAMME:
@@ -138,6 +182,8 @@ public class ProgrammeInstanceImpl extends MinimalEObjectImpl.Container implemen
 				return basicGetProgramme();
 			case ProgrammesPackage.PROGRAMME_INSTANCE__PROGRAMME_YEARS:
 				return getProgrammeYears();
+			case ProgrammesPackage.PROGRAMME_INSTANCE__STARTING_YEAR:
+				return getStartingYear();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,6 +204,9 @@ public class ProgrammeInstanceImpl extends MinimalEObjectImpl.Container implemen
 				getProgrammeYears().clear();
 				getProgrammeYears().addAll((Collection<? extends ProgrammeYearInstance>)newValue);
 				return;
+			case ProgrammesPackage.PROGRAMME_INSTANCE__STARTING_YEAR:
+				setStartingYear((Short)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,6 +225,9 @@ public class ProgrammeInstanceImpl extends MinimalEObjectImpl.Container implemen
 			case ProgrammesPackage.PROGRAMME_INSTANCE__PROGRAMME_YEARS:
 				getProgrammeYears().clear();
 				return;
+			case ProgrammesPackage.PROGRAMME_INSTANCE__STARTING_YEAR:
+				setStartingYear(STARTING_YEAR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,8 +244,26 @@ public class ProgrammeInstanceImpl extends MinimalEObjectImpl.Container implemen
 				return programme != null;
 			case ProgrammesPackage.PROGRAMME_INSTANCE__PROGRAMME_YEARS:
 				return programmeYears != null && !programmeYears.isEmpty();
+			case ProgrammesPackage.PROGRAMME_INSTANCE__STARTING_YEAR:
+				return startingYear != STARTING_YEAR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (startingYear: ");
+		result.append(startingYear);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ProgrammeInstanceImpl
