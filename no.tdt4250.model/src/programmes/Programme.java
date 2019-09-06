@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link programmes.Programme#getCode <em>Code</em>}</li>
  *   <li>{@link programmes.Programme#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link programmes.Programme#getProgrammeYears <em>Programme Years</em>}</li>
- *   <li>{@link programmes.Programme#getCombinedCourseConstrains <em>Combined Course Constrains</em>}</li>
  * </ul>
  *
  * @see programmes.ProgrammesPackage#getProgramme()
@@ -98,17 +97,5 @@ public interface Programme extends EObject {
 	 * @generated
 	 */
 	EList<ProgrammeYear> getProgrammeYears();
-
-	/**
-	 * Returns the value of the '<em><b>Combined Course Constrains</b></em>' reference list.
-	 * The list contents are of type {@link programmes.CombinedCourseConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Combined Course Constrains</em>' reference list.
-	 * @see programmes.ProgrammesPackage#getProgramme_CombinedCourseConstrains()
-	 * @model
-	 * @generated
-	 */
-	EList<CombinedCourseConstraint> getCombinedCourseConstrains();
 
 } // Programme

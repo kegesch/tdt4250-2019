@@ -103,18 +103,8 @@ public class ProgrammesValidator extends EObjectValidator {
 				return validateProgrammeYear((ProgrammeYear)value, diagnostics, context);
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE:
 				return validateYearCourseReference((YearCourseReference)value, diagnostics, context);
-			case ProgrammesPackage.SEMESTER_COURSE_CONSTRAINT:
-				return validateSemesterCourseConstraint((SemesterCourseConstraint)value, diagnostics, context);
-			case ProgrammesPackage.PROGRAMME_COURSE_GROUP:
-				return validateProgrammeCourseGroup((ProgrammeCourseGroup)value, diagnostics, context);
-			case ProgrammesPackage.MANDATORY_COURSE_CONSTRAINT:
-				return validateMandatoryCourseConstraint((MandatoryCourseConstraint)value, diagnostics, context);
-			case ProgrammesPackage.ELECTIVE_COURSE_CONSTRAINT:
-				return validateElectiveCourseConstraint((ElectiveCourseConstraint)value, diagnostics, context);
-			case ProgrammesPackage.AMOUNT_COURSE_OUT_GROUP_CONSTRAINT:
-				return validateAmountCourseOutGroupConstraint((AmountCourseOutGroupConstraint)value, diagnostics, context);
-			case ProgrammesPackage.COMBINED_COURSE_CONSTRAINT:
-				return validateCombinedCourseConstraint((CombinedCourseConstraint)value, diagnostics, context);
+			case ProgrammesPackage.SEMESTER_COURSE_GROUP:
+				return validateSemesterCourseGroup((SemesterCourseGroup)value, diagnostics, context);
 			case ProgrammesPackage.STUDENT:
 				return validateStudent((Student)value, diagnostics, context);
 			case ProgrammesPackage.EXAM_ATTEMPT:
@@ -248,53 +238,8 @@ public class ProgrammesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSemesterCourseConstraint(SemesterCourseConstraint semesterCourseConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(semesterCourseConstraint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProgrammeCourseGroup(ProgrammeCourseGroup programmeCourseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programmeCourseGroup, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateMandatoryCourseConstraint(MandatoryCourseConstraint mandatoryCourseConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(mandatoryCourseConstraint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateElectiveCourseConstraint(ElectiveCourseConstraint electiveCourseConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(electiveCourseConstraint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAmountCourseOutGroupConstraint(AmountCourseOutGroupConstraint amountCourseOutGroupConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(amountCourseOutGroupConstraint, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCombinedCourseConstraint(CombinedCourseConstraint combinedCourseConstraint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(combinedCourseConstraint, diagnostics, context);
+	public boolean validateSemesterCourseGroup(SemesterCourseGroup semesterCourseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(semesterCourseGroup, diagnostics, context);
 	}
 
 	/**

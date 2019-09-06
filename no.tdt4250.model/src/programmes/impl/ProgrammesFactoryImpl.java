@@ -65,12 +65,7 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 			case ProgrammesPackage.SPECIALIZATION: return createSpecialization();
 			case ProgrammesPackage.PROGRAMME_YEAR: return createProgrammeYear();
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE: return createYearCourseReference();
-			case ProgrammesPackage.SEMESTER_COURSE_CONSTRAINT: return createSemesterCourseConstraint();
-			case ProgrammesPackage.PROGRAMME_COURSE_GROUP: return createProgrammeCourseGroup();
-			case ProgrammesPackage.MANDATORY_COURSE_CONSTRAINT: return createMandatoryCourseConstraint();
-			case ProgrammesPackage.ELECTIVE_COURSE_CONSTRAINT: return createElectiveCourseConstraint();
-			case ProgrammesPackage.AMOUNT_COURSE_OUT_GROUP_CONSTRAINT: return createAmountCourseOutGroupConstraint();
-			case ProgrammesPackage.COMBINED_COURSE_CONSTRAINT: return createCombinedCourseConstraint();
+			case ProgrammesPackage.SEMESTER_COURSE_GROUP: return createSemesterCourseGroup();
 			case ProgrammesPackage.STUDENT: return createStudent();
 			case ProgrammesPackage.EXAM_ATTEMPT: return createExamAttempt();
 			case ProgrammesPackage.PROGRAMME_INSTANCE: return createProgrammeInstance();
@@ -208,64 +203,9 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * @generated
 	 */
 	@Override
-	public SemesterCourseConstraint createSemesterCourseConstraint() {
-		SemesterCourseConstraintImpl semesterCourseConstraint = new SemesterCourseConstraintImpl();
-		return semesterCourseConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ProgrammeCourseGroup createProgrammeCourseGroup() {
-		ProgrammeCourseGroupImpl programmeCourseGroup = new ProgrammeCourseGroupImpl();
-		return programmeCourseGroup;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MandatoryCourseConstraint createMandatoryCourseConstraint() {
-		MandatoryCourseConstraintImpl mandatoryCourseConstraint = new MandatoryCourseConstraintImpl();
-		return mandatoryCourseConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ElectiveCourseConstraint createElectiveCourseConstraint() {
-		ElectiveCourseConstraintImpl electiveCourseConstraint = new ElectiveCourseConstraintImpl();
-		return electiveCourseConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AmountCourseOutGroupConstraint createAmountCourseOutGroupConstraint() {
-		AmountCourseOutGroupConstraintImpl amountCourseOutGroupConstraint = new AmountCourseOutGroupConstraintImpl();
-		return amountCourseOutGroupConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public CombinedCourseConstraint createCombinedCourseConstraint() {
-		CombinedCourseConstraintImpl combinedCourseConstraint = new CombinedCourseConstraintImpl();
-		return combinedCourseConstraint;
+	public SemesterCourseGroup createSemesterCourseGroup() {
+		SemesterCourseGroupImpl semesterCourseGroup = new SemesterCourseGroupImpl();
+		return semesterCourseGroup;
 	}
 
 	/**

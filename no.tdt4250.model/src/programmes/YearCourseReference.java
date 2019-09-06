@@ -14,9 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link programmes.YearCourseReference#getProgrammeYear <em>Programme Year</em>}</li>
- *   <li>{@link programmes.YearCourseReference#getCourse <em>Course</em>}</li>
+ *   <li>{@link programmes.YearCourseReference#getCourseGroup <em>Course Group</em>}</li>
  *   <li>{@link programmes.YearCourseReference#getSemesterType <em>Semester Type</em>}</li>
- *   <li>{@link programmes.YearCourseReference#getConstraint <em>Constraint</em>}</li>
  * </ul>
  *
  * @see programmes.ProgrammesPackage#getYearCourseReference()
@@ -49,28 +48,26 @@ public interface YearCourseReference extends EObject {
 	void setProgrammeYear(ProgrammeYear value);
 
 	/**
-	 * Returns the value of the '<em><b>Course</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link programmes.Course#getYearReference <em>Year Reference</em>}'.
+	 * Returns the value of the '<em><b>Course Group</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Course</em>' reference.
-	 * @see #setCourse(Course)
-	 * @see programmes.ProgrammesPackage#getYearCourseReference_Course()
-	 * @see programmes.Course#getYearReference
-	 * @model opposite="yearReference" required="true"
+	 * @return the value of the '<em>Course Group</em>' reference.
+	 * @see #setCourseGroup(SemesterCourseGroup)
+	 * @see programmes.ProgrammesPackage#getYearCourseReference_CourseGroup()
+	 * @model required="true"
 	 * @generated
 	 */
-	Course getCourse();
+	SemesterCourseGroup getCourseGroup();
 
 	/**
-	 * Sets the value of the '{@link programmes.YearCourseReference#getCourse <em>Course</em>}' reference.
+	 * Sets the value of the '{@link programmes.YearCourseReference#getCourseGroup <em>Course Group</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Course</em>' reference.
-	 * @see #getCourse()
+	 * @param value the new value of the '<em>Course Group</em>' reference.
+	 * @see #getCourseGroup()
 	 * @generated
 	 */
-	void setCourse(Course value);
+	void setCourseGroup(SemesterCourseGroup value);
 
 	/**
 	 * Returns the value of the '<em><b>Semester Type</b></em>' attribute.
@@ -96,27 +93,5 @@ public interface YearCourseReference extends EObject {
 	 * @generated
 	 */
 	void setSemesterType(ESemester value);
-
-	/**
-	 * Returns the value of the '<em><b>Constraint</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Constraint</em>' reference.
-	 * @see #setConstraint(SemesterCourseConstraint)
-	 * @see programmes.ProgrammesPackage#getYearCourseReference_Constraint()
-	 * @model required="true"
-	 * @generated
-	 */
-	SemesterCourseConstraint getConstraint();
-
-	/**
-	 * Sets the value of the '{@link programmes.YearCourseReference#getConstraint <em>Constraint</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Constraint</em>' reference.
-	 * @see #getConstraint()
-	 * @generated
-	 */
-	void setConstraint(SemesterCourseConstraint value);
 
 } // YearCourseReference

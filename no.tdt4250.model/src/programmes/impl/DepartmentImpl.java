@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -81,14 +82,14 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	protected String shortName = SHORT_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference.
+	 * The cached value of the '{@link #getCourses() <em>Courses</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCourses()
 	 * @generated
 	 * @ordered
 	 */
-	protected Course courses;
+	protected EList<Course> courses;
 
 	/**
 	 * The cached value of the '{@link #getEmployees() <em>Employees</em>}' reference list.
@@ -171,43 +172,11 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	 * @generated
 	 */
 	@Override
-	public Course getCourses() {
+	public EList<Course> getCourses() {
+		if (courses == null) {
+			courses = new EObjectContainmentWithInverseEList<Course>(Course.class, this, ProgrammesPackage.DEPARTMENT__COURSES, ProgrammesPackage.COURSE__DEPARTMENT);
+		}
 		return courses;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCourses(Course newCourses, NotificationChain msgs) {
-		Course oldCourses = courses;
-		courses = newCourses;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProgrammesPackage.DEPARTMENT__COURSES, oldCourses, newCourses);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCourses(Course newCourses) {
-		if (newCourses != courses) {
-			NotificationChain msgs = null;
-			if (courses != null)
-				msgs = ((InternalEObject)courses).eInverseRemove(this, ProgrammesPackage.COURSE__DEPARTMENT, Course.class, msgs);
-			if (newCourses != null)
-				msgs = ((InternalEObject)newCourses).eInverseAdd(this, ProgrammesPackage.COURSE__DEPARTMENT, Course.class, msgs);
-			msgs = basicSetCourses(newCourses, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.DEPARTMENT__COURSES, newCourses, newCourses));
 	}
 
 	/**
@@ -233,9 +202,7 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ProgrammesPackage.DEPARTMENT__COURSES:
-				if (courses != null)
-					msgs = ((InternalEObject)courses).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ProgrammesPackage.DEPARTMENT__COURSES, null, msgs);
-				return basicSetCourses((Course)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCourses()).basicAdd(otherEnd, msgs);
 			case ProgrammesPackage.DEPARTMENT__EMPLOYEES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getEmployees()).basicAdd(otherEnd, msgs);
 		}
@@ -251,7 +218,7 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ProgrammesPackage.DEPARTMENT__COURSES:
-				return basicSetCourses(null, msgs);
+				return ((InternalEList<?>)getCourses()).basicRemove(otherEnd, msgs);
 			case ProgrammesPackage.DEPARTMENT__EMPLOYEES:
 				return ((InternalEList<?>)getEmployees()).basicRemove(otherEnd, msgs);
 		}
@@ -294,7 +261,8 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				setShortName((String)newValue);
 				return;
 			case ProgrammesPackage.DEPARTMENT__COURSES:
-				setCourses((Course)newValue);
+				getCourses().clear();
+				getCourses().addAll((Collection<? extends Course>)newValue);
 				return;
 			case ProgrammesPackage.DEPARTMENT__EMPLOYEES:
 				getEmployees().clear();
@@ -319,7 +287,7 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 				setShortName(SHORT_NAME_EDEFAULT);
 				return;
 			case ProgrammesPackage.DEPARTMENT__COURSES:
-				setCourses((Course)null);
+				getCourses().clear();
 				return;
 			case ProgrammesPackage.DEPARTMENT__EMPLOYEES:
 				getEmployees().clear();
@@ -341,7 +309,7 @@ public class DepartmentImpl extends MinimalEObjectImpl.Container implements Depa
 			case ProgrammesPackage.DEPARTMENT__SHORT_NAME:
 				return SHORT_NAME_EDEFAULT == null ? shortName != null : !SHORT_NAME_EDEFAULT.equals(shortName);
 			case ProgrammesPackage.DEPARTMENT__COURSES:
-				return courses != null;
+				return courses != null && !courses.isEmpty();
 			case ProgrammesPackage.DEPARTMENT__EMPLOYEES:
 				return employees != null && !employees.isEmpty();
 		}

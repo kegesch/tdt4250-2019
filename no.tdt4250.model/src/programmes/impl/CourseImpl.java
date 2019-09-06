@@ -2,28 +2,18 @@
  */
 package programmes.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import programmes.Course;
 import programmes.Department;
 import programmes.Instructor;
 import programmes.ProgrammesPackage;
-import programmes.YearCourseReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +29,6 @@ import programmes.YearCourseReference;
  *   <li>{@link programmes.impl.CourseImpl#getLevel <em>Level</em>}</li>
  *   <li>{@link programmes.impl.CourseImpl#getDepartment <em>Department</em>}</li>
  *   <li>{@link programmes.impl.CourseImpl#getInstructor <em>Instructor</em>}</li>
- *   <li>{@link programmes.impl.CourseImpl#getYearReference <em>Year Reference</em>}</li>
  * </ul>
  *
  * @generated
@@ -134,16 +123,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @ordered
 	 */
 	protected Instructor instructor;
-
-	/**
-	 * The cached value of the '{@link #getYearReference() <em>Year Reference</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getYearReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<YearCourseReference> yearReference;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -366,19 +345,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<YearCourseReference> getYearReference() {
-		if (yearReference == null) {
-			yearReference = new EObjectWithInverseResolvingEList<YearCourseReference>(YearCourseReference.class, this, ProgrammesPackage.COURSE__YEAR_REFERENCE, ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE);
-		}
-		return yearReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -391,8 +357,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				if (instructor != null)
 					msgs = ((InternalEObject)instructor).eInverseRemove(this, ProgrammesPackage.INSTRUCTOR__LECTURED_COURSES, Instructor.class, msgs);
 				return basicSetInstructor((Instructor)otherEnd, msgs);
-			case ProgrammesPackage.COURSE__YEAR_REFERENCE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getYearReference()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -409,8 +373,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return basicSetDepartment(null, msgs);
 			case ProgrammesPackage.COURSE__INSTRUCTOR:
 				return basicSetInstructor(null, msgs);
-			case ProgrammesPackage.COURSE__YEAR_REFERENCE:
-				return ((InternalEList<?>)getYearReference()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -450,8 +412,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case ProgrammesPackage.COURSE__INSTRUCTOR:
 				if (resolve) return getInstructor();
 				return basicGetInstructor();
-			case ProgrammesPackage.COURSE__YEAR_REFERENCE:
-				return getYearReference();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -483,10 +443,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case ProgrammesPackage.COURSE__INSTRUCTOR:
 				setInstructor((Instructor)newValue);
 				return;
-			case ProgrammesPackage.COURSE__YEAR_REFERENCE:
-				getYearReference().clear();
-				getYearReference().addAll((Collection<? extends YearCourseReference>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -517,9 +473,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case ProgrammesPackage.COURSE__INSTRUCTOR:
 				setInstructor((Instructor)null);
 				return;
-			case ProgrammesPackage.COURSE__YEAR_REFERENCE:
-				getYearReference().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -544,8 +497,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return getDepartment() != null;
 			case ProgrammesPackage.COURSE__INSTRUCTOR:
 				return instructor != null;
-			case ProgrammesPackage.COURSE__YEAR_REFERENCE:
-				return yearReference != null && !yearReference.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

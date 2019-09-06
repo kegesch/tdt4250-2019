@@ -5,7 +5,6 @@ package programmes;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -88,7 +87,7 @@ public interface ProgrammesPackage extends EPackage {
 	int DEPARTMENT__SHORT_NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Courses</b></em>' containment reference.
+	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -188,22 +187,13 @@ public interface ProgrammesPackage extends EPackage {
 	int COURSE__INSTRUCTOR = 5;
 
 	/**
-	 * The feature id for the '<em><b>Year Reference</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE__YEAR_REFERENCE = 6;
-
-	/**
 	 * The number of structural features of the '<em>Course</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_FEATURE_COUNT = 7;
+	int COURSE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Course</em>' class.
@@ -389,22 +379,13 @@ public interface ProgrammesPackage extends EPackage {
 	int PROGRAMME__PROGRAMME_YEARS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Combined Course Constrains</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME__COMBINED_COURSE_CONSTRAINS = 4;
-
-	/**
 	 * The number of structural features of the '<em>Programme</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_FEATURE_COUNT = 5;
+	int PROGRAMME_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Programme</em>' class.
@@ -460,15 +441,6 @@ public interface ProgrammesPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPECIALIZATION__PROGRAMME_YEARS = PROGRAMME__PROGRAMME_YEARS;
-
-	/**
-	 * The feature id for the '<em><b>Combined Course Constrains</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIALIZATION__COMBINED_COURSE_CONSTRAINS = PROGRAMME__COMBINED_COURSE_CONSTRAINS;
 
 	/**
 	 * The feature id for the '<em><b>Specializes In</b></em>' container reference.
@@ -581,13 +553,13 @@ public interface ProgrammesPackage extends EPackage {
 	int YEAR_COURSE_REFERENCE__PROGRAMME_YEAR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Course</b></em>' reference.
+	 * The feature id for the '<em><b>Course Group</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int YEAR_COURSE_REFERENCE__COURSE = 1;
+	int YEAR_COURSE_REFERENCE__COURSE_GROUP = 1;
 
 	/**
 	 * The feature id for the '<em><b>Semester Type</b></em>' attribute.
@@ -599,22 +571,13 @@ public interface ProgrammesPackage extends EPackage {
 	int YEAR_COURSE_REFERENCE__SEMESTER_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Constraint</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_COURSE_REFERENCE__CONSTRAINT = 3;
-
-	/**
 	 * The number of structural features of the '<em>Year Course Reference</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int YEAR_COURSE_REFERENCE_FEATURE_COUNT = 4;
+	int YEAR_COURSE_REFERENCE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Year Course Reference</em>' class.
@@ -626,60 +589,14 @@ public interface ProgrammesPackage extends EPackage {
 	int YEAR_COURSE_REFERENCE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link programmes.impl.SemesterCourseConstraintImpl <em>Semester Course Constraint</em>}' class.
+	 * The meta object id for the '{@link programmes.impl.SemesterCourseGroupImpl <em>Semester Course Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see programmes.impl.SemesterCourseConstraintImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getSemesterCourseConstraint()
+	 * @see programmes.impl.SemesterCourseGroupImpl
+	 * @see programmes.impl.ProgrammesPackageImpl#getSemesterCourseGroup()
 	 * @generated
 	 */
-	int SEMESTER_COURSE_CONSTRAINT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER_COURSE_CONSTRAINT__SHORT_NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Semester Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = 0;
-
-	/**
-	 * The number of operations of the '<em>Semester Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER_COURSE_CONSTRAINT_OPERATION_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.ProgrammeCourseGroupImpl <em>Programme Course Group</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.ProgrammeCourseGroupImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeCourseGroup()
-	 * @generated
-	 */
-	int PROGRAMME_COURSE_GROUP = 9;
+	int SEMESTER_COURSE_GROUP = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -688,7 +605,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_COURSE_GROUP__NAME = 0;
+	int SEMESTER_COURSE_GROUP__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Courses</b></em>' reference list.
@@ -697,227 +614,25 @@ public interface ProgrammesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_COURSE_GROUP__COURSES = 1;
+	int SEMESTER_COURSE_GROUP__COURSES = 1;
 
 	/**
-	 * The number of structural features of the '<em>Programme Course Group</em>' class.
+	 * The number of structural features of the '<em>Semester Course Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_COURSE_GROUP_FEATURE_COUNT = 2;
+	int SEMESTER_COURSE_GROUP_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>Programme Course Group</em>' class.
+	 * The number of operations of the '<em>Semester Course Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_COURSE_GROUP_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.MandatoryCourseConstraintImpl <em>Mandatory Course Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.MandatoryCourseConstraintImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getMandatoryCourseConstraint()
-	 * @generated
-	 */
-	int MANDATORY_COURSE_CONSTRAINT = 10;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANDATORY_COURSE_CONSTRAINT__SHORT_NAME = SEMESTER_COURSE_CONSTRAINT__SHORT_NAME;
-
-	/**
-	 * The number of structural features of the '<em>Mandatory Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANDATORY_COURSE_CONSTRAINT_FEATURE_COUNT = SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANDATORY_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
-
-	/**
-	 * The number of operations of the '<em>Mandatory Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MANDATORY_COURSE_CONSTRAINT_OPERATION_COUNT = SEMESTER_COURSE_CONSTRAINT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.ElectiveCourseConstraintImpl <em>Elective Course Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.ElectiveCourseConstraintImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getElectiveCourseConstraint()
-	 * @generated
-	 */
-	int ELECTIVE_COURSE_CONSTRAINT = 11;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTIVE_COURSE_CONSTRAINT__SHORT_NAME = SEMESTER_COURSE_CONSTRAINT__SHORT_NAME;
-
-	/**
-	 * The number of structural features of the '<em>Elective Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTIVE_COURSE_CONSTRAINT_FEATURE_COUNT = SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTIVE_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
-
-	/**
-	 * The number of operations of the '<em>Elective Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELECTIVE_COURSE_CONSTRAINT_OPERATION_COUNT = SEMESTER_COURSE_CONSTRAINT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.CombinedCourseConstraintImpl <em>Combined Course Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.CombinedCourseConstraintImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getCombinedCourseConstraint()
-	 * @generated
-	 */
-	int COMBINED_COURSE_CONSTRAINT = 13;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMBINED_COURSE_CONSTRAINT__SHORT_NAME = SEMESTER_COURSE_CONSTRAINT__SHORT_NAME;
-
-	/**
-	 * The number of structural features of the '<em>Combined Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMBINED_COURSE_CONSTRAINT_FEATURE_COUNT = SEMESTER_COURSE_CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMBINED_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
-
-	/**
-	 * The number of operations of the '<em>Combined Course Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMBINED_COURSE_CONSTRAINT_OPERATION_COUNT = SEMESTER_COURSE_CONSTRAINT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.AmountCourseOutGroupConstraintImpl <em>Amount Course Out Group Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.AmountCourseOutGroupConstraintImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getAmountCourseOutGroupConstraint()
-	 * @generated
-	 */
-	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT = 12;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT__SHORT_NAME = COMBINED_COURSE_CONSTRAINT__SHORT_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Amount Of Courses</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT__AMOUNT_OF_COURSES = COMBINED_COURSE_CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Course Group</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT__COURSE_GROUP = COMBINED_COURSE_CONSTRAINT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Amount Course Out Group Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT_FEATURE_COUNT = COMBINED_COURSE_CONSTRAINT_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Validate</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = COMBINED_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE;
-
-	/**
-	 * The number of operations of the '<em>Amount Course Out Group Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AMOUNT_COURSE_OUT_GROUP_CONSTRAINT_OPERATION_COUNT = COMBINED_COURSE_CONSTRAINT_OPERATION_COUNT + 0;
+	int SEMESTER_COURSE_GROUP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link programmes.impl.StudentImpl <em>Student</em>}' class.
@@ -927,7 +642,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getStudent()
 	 * @generated
 	 */
-	int STUDENT = 14;
+	int STUDENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -1000,7 +715,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getExamAttempt()
 	 * @generated
 	 */
-	int EXAM_ATTEMPT = 15;
+	int EXAM_ATTEMPT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -1073,7 +788,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeInstance()
 	 * @generated
 	 */
-	int PROGRAMME_INSTANCE = 16;
+	int PROGRAMME_INSTANCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Programme</b></em>' reference.
@@ -1128,7 +843,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeYearInstance()
 	 * @generated
 	 */
-	int PROGRAMME_YEAR_INSTANCE = 17;
+	int PROGRAMME_YEAR_INSTANCE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Programme Year</b></em>' reference.
@@ -1174,7 +889,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getESemester()
 	 * @generated
 	 */
-	int ESEMESTER = 18;
+	int ESEMESTER = 13;
 
 	/**
 	 * The meta object id for the '{@link programmes.EGrade <em>EGrade</em>}' enum.
@@ -1184,7 +899,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getEGrade()
 	 * @generated
 	 */
-	int EGRADE = 19;
+	int EGRADE = 14;
 
 
 	/**
@@ -1220,10 +935,10 @@ public interface ProgrammesPackage extends EPackage {
 	EAttribute getDepartment_ShortName();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link programmes.Department#getCourses <em>Courses</em>}'.
+	 * Returns the meta object for the containment reference list '{@link programmes.Department#getCourses <em>Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Courses</em>'.
+	 * @return the meta object for the containment reference list '<em>Courses</em>'.
 	 * @see programmes.Department#getCourses()
 	 * @see #getDepartment()
 	 * @generated
@@ -1316,17 +1031,6 @@ public interface ProgrammesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCourse_Instructor();
-
-	/**
-	 * Returns the meta object for the reference list '{@link programmes.Course#getYearReference <em>Year Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Year Reference</em>'.
-	 * @see programmes.Course#getYearReference()
-	 * @see #getCourse()
-	 * @generated
-	 */
-	EReference getCourse_YearReference();
 
 	/**
 	 * Returns the meta object for class '{@link programmes.Person <em>Person</em>}'.
@@ -1458,17 +1162,6 @@ public interface ProgrammesPackage extends EPackage {
 	EReference getProgramme_ProgrammeYears();
 
 	/**
-	 * Returns the meta object for the reference list '{@link programmes.Programme#getCombinedCourseConstrains <em>Combined Course Constrains</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Combined Course Constrains</em>'.
-	 * @see programmes.Programme#getCombinedCourseConstrains()
-	 * @see #getProgramme()
-	 * @generated
-	 */
-	EReference getProgramme_CombinedCourseConstrains();
-
-	/**
 	 * Returns the meta object for class '{@link programmes.Specialization <em>Specialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1565,15 +1258,15 @@ public interface ProgrammesPackage extends EPackage {
 	EReference getYearCourseReference_ProgrammeYear();
 
 	/**
-	 * Returns the meta object for the reference '{@link programmes.YearCourseReference#getCourse <em>Course</em>}'.
+	 * Returns the meta object for the reference '{@link programmes.YearCourseReference#getCourseGroup <em>Course Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Course</em>'.
-	 * @see programmes.YearCourseReference#getCourse()
+	 * @return the meta object for the reference '<em>Course Group</em>'.
+	 * @see programmes.YearCourseReference#getCourseGroup()
 	 * @see #getYearCourseReference()
 	 * @generated
 	 */
-	EReference getYearCourseReference_Course();
+	EReference getYearCourseReference_CourseGroup();
 
 	/**
 	 * Returns the meta object for the attribute '{@link programmes.YearCourseReference#getSemesterType <em>Semester Type</em>}'.
@@ -1587,140 +1280,36 @@ public interface ProgrammesPackage extends EPackage {
 	EAttribute getYearCourseReference_SemesterType();
 
 	/**
-	 * Returns the meta object for the reference '{@link programmes.YearCourseReference#getConstraint <em>Constraint</em>}'.
+	 * Returns the meta object for class '{@link programmes.SemesterCourseGroup <em>Semester Course Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Constraint</em>'.
-	 * @see programmes.YearCourseReference#getConstraint()
-	 * @see #getYearCourseReference()
+	 * @return the meta object for class '<em>Semester Course Group</em>'.
+	 * @see programmes.SemesterCourseGroup
 	 * @generated
 	 */
-	EReference getYearCourseReference_Constraint();
+	EClass getSemesterCourseGroup();
 
 	/**
-	 * Returns the meta object for class '{@link programmes.SemesterCourseConstraint <em>Semester Course Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Semester Course Constraint</em>'.
-	 * @see programmes.SemesterCourseConstraint
-	 * @generated
-	 */
-	EClass getSemesterCourseConstraint();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.SemesterCourseConstraint#getShortName <em>Short Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Short Name</em>'.
-	 * @see programmes.SemesterCourseConstraint#getShortName()
-	 * @see #getSemesterCourseConstraint()
-	 * @generated
-	 */
-	EAttribute getSemesterCourseConstraint_ShortName();
-
-	/**
-	 * Returns the meta object for the '{@link programmes.SemesterCourseConstraint#validate(programmes.ProgrammeInstance) <em>Validate</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Validate</em>' operation.
-	 * @see programmes.SemesterCourseConstraint#validate(programmes.ProgrammeInstance)
-	 * @generated
-	 */
-	EOperation getSemesterCourseConstraint__Validate__ProgrammeInstance();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.ProgrammeCourseGroup <em>Programme Course Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Programme Course Group</em>'.
-	 * @see programmes.ProgrammeCourseGroup
-	 * @generated
-	 */
-	EClass getProgrammeCourseGroup();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.ProgrammeCourseGroup#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link programmes.SemesterCourseGroup#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see programmes.ProgrammeCourseGroup#getName()
-	 * @see #getProgrammeCourseGroup()
+	 * @see programmes.SemesterCourseGroup#getName()
+	 * @see #getSemesterCourseGroup()
 	 * @generated
 	 */
-	EAttribute getProgrammeCourseGroup_Name();
+	EAttribute getSemesterCourseGroup_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link programmes.ProgrammeCourseGroup#getCourses <em>Courses</em>}'.
+	 * Returns the meta object for the reference list '{@link programmes.SemesterCourseGroup#getCourses <em>Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see programmes.ProgrammeCourseGroup#getCourses()
-	 * @see #getProgrammeCourseGroup()
+	 * @see programmes.SemesterCourseGroup#getCourses()
+	 * @see #getSemesterCourseGroup()
 	 * @generated
 	 */
-	EReference getProgrammeCourseGroup_Courses();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.MandatoryCourseConstraint <em>Mandatory Course Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mandatory Course Constraint</em>'.
-	 * @see programmes.MandatoryCourseConstraint
-	 * @generated
-	 */
-	EClass getMandatoryCourseConstraint();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.ElectiveCourseConstraint <em>Elective Course Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Elective Course Constraint</em>'.
-	 * @see programmes.ElectiveCourseConstraint
-	 * @generated
-	 */
-	EClass getElectiveCourseConstraint();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.AmountCourseOutGroupConstraint <em>Amount Course Out Group Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Amount Course Out Group Constraint</em>'.
-	 * @see programmes.AmountCourseOutGroupConstraint
-	 * @generated
-	 */
-	EClass getAmountCourseOutGroupConstraint();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.AmountCourseOutGroupConstraint#getAmountOfCourses <em>Amount Of Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Amount Of Courses</em>'.
-	 * @see programmes.AmountCourseOutGroupConstraint#getAmountOfCourses()
-	 * @see #getAmountCourseOutGroupConstraint()
-	 * @generated
-	 */
-	EAttribute getAmountCourseOutGroupConstraint_AmountOfCourses();
-
-	/**
-	 * Returns the meta object for the reference '{@link programmes.AmountCourseOutGroupConstraint#getCourseGroup <em>Course Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Course Group</em>'.
-	 * @see programmes.AmountCourseOutGroupConstraint#getCourseGroup()
-	 * @see #getAmountCourseOutGroupConstraint()
-	 * @generated
-	 */
-	EReference getAmountCourseOutGroupConstraint_CourseGroup();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.CombinedCourseConstraint <em>Combined Course Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Combined Course Constraint</em>'.
-	 * @see programmes.CombinedCourseConstraint
-	 * @generated
-	 */
-	EClass getCombinedCourseConstraint();
+	EReference getSemesterCourseGroup_Courses();
 
 	/**
 	 * Returns the meta object for class '{@link programmes.Student <em>Student</em>}'.
@@ -1964,7 +1553,7 @@ public interface ProgrammesPackage extends EPackage {
 		EAttribute DEPARTMENT__SHORT_NAME = eINSTANCE.getDepartment_ShortName();
 
 		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Courses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2036,14 +1625,6 @@ public interface ProgrammesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COURSE__INSTRUCTOR = eINSTANCE.getCourse_Instructor();
-
-		/**
-		 * The meta object literal for the '<em><b>Year Reference</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COURSE__YEAR_REFERENCE = eINSTANCE.getCourse_YearReference();
 
 		/**
 		 * The meta object literal for the '{@link programmes.impl.PersonImpl <em>Person</em>}' class.
@@ -2148,14 +1729,6 @@ public interface ProgrammesPackage extends EPackage {
 		EReference PROGRAMME__PROGRAMME_YEARS = eINSTANCE.getProgramme_ProgrammeYears();
 
 		/**
-		 * The meta object literal for the '<em><b>Combined Course Constrains</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROGRAMME__COMBINED_COURSE_CONSTRAINS = eINSTANCE.getProgramme_CombinedCourseConstrains();
-
-		/**
 		 * The meta object literal for the '{@link programmes.impl.SpecializationImpl <em>Specialization</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2234,12 +1807,12 @@ public interface ProgrammesPackage extends EPackage {
 		EReference YEAR_COURSE_REFERENCE__PROGRAMME_YEAR = eINSTANCE.getYearCourseReference_ProgrammeYear();
 
 		/**
-		 * The meta object literal for the '<em><b>Course</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Course Group</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference YEAR_COURSE_REFERENCE__COURSE = eINSTANCE.getYearCourseReference_Course();
+		EReference YEAR_COURSE_REFERENCE__COURSE_GROUP = eINSTANCE.getYearCourseReference_CourseGroup();
 
 		/**
 		 * The meta object literal for the '<em><b>Semester Type</b></em>' attribute feature.
@@ -2250,48 +1823,14 @@ public interface ProgrammesPackage extends EPackage {
 		EAttribute YEAR_COURSE_REFERENCE__SEMESTER_TYPE = eINSTANCE.getYearCourseReference_SemesterType();
 
 		/**
-		 * The meta object literal for the '<em><b>Constraint</b></em>' reference feature.
+		 * The meta object literal for the '{@link programmes.impl.SemesterCourseGroupImpl <em>Semester Course Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see programmes.impl.SemesterCourseGroupImpl
+		 * @see programmes.impl.ProgrammesPackageImpl#getSemesterCourseGroup()
 		 * @generated
 		 */
-		EReference YEAR_COURSE_REFERENCE__CONSTRAINT = eINSTANCE.getYearCourseReference_Constraint();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.SemesterCourseConstraintImpl <em>Semester Course Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.SemesterCourseConstraintImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getSemesterCourseConstraint()
-		 * @generated
-		 */
-		EClass SEMESTER_COURSE_CONSTRAINT = eINSTANCE.getSemesterCourseConstraint();
-
-		/**
-		 * The meta object literal for the '<em><b>Short Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEMESTER_COURSE_CONSTRAINT__SHORT_NAME = eINSTANCE.getSemesterCourseConstraint_ShortName();
-
-		/**
-		 * The meta object literal for the '<em><b>Validate</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE = eINSTANCE.getSemesterCourseConstraint__Validate__ProgrammeInstance();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.ProgrammeCourseGroupImpl <em>Programme Course Group</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.ProgrammeCourseGroupImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeCourseGroup()
-		 * @generated
-		 */
-		EClass PROGRAMME_COURSE_GROUP = eINSTANCE.getProgrammeCourseGroup();
+		EClass SEMESTER_COURSE_GROUP = eINSTANCE.getSemesterCourseGroup();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2299,7 +1838,7 @@ public interface ProgrammesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROGRAMME_COURSE_GROUP__NAME = eINSTANCE.getProgrammeCourseGroup_Name();
+		EAttribute SEMESTER_COURSE_GROUP__NAME = eINSTANCE.getSemesterCourseGroup_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
@@ -2307,63 +1846,7 @@ public interface ProgrammesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_COURSE_GROUP__COURSES = eINSTANCE.getProgrammeCourseGroup_Courses();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.MandatoryCourseConstraintImpl <em>Mandatory Course Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.MandatoryCourseConstraintImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getMandatoryCourseConstraint()
-		 * @generated
-		 */
-		EClass MANDATORY_COURSE_CONSTRAINT = eINSTANCE.getMandatoryCourseConstraint();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.ElectiveCourseConstraintImpl <em>Elective Course Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.ElectiveCourseConstraintImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getElectiveCourseConstraint()
-		 * @generated
-		 */
-		EClass ELECTIVE_COURSE_CONSTRAINT = eINSTANCE.getElectiveCourseConstraint();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.AmountCourseOutGroupConstraintImpl <em>Amount Course Out Group Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.AmountCourseOutGroupConstraintImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getAmountCourseOutGroupConstraint()
-		 * @generated
-		 */
-		EClass AMOUNT_COURSE_OUT_GROUP_CONSTRAINT = eINSTANCE.getAmountCourseOutGroupConstraint();
-
-		/**
-		 * The meta object literal for the '<em><b>Amount Of Courses</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute AMOUNT_COURSE_OUT_GROUP_CONSTRAINT__AMOUNT_OF_COURSES = eINSTANCE.getAmountCourseOutGroupConstraint_AmountOfCourses();
-
-		/**
-		 * The meta object literal for the '<em><b>Course Group</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference AMOUNT_COURSE_OUT_GROUP_CONSTRAINT__COURSE_GROUP = eINSTANCE.getAmountCourseOutGroupConstraint_CourseGroup();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.CombinedCourseConstraintImpl <em>Combined Course Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.CombinedCourseConstraintImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getCombinedCourseConstraint()
-		 * @generated
-		 */
-		EClass COMBINED_COURSE_CONSTRAINT = eINSTANCE.getCombinedCourseConstraint();
+		EReference SEMESTER_COURSE_GROUP__COURSES = eINSTANCE.getSemesterCourseGroup_Courses();
 
 		/**
 		 * The meta object literal for the '{@link programmes.impl.StudentImpl <em>Student</em>}' class.

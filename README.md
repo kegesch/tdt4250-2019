@@ -2,7 +2,6 @@
 Repository for the assignments of the course TDT4250 at NTNU
 
 # Structure
-ECore Projects
 ## `no.tdt4250.model`
 contains the source code and the model
 * `src` contains the generated source code
@@ -10,3 +9,6 @@ contains the source code and the model
 
 ## `no.tdt4250.model.tests`
 contains the generated and the custom tests for the source code
+
+# Model
+![Model](model.png)

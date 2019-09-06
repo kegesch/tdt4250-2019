@@ -11,11 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import programmes.Course;
 import programmes.ESemester;
 import programmes.ProgrammeYear;
 import programmes.ProgrammesPackage;
-import programmes.SemesterCourseConstraint;
+import programmes.SemesterCourseGroup;
 import programmes.YearCourseReference;
 
 /**
@@ -27,9 +26,8 @@ import programmes.YearCourseReference;
  * </p>
  * <ul>
  *   <li>{@link programmes.impl.YearCourseReferenceImpl#getProgrammeYear <em>Programme Year</em>}</li>
- *   <li>{@link programmes.impl.YearCourseReferenceImpl#getCourse <em>Course</em>}</li>
+ *   <li>{@link programmes.impl.YearCourseReferenceImpl#getCourseGroup <em>Course Group</em>}</li>
  *   <li>{@link programmes.impl.YearCourseReferenceImpl#getSemesterType <em>Semester Type</em>}</li>
- *   <li>{@link programmes.impl.YearCourseReferenceImpl#getConstraint <em>Constraint</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,14 +44,14 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 	protected ProgrammeYear programmeYear;
 
 	/**
-	 * The cached value of the '{@link #getCourse() <em>Course</em>}' reference.
+	 * The cached value of the '{@link #getCourseGroup() <em>Course Group</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCourse()
+	 * @see #getCourseGroup()
 	 * @generated
 	 * @ordered
 	 */
-	protected Course course;
+	protected SemesterCourseGroup courseGroup;
 
 	/**
 	 * The default value of the '{@link #getSemesterType() <em>Semester Type</em>}' attribute.
@@ -74,16 +72,6 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected ESemester semesterType = SEMESTER_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getConstraint()
-	 * @generated
-	 * @ordered
-	 */
-	protected SemesterCourseConstraint constraint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,16 +160,16 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public Course getCourse() {
-		if (course != null && course.eIsProxy()) {
-			InternalEObject oldCourse = (InternalEObject)course;
-			course = (Course)eResolveProxy(oldCourse);
-			if (course != oldCourse) {
+	public SemesterCourseGroup getCourseGroup() {
+		if (courseGroup != null && courseGroup.eIsProxy()) {
+			InternalEObject oldCourseGroup = (InternalEObject)courseGroup;
+			courseGroup = (SemesterCourseGroup)eResolveProxy(oldCourseGroup);
+			if (courseGroup != oldCourseGroup) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE, oldCourse, course));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE_GROUP, oldCourseGroup, courseGroup));
 			}
 		}
-		return course;
+		return courseGroup;
 	}
 
 	/**
@@ -189,23 +177,8 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Course basicGetCourse() {
-		return course;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCourse(Course newCourse, NotificationChain msgs) {
-		Course oldCourse = course;
-		course = newCourse;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE, oldCourse, newCourse);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public SemesterCourseGroup basicGetCourseGroup() {
+		return courseGroup;
 	}
 
 	/**
@@ -214,18 +187,11 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public void setCourse(Course newCourse) {
-		if (newCourse != course) {
-			NotificationChain msgs = null;
-			if (course != null)
-				msgs = ((InternalEObject)course).eInverseRemove(this, ProgrammesPackage.COURSE__YEAR_REFERENCE, Course.class, msgs);
-			if (newCourse != null)
-				msgs = ((InternalEObject)newCourse).eInverseAdd(this, ProgrammesPackage.COURSE__YEAR_REFERENCE, Course.class, msgs);
-			msgs = basicSetCourse(newCourse, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE, newCourse, newCourse));
+	public void setCourseGroup(SemesterCourseGroup newCourseGroup) {
+		SemesterCourseGroup oldCourseGroup = courseGroup;
+		courseGroup = newCourseGroup;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE_GROUP, oldCourseGroup, courseGroup));
 	}
 
 	/**
@@ -257,56 +223,12 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 	 * @generated
 	 */
 	@Override
-	public SemesterCourseConstraint getConstraint() {
-		if (constraint != null && constraint.eIsProxy()) {
-			InternalEObject oldConstraint = (InternalEObject)constraint;
-			constraint = (SemesterCourseConstraint)eResolveProxy(oldConstraint);
-			if (constraint != oldConstraint) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProgrammesPackage.YEAR_COURSE_REFERENCE__CONSTRAINT, oldConstraint, constraint));
-			}
-		}
-		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SemesterCourseConstraint basicGetConstraint() {
-		return constraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setConstraint(SemesterCourseConstraint newConstraint) {
-		SemesterCourseConstraint oldConstraint = constraint;
-		constraint = newConstraint;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.YEAR_COURSE_REFERENCE__CONSTRAINT, oldConstraint, constraint));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__PROGRAMME_YEAR:
 				if (programmeYear != null)
 					msgs = ((InternalEObject)programmeYear).eInverseRemove(this, ProgrammesPackage.PROGRAMME_YEAR__COURSE_REFERENCES, ProgrammeYear.class, msgs);
 				return basicSetProgrammeYear((ProgrammeYear)otherEnd, msgs);
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE:
-				if (course != null)
-					msgs = ((InternalEObject)course).eInverseRemove(this, ProgrammesPackage.COURSE__YEAR_REFERENCE, Course.class, msgs);
-				return basicSetCourse((Course)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -321,8 +243,6 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__PROGRAMME_YEAR:
 				return basicSetProgrammeYear(null, msgs);
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE:
-				return basicSetCourse(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -338,14 +258,11 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__PROGRAMME_YEAR:
 				if (resolve) return getProgrammeYear();
 				return basicGetProgrammeYear();
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE:
-				if (resolve) return getCourse();
-				return basicGetCourse();
+			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE_GROUP:
+				if (resolve) return getCourseGroup();
+				return basicGetCourseGroup();
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__SEMESTER_TYPE:
 				return getSemesterType();
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__CONSTRAINT:
-				if (resolve) return getConstraint();
-				return basicGetConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -361,14 +278,11 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__PROGRAMME_YEAR:
 				setProgrammeYear((ProgrammeYear)newValue);
 				return;
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE:
-				setCourse((Course)newValue);
+			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE_GROUP:
+				setCourseGroup((SemesterCourseGroup)newValue);
 				return;
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__SEMESTER_TYPE:
 				setSemesterType((ESemester)newValue);
-				return;
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__CONSTRAINT:
-				setConstraint((SemesterCourseConstraint)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -385,14 +299,11 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__PROGRAMME_YEAR:
 				setProgrammeYear((ProgrammeYear)null);
 				return;
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE:
-				setCourse((Course)null);
+			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE_GROUP:
+				setCourseGroup((SemesterCourseGroup)null);
 				return;
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__SEMESTER_TYPE:
 				setSemesterType(SEMESTER_TYPE_EDEFAULT);
-				return;
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__CONSTRAINT:
-				setConstraint((SemesterCourseConstraint)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -408,12 +319,10 @@ public class YearCourseReferenceImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__PROGRAMME_YEAR:
 				return programmeYear != null;
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE:
-				return course != null;
+			case ProgrammesPackage.YEAR_COURSE_REFERENCE__COURSE_GROUP:
+				return courseGroup != null;
 			case ProgrammesPackage.YEAR_COURSE_REFERENCE__SEMESTER_TYPE:
 				return semesterType != SEMESTER_TYPE_EDEFAULT;
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE__CONSTRAINT:
-				return constraint != null;
 		}
 		return super.eIsSet(featureID);
 	}

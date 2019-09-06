@@ -72,21 +72,10 @@ public interface Person extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Full Name</em>' attribute.
-	 * @see #setFullName(String)
 	 * @see programmes.ProgrammesPackage#getPerson_FullName()
-	 * @model derived="true"
+	 * @model changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	String getFullName();
-
-	/**
-	 * Sets the value of the '{@link programmes.Person#getFullName <em>Full Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Full Name</em>' attribute.
-	 * @see #getFullName()
-	 * @generated
-	 */
-	void setFullName(String value);
 
 } // Person

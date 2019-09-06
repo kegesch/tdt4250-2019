@@ -2,8 +2,6 @@
  */
 package programmes;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link programmes.Course#getLevel <em>Level</em>}</li>
  *   <li>{@link programmes.Course#getDepartment <em>Department</em>}</li>
  *   <li>{@link programmes.Course#getInstructor <em>Instructor</em>}</li>
- *   <li>{@link programmes.Course#getYearReference <em>Year Reference</em>}</li>
  * </ul>
  *
  * @see programmes.ProgrammesPackage#getCourse()
@@ -165,19 +162,5 @@ public interface Course extends EObject {
 	 * @generated
 	 */
 	void setInstructor(Instructor value);
-
-	/**
-	 * Returns the value of the '<em><b>Year Reference</b></em>' reference list.
-	 * The list contents are of type {@link programmes.YearCourseReference}.
-	 * It is bidirectional and its opposite is '{@link programmes.YearCourseReference#getCourse <em>Course</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Year Reference</em>' reference list.
-	 * @see programmes.ProgrammesPackage#getCourse_YearReference()
-	 * @see programmes.YearCourseReference#getCourse
-	 * @model opposite="course"
-	 * @generated
-	 */
-	EList<YearCourseReference> getYearReference();
 
 } // Course

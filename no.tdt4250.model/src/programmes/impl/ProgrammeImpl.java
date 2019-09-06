@@ -16,11 +16,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import programmes.CombinedCourseConstraint;
 import programmes.Programme;
 import programmes.ProgrammeYear;
 import programmes.ProgrammesPackage;
@@ -38,7 +35,6 @@ import programmes.Specialization;
  *   <li>{@link programmes.impl.ProgrammeImpl#getCode <em>Code</em>}</li>
  *   <li>{@link programmes.impl.ProgrammeImpl#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link programmes.impl.ProgrammeImpl#getProgrammeYears <em>Programme Years</em>}</li>
- *   <li>{@link programmes.impl.ProgrammeImpl#getCombinedCourseConstrains <em>Combined Course Constrains</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,16 +99,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @ordered
 	 */
 	protected EList<ProgrammeYear> programmeYears;
-
-	/**
-	 * The cached value of the '{@link #getCombinedCourseConstrains() <em>Combined Course Constrains</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCombinedCourseConstrains()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<CombinedCourseConstraint> combinedCourseConstrains;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,19 +196,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<CombinedCourseConstraint> getCombinedCourseConstrains() {
-		if (combinedCourseConstrains == null) {
-			combinedCourseConstrains = new EObjectResolvingEList<CombinedCourseConstraint>(CombinedCourseConstraint.class, this, ProgrammesPackage.PROGRAMME__COMBINED_COURSE_CONSTRAINS);
-		}
-		return combinedCourseConstrains;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -267,8 +240,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return getSpecializations();
 			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
 				return getProgrammeYears();
-			case ProgrammesPackage.PROGRAMME__COMBINED_COURSE_CONSTRAINS:
-				return getCombinedCourseConstrains();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -296,10 +267,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				getProgrammeYears().clear();
 				getProgrammeYears().addAll((Collection<? extends ProgrammeYear>)newValue);
 				return;
-			case ProgrammesPackage.PROGRAMME__COMBINED_COURSE_CONSTRAINS:
-				getCombinedCourseConstrains().clear();
-				getCombinedCourseConstrains().addAll((Collection<? extends CombinedCourseConstraint>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -324,9 +291,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
 				getProgrammeYears().clear();
 				return;
-			case ProgrammesPackage.PROGRAMME__COMBINED_COURSE_CONSTRAINS:
-				getCombinedCourseConstrains().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -347,8 +311,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return specializations != null && !specializations.isEmpty();
 			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
 				return programmeYears != null && !programmeYears.isEmpty();
-			case ProgrammesPackage.PROGRAMME__COMBINED_COURSE_CONSTRAINS:
-				return combinedCourseConstrains != null && !combinedCourseConstrains.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

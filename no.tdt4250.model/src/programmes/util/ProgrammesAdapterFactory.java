@@ -100,28 +100,8 @@ public class ProgrammesAdapterFactory extends AdapterFactoryImpl {
 				return createYearCourseReferenceAdapter();
 			}
 			@Override
-			public Adapter caseSemesterCourseConstraint(SemesterCourseConstraint object) {
-				return createSemesterCourseConstraintAdapter();
-			}
-			@Override
-			public Adapter caseProgrammeCourseGroup(ProgrammeCourseGroup object) {
-				return createProgrammeCourseGroupAdapter();
-			}
-			@Override
-			public Adapter caseMandatoryCourseConstraint(MandatoryCourseConstraint object) {
-				return createMandatoryCourseConstraintAdapter();
-			}
-			@Override
-			public Adapter caseElectiveCourseConstraint(ElectiveCourseConstraint object) {
-				return createElectiveCourseConstraintAdapter();
-			}
-			@Override
-			public Adapter caseAmountCourseOutGroupConstraint(AmountCourseOutGroupConstraint object) {
-				return createAmountCourseOutGroupConstraintAdapter();
-			}
-			@Override
-			public Adapter caseCombinedCourseConstraint(CombinedCourseConstraint object) {
-				return createCombinedCourseConstraintAdapter();
+			public Adapter caseSemesterCourseGroup(SemesterCourseGroup object) {
+				return createSemesterCourseGroupAdapter();
 			}
 			@Override
 			public Adapter caseStudent(Student object) {
@@ -272,86 +252,16 @@ public class ProgrammesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link programmes.SemesterCourseConstraint <em>Semester Course Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link programmes.SemesterCourseGroup <em>Semester Course Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see programmes.SemesterCourseConstraint
+	 * @see programmes.SemesterCourseGroup
 	 * @generated
 	 */
-	public Adapter createSemesterCourseConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.ProgrammeCourseGroup <em>Programme Course Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.ProgrammeCourseGroup
-	 * @generated
-	 */
-	public Adapter createProgrammeCourseGroupAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.MandatoryCourseConstraint <em>Mandatory Course Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.MandatoryCourseConstraint
-	 * @generated
-	 */
-	public Adapter createMandatoryCourseConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.ElectiveCourseConstraint <em>Elective Course Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.ElectiveCourseConstraint
-	 * @generated
-	 */
-	public Adapter createElectiveCourseConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.AmountCourseOutGroupConstraint <em>Amount Course Out Group Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.AmountCourseOutGroupConstraint
-	 * @generated
-	 */
-	public Adapter createAmountCourseOutGroupConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.CombinedCourseConstraint <em>Combined Course Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.CombinedCourseConstraint
-	 * @generated
-	 */
-	public Adapter createCombinedCourseConstraintAdapter() {
+	public Adapter createSemesterCourseGroupAdapter() {
 		return null;
 	}
 

@@ -6,4 +6,9 @@
     xmlns:programmes="platform:/plugin/no.tdt4250.model/model/programmes.ecore"
     xsi:schemaLocation="platform:/plugin/no.tdt4250.model/model/programmes.ecore programmes.ecore"
     name="Department of Computer Science"
-    shortName="IDI"/>
+    shortName="IDI">
+  <courses code="TDT4250"
+      name="Advanced Software Design "
+      credits="7.5"
+      level="Second degree level"/>
+</programmes:Department>

@@ -105,17 +105,4 @@ public class PersonTest extends TestCase {
 		fail();
 	}
 
-	/**
-	 * Tests the '{@link programmes.Person#setFullName(java.lang.String) <em>Full Name</em>}' feature setter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.Person#setFullName(java.lang.String)
-	 * @generated
-	 */
-	public void testSetFullName() {
-		// TODO: implement this feature setter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
 } //PersonTest

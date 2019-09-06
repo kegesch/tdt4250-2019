@@ -5,35 +5,30 @@ package programmes.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import programmes.AmountCourseOutGroupConstraint;
-import programmes.CombinedCourseConstraint;
 import programmes.Course;
 import programmes.Department;
 import programmes.EGrade;
 import programmes.ESemester;
-import programmes.ElectiveCourseConstraint;
 import programmes.ExamAttempt;
 import programmes.Instructor;
-import programmes.MandatoryCourseConstraint;
 import programmes.Person;
 import programmes.Programme;
-import programmes.ProgrammeCourseGroup;
 import programmes.ProgrammeInstance;
 import programmes.ProgrammeYear;
 import programmes.ProgrammeYearInstance;
 import programmes.ProgrammesFactory;
 import programmes.ProgrammesPackage;
-import programmes.SemesterCourseConstraint;
+import programmes.SemesterCourseGroup;
 import programmes.Specialization;
 import programmes.Student;
 import programmes.YearCourseReference;
+
 import programmes.util.ProgrammesValidator;
 
 /**
@@ -104,42 +99,7 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass semesterCourseConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass programmeCourseGroupEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mandatoryCourseConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass electiveCourseConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass amountCourseOutGroupConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass combinedCourseConstraintEClass = null;
+	private EClass semesterCourseGroupEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -380,16 +340,6 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getCourse_YearReference() {
-		return (EReference)courseEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getPerson() {
 		return personEClass;
 	}
@@ -510,16 +460,6 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getProgramme_CombinedCourseConstrains() {
-		return (EReference)programmeEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getSpecialization() {
 		return specializationEClass;
 	}
@@ -610,7 +550,7 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getYearCourseReference_Course() {
+	public EReference getYearCourseReference_CourseGroup() {
 		return (EReference)yearCourseReferenceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -630,8 +570,8 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getYearCourseReference_Constraint() {
-		return (EReference)yearCourseReferenceEClass.getEStructuralFeatures().get(3);
+	public EClass getSemesterCourseGroup() {
+		return semesterCourseGroupEClass;
 	}
 
 	/**
@@ -640,8 +580,8 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
-	public EClass getSemesterCourseConstraint() {
-		return semesterCourseConstraintEClass;
+	public EAttribute getSemesterCourseGroup_Name() {
+		return (EAttribute)semesterCourseGroupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -650,108 +590,8 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSemesterCourseConstraint_ShortName() {
-		return (EAttribute)semesterCourseConstraintEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getSemesterCourseConstraint__Validate__ProgrammeInstance() {
-		return semesterCourseConstraintEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getProgrammeCourseGroup() {
-		return programmeCourseGroupEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProgrammeCourseGroup_Name() {
-		return (EAttribute)programmeCourseGroupEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getProgrammeCourseGroup_Courses() {
-		return (EReference)programmeCourseGroupEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMandatoryCourseConstraint() {
-		return mandatoryCourseConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getElectiveCourseConstraint() {
-		return electiveCourseConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAmountCourseOutGroupConstraint() {
-		return amountCourseOutGroupConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAmountCourseOutGroupConstraint_AmountOfCourses() {
-		return (EAttribute)amountCourseOutGroupConstraintEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAmountCourseOutGroupConstraint_CourseGroup() {
-		return (EReference)amountCourseOutGroupConstraintEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getCombinedCourseConstraint() {
-		return combinedCourseConstraintEClass;
+	public EReference getSemesterCourseGroup_Courses() {
+		return (EReference)semesterCourseGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -976,7 +816,6 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		createEAttribute(courseEClass, COURSE__LEVEL);
 		createEReference(courseEClass, COURSE__DEPARTMENT);
 		createEReference(courseEClass, COURSE__INSTRUCTOR);
-		createEReference(courseEClass, COURSE__YEAR_REFERENCE);
 
 		personEClass = createEClass(PERSON);
 		createEAttribute(personEClass, PERSON__FIRST_NAME);
@@ -992,7 +831,6 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		createEAttribute(programmeEClass, PROGRAMME__CODE);
 		createEReference(programmeEClass, PROGRAMME__SPECIALIZATIONS);
 		createEReference(programmeEClass, PROGRAMME__PROGRAMME_YEARS);
-		createEReference(programmeEClass, PROGRAMME__COMBINED_COURSE_CONSTRAINS);
 
 		specializationEClass = createEClass(SPECIALIZATION);
 		createEReference(specializationEClass, SPECIALIZATION__SPECIALIZES_IN);
@@ -1005,27 +843,12 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 
 		yearCourseReferenceEClass = createEClass(YEAR_COURSE_REFERENCE);
 		createEReference(yearCourseReferenceEClass, YEAR_COURSE_REFERENCE__PROGRAMME_YEAR);
-		createEReference(yearCourseReferenceEClass, YEAR_COURSE_REFERENCE__COURSE);
+		createEReference(yearCourseReferenceEClass, YEAR_COURSE_REFERENCE__COURSE_GROUP);
 		createEAttribute(yearCourseReferenceEClass, YEAR_COURSE_REFERENCE__SEMESTER_TYPE);
-		createEReference(yearCourseReferenceEClass, YEAR_COURSE_REFERENCE__CONSTRAINT);
 
-		semesterCourseConstraintEClass = createEClass(SEMESTER_COURSE_CONSTRAINT);
-		createEAttribute(semesterCourseConstraintEClass, SEMESTER_COURSE_CONSTRAINT__SHORT_NAME);
-		createEOperation(semesterCourseConstraintEClass, SEMESTER_COURSE_CONSTRAINT___VALIDATE__PROGRAMMEINSTANCE);
-
-		programmeCourseGroupEClass = createEClass(PROGRAMME_COURSE_GROUP);
-		createEAttribute(programmeCourseGroupEClass, PROGRAMME_COURSE_GROUP__NAME);
-		createEReference(programmeCourseGroupEClass, PROGRAMME_COURSE_GROUP__COURSES);
-
-		mandatoryCourseConstraintEClass = createEClass(MANDATORY_COURSE_CONSTRAINT);
-
-		electiveCourseConstraintEClass = createEClass(ELECTIVE_COURSE_CONSTRAINT);
-
-		amountCourseOutGroupConstraintEClass = createEClass(AMOUNT_COURSE_OUT_GROUP_CONSTRAINT);
-		createEAttribute(amountCourseOutGroupConstraintEClass, AMOUNT_COURSE_OUT_GROUP_CONSTRAINT__AMOUNT_OF_COURSES);
-		createEReference(amountCourseOutGroupConstraintEClass, AMOUNT_COURSE_OUT_GROUP_CONSTRAINT__COURSE_GROUP);
-
-		combinedCourseConstraintEClass = createEClass(COMBINED_COURSE_CONSTRAINT);
+		semesterCourseGroupEClass = createEClass(SEMESTER_COURSE_GROUP);
+		createEAttribute(semesterCourseGroupEClass, SEMESTER_COURSE_GROUP__NAME);
+		createEReference(semesterCourseGroupEClass, SEMESTER_COURSE_GROUP__COURSES);
 
 		studentEClass = createEClass(STUDENT);
 		createEReference(studentEClass, STUDENT__ENROLLED_IN);
@@ -1082,17 +905,13 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		// Add supertypes to classes
 		instructorEClass.getESuperTypes().add(this.getPerson());
 		specializationEClass.getESuperTypes().add(this.getProgramme());
-		mandatoryCourseConstraintEClass.getESuperTypes().add(this.getSemesterCourseConstraint());
-		electiveCourseConstraintEClass.getESuperTypes().add(this.getSemesterCourseConstraint());
-		amountCourseOutGroupConstraintEClass.getESuperTypes().add(this.getCombinedCourseConstraint());
-		combinedCourseConstraintEClass.getESuperTypes().add(this.getSemesterCourseConstraint());
 		studentEClass.getESuperTypes().add(this.getPerson());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(departmentEClass, Department.class, "Department", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDepartment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDepartment_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDepartment_Courses(), this.getCourse(), this.getCourse_Department(), "courses", null, 0, 1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDepartment_Courses(), this.getCourse(), this.getCourse_Department(), "courses", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDepartment_Employees(), this.getInstructor(), this.getInstructor_Department(), "employees", null, 0, -1, Department.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(courseEClass, Course.class, "Course", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1102,12 +921,11 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		initEAttribute(getCourse_Level(), ecorePackage.getEString(), "level", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourse_Department(), this.getDepartment(), this.getDepartment_Courses(), "department", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCourse_Instructor(), this.getInstructor(), this.getInstructor_LecturedCourses(), "instructor", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCourse_YearReference(), this.getYearCourseReference(), this.getYearCourseReference_Course(), "yearReference", null, 0, -1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPerson_FirstName(), ecorePackage.getEString(), "firstName", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPerson_SurName(), ecorePackage.getEString(), "surName", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPerson_FullName(), ecorePackage.getEString(), "fullName", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPerson_FullName(), ecorePackage.getEString(), "fullName", null, 0, 1, Person.class, !IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructorEClass, Instructor.class, "Instructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInstructor_LecturedCourses(), this.getCourse(), this.getCourse_Instructor(), "lecturedCourses", null, 0, -1, Instructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1118,7 +936,6 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 		initEAttribute(getProgramme_Code(), ecorePackage.getEString(), "code", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgramme_Specializations(), this.getSpecialization(), this.getSpecialization_SpecializesIn(), "specializations", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgramme_ProgrammeYears(), this.getProgrammeYear(), this.getProgrammeYear_Programme(), "programmeYears", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProgramme_CombinedCourseConstrains(), this.getCombinedCourseConstraint(), null, "combinedCourseConstrains", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSpecialization_SpecializesIn(), this.getProgramme(), this.getProgramme_Specializations(), "specializesIn", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1131,29 +948,12 @@ public class ProgrammesPackageImpl extends EPackageImpl implements ProgrammesPac
 
 		initEClass(yearCourseReferenceEClass, YearCourseReference.class, "YearCourseReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getYearCourseReference_ProgrammeYear(), this.getProgrammeYear(), this.getProgrammeYear_CourseReferences(), "programmeYear", null, 1, 1, YearCourseReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYearCourseReference_Course(), this.getCourse(), this.getCourse_YearReference(), "course", null, 1, 1, YearCourseReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getYearCourseReference_CourseGroup(), this.getSemesterCourseGroup(), null, "courseGroup", null, 1, 1, YearCourseReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getYearCourseReference_SemesterType(), this.getESemester(), "semesterType", null, 0, 1, YearCourseReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getYearCourseReference_Constraint(), this.getSemesterCourseConstraint(), null, "constraint", null, 1, 1, YearCourseReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(semesterCourseConstraintEClass, SemesterCourseConstraint.class, "SemesterCourseConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSemesterCourseConstraint_ShortName(), ecorePackage.getEString(), "shortName", null, 0, 1, SemesterCourseConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		EOperation op = initEOperation(getSemesterCourseConstraint__Validate__ProgrammeInstance(), ecorePackage.getEBoolean(), "validate", 1, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getProgrammeInstance(), "programmeInstance", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(programmeCourseGroupEClass, ProgrammeCourseGroup.class, "ProgrammeCourseGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getProgrammeCourseGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProgrammeCourseGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProgrammeCourseGroup_Courses(), this.getCourse(), null, "courses", null, 0, -1, ProgrammeCourseGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(mandatoryCourseConstraintEClass, MandatoryCourseConstraint.class, "MandatoryCourseConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(electiveCourseConstraintEClass, ElectiveCourseConstraint.class, "ElectiveCourseConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(amountCourseOutGroupConstraintEClass, AmountCourseOutGroupConstraint.class, "AmountCourseOutGroupConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAmountCourseOutGroupConstraint_AmountOfCourses(), ecorePackage.getEShort(), "amountOfCourses", null, 0, 1, AmountCourseOutGroupConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAmountCourseOutGroupConstraint_CourseGroup(), this.getProgrammeCourseGroup(), null, "courseGroup", null, 1, 1, AmountCourseOutGroupConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(combinedCourseConstraintEClass, CombinedCourseConstraint.class, "CombinedCourseConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(semesterCourseGroupEClass, SemesterCourseGroup.class, "SemesterCourseGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSemesterCourseGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, SemesterCourseGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSemesterCourseGroup_Courses(), this.getCourse(), null, "courses", null, 0, -1, SemesterCourseGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(studentEClass, Student.class, "Student", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStudent_EnrolledIn(), this.getProgrammeInstance(), null, "enrolledIn", null, 0, 1, Student.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

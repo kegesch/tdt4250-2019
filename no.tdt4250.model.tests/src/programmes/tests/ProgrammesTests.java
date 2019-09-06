@@ -33,11 +33,6 @@ public class ProgrammesTests extends TestSuite {
 		TestSuite suite = new ProgrammesTests("programmes Tests");
 		suite.addTestSuite(PersonTest.class);
 		suite.addTestSuite(InstructorTest.class);
-		suite.addTestSuite(SemesterCourseConstraintTest.class);
-		suite.addTestSuite(MandatoryCourseConstraintTest.class);
-		suite.addTestSuite(ElectiveCourseConstraintTest.class);
-		suite.addTestSuite(AmountCourseOutGroupConstraintTest.class);
-		suite.addTestSuite(CombinedCourseConstraintTest.class);
 		suite.addTestSuite(StudentTest.class);
 		return suite;
 	}

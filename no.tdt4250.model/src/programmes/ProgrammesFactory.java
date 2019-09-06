@@ -94,58 +94,13 @@ public interface ProgrammesFactory extends EFactory {
 	YearCourseReference createYearCourseReference();
 
 	/**
-	 * Returns a new object of class '<em>Semester Course Constraint</em>'.
+	 * Returns a new object of class '<em>Semester Course Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Semester Course Constraint</em>'.
+	 * @return a new object of class '<em>Semester Course Group</em>'.
 	 * @generated
 	 */
-	SemesterCourseConstraint createSemesterCourseConstraint();
-
-	/**
-	 * Returns a new object of class '<em>Programme Course Group</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme Course Group</em>'.
-	 * @generated
-	 */
-	ProgrammeCourseGroup createProgrammeCourseGroup();
-
-	/**
-	 * Returns a new object of class '<em>Mandatory Course Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mandatory Course Constraint</em>'.
-	 * @generated
-	 */
-	MandatoryCourseConstraint createMandatoryCourseConstraint();
-
-	/**
-	 * Returns a new object of class '<em>Elective Course Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Elective Course Constraint</em>'.
-	 * @generated
-	 */
-	ElectiveCourseConstraint createElectiveCourseConstraint();
-
-	/**
-	 * Returns a new object of class '<em>Amount Course Out Group Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Amount Course Out Group Constraint</em>'.
-	 * @generated
-	 */
-	AmountCourseOutGroupConstraint createAmountCourseOutGroupConstraint();
-
-	/**
-	 * Returns a new object of class '<em>Combined Course Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Combined Course Constraint</em>'.
-	 * @generated
-	 */
-	CombinedCourseConstraint createCombinedCourseConstraint();
+	SemesterCourseGroup createSemesterCourseGroup();
 
 	/**
 	 * Returns a new object of class '<em>Student</em>'.

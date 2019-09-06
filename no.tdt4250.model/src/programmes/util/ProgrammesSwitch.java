@@ -116,44 +116,9 @@ public class ProgrammesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ProgrammesPackage.SEMESTER_COURSE_CONSTRAINT: {
-				SemesterCourseConstraint semesterCourseConstraint = (SemesterCourseConstraint)theEObject;
-				T result = caseSemesterCourseConstraint(semesterCourseConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProgrammesPackage.PROGRAMME_COURSE_GROUP: {
-				ProgrammeCourseGroup programmeCourseGroup = (ProgrammeCourseGroup)theEObject;
-				T result = caseProgrammeCourseGroup(programmeCourseGroup);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProgrammesPackage.MANDATORY_COURSE_CONSTRAINT: {
-				MandatoryCourseConstraint mandatoryCourseConstraint = (MandatoryCourseConstraint)theEObject;
-				T result = caseMandatoryCourseConstraint(mandatoryCourseConstraint);
-				if (result == null) result = caseSemesterCourseConstraint(mandatoryCourseConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProgrammesPackage.ELECTIVE_COURSE_CONSTRAINT: {
-				ElectiveCourseConstraint electiveCourseConstraint = (ElectiveCourseConstraint)theEObject;
-				T result = caseElectiveCourseConstraint(electiveCourseConstraint);
-				if (result == null) result = caseSemesterCourseConstraint(electiveCourseConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProgrammesPackage.AMOUNT_COURSE_OUT_GROUP_CONSTRAINT: {
-				AmountCourseOutGroupConstraint amountCourseOutGroupConstraint = (AmountCourseOutGroupConstraint)theEObject;
-				T result = caseAmountCourseOutGroupConstraint(amountCourseOutGroupConstraint);
-				if (result == null) result = caseCombinedCourseConstraint(amountCourseOutGroupConstraint);
-				if (result == null) result = caseSemesterCourseConstraint(amountCourseOutGroupConstraint);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ProgrammesPackage.COMBINED_COURSE_CONSTRAINT: {
-				CombinedCourseConstraint combinedCourseConstraint = (CombinedCourseConstraint)theEObject;
-				T result = caseCombinedCourseConstraint(combinedCourseConstraint);
-				if (result == null) result = caseSemesterCourseConstraint(combinedCourseConstraint);
+			case ProgrammesPackage.SEMESTER_COURSE_GROUP: {
+				SemesterCourseGroup semesterCourseGroup = (SemesterCourseGroup)theEObject;
+				T result = caseSemesterCourseGroup(semesterCourseGroup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -307,92 +272,17 @@ public class ProgrammesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Semester Course Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Semester Course Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Semester Course Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Semester Course Group</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSemesterCourseConstraint(SemesterCourseConstraint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Programme Course Group</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Programme Course Group</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProgrammeCourseGroup(ProgrammeCourseGroup object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mandatory Course Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mandatory Course Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMandatoryCourseConstraint(MandatoryCourseConstraint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Elective Course Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Elective Course Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseElectiveCourseConstraint(ElectiveCourseConstraint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Amount Course Out Group Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Amount Course Out Group Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAmountCourseOutGroupConstraint(AmountCourseOutGroupConstraint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Combined Course Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Combined Course Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCombinedCourseConstraint(CombinedCourseConstraint object) {
+	public T caseSemesterCourseGroup(SemesterCourseGroup object) {
 		return null;
 	}
 

@@ -79,16 +79,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	protected static final String FULL_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getFullName() <em>Full Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFullName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String fullName = FULL_NAME_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -156,24 +146,11 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @NOT generated
 	 */
 	@Override
 	public String getFullName() {
-		return fullName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFullName(String newFullName) {
-		String oldFullName = fullName;
-		fullName = newFullName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.PERSON__FULL_NAME, oldFullName, fullName));
+		return firstName + "  " + surName;
 	}
 
 	/**
@@ -208,9 +185,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 			case ProgrammesPackage.PERSON__SUR_NAME:
 				setSurName((String)newValue);
 				return;
-			case ProgrammesPackage.PERSON__FULL_NAME:
-				setFullName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -229,9 +203,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 			case ProgrammesPackage.PERSON__SUR_NAME:
 				setSurName(SUR_NAME_EDEFAULT);
 				return;
-			case ProgrammesPackage.PERSON__FULL_NAME:
-				setFullName(FULL_NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,7 +220,7 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 			case ProgrammesPackage.PERSON__SUR_NAME:
 				return SUR_NAME_EDEFAULT == null ? surName != null : !SUR_NAME_EDEFAULT.equals(surName);
 			case ProgrammesPackage.PERSON__FULL_NAME:
-				return FULL_NAME_EDEFAULT == null ? fullName != null : !FULL_NAME_EDEFAULT.equals(fullName);
+				return FULL_NAME_EDEFAULT == null ? getFullName() != null : !FULL_NAME_EDEFAULT.equals(getFullName());
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,8 +239,6 @@ public class PersonImpl extends MinimalEObjectImpl.Container implements Person {
 		result.append(firstName);
 		result.append(", surName: ");
 		result.append(surName);
-		result.append(", fullName: ");
-		result.append(fullName);
 		result.append(')');
 		return result.toString();
 	}

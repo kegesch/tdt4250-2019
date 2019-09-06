@@ -71,28 +71,18 @@ public interface Department extends EObject {
 	void setShortName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Courses</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Courses</b></em>' containment reference list.
+	 * The list contents are of type {@link programmes.Course}.
 	 * It is bidirectional and its opposite is '{@link programmes.Course#getDepartment <em>Department</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Courses</em>' containment reference.
-	 * @see #setCourses(Course)
+	 * @return the value of the '<em>Courses</em>' containment reference list.
 	 * @see programmes.ProgrammesPackage#getDepartment_Courses()
 	 * @see programmes.Course#getDepartment
 	 * @model opposite="department" containment="true"
 	 * @generated
 	 */
-	Course getCourses();
-
-	/**
-	 * Sets the value of the '{@link programmes.Department#getCourses <em>Courses</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Courses</em>' containment reference.
-	 * @see #getCourses()
-	 * @generated
-	 */
-	void setCourses(Course value);
+	EList<Course> getCourses();
 
 	/**
 	 * Returns the value of the '<em><b>Employees</b></em>' reference list.
