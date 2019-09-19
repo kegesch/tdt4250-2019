@@ -2,6 +2,7 @@ package no.tdt4250.conversion.api;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Converter {
 	
@@ -28,5 +29,13 @@ public class Converter {
 		}
 		
 		return convertedValue;
+	}
+	
+	public List<Conversion> findTransientConversion(String fromUnitName, String toUnitName) {
+		List<Conversion> pathToConversion = new ArrayList<Conversion>();
+		
+		
+		
+		return pathToConversion;
 	}
 }
