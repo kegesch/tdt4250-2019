@@ -15,12 +15,15 @@ public class Converter {
 		this.conversions.remove(conv);
 	}
 	
-	public double convertValue(double value, String fromUnitName, String toUnitName) {
-		double convertedValue = Double.NaN;
+	public String convertValue(double value, String fromUnitName, String toUnitName) {
+		String convertedValue = "Could not convert"+ " ";
 		for(Conversion conv : this.conversions) {
 			if(conv.getFromUnit().getName().equals(fromUnitName) && 
 					conv.getToUnit().getName().equals(toUnitName)) {
-				convertedValue = conv.convert(value);
+				convertedValue = conv.convert(value) + "" + conv.getToUnit().getSymbol();
+			} else if(conv.getFromUnit().getName().equals(toUnitName) &&
+					conv.getToUnit().getName().equals(fromUnitName)) {
+				convertedValue = conv.convertInverse(value) + "" + conv.getToUnit().getSymbol();
 			}
 		}
 		
