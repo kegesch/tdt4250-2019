@@ -10,7 +10,7 @@ import org.osgi.service.component.annotations.*;
 import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardServletPattern;
 
 import no.tdt4250.conversion.api.Conversion;
-import no.tdt4250.conversion.api.Converter;
+import no.tdt4250.conversion.util.Converter;
 
 @Component
 @HttpWhiteboardServletPattern("/conversion/*")
