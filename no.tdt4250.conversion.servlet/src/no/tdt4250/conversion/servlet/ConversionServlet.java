@@ -21,7 +21,7 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 
 	private Converter converter;
 	private ConversionRepository conversions = new ConversionRepository();
-
+	
 	@Reference
 	public void setConverter(Converter converter) {
 		System.out.println("Using converter " + converter.getClass().getName());
@@ -38,6 +38,7 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 	)
 	public void addConversion(Conversion conversion) {
 		System.out.println("Added Conversion: " +  conversion.getFromUnit().getName() + "-" + conversion.getToUnit().getName());
+		System.out.println(conversions);
 		conversions.addConversion(conversion);
 	}
 	

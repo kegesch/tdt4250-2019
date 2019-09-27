@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class ConversionRepository {
+	
 	private Collection<Conversion> conversions;
 	
 	public ConversionRepository() {

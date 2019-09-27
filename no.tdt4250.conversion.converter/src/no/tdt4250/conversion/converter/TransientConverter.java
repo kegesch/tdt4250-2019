@@ -10,7 +10,6 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
 
 import no.tdt4250.conversion.api.Conversion;
 import no.tdt4250.conversion.api.ConversionRepository;
@@ -20,12 +19,6 @@ import no.tdt4250.conversion.api.Converter;
 public class TransientConverter implements Converter {
 	
 	private ConversionRepository repo;
-	
-	@Reference
-	public void setConversionsRepository(ConversionRepository repo) {
-		this.repo = repo;
-	}
-
 	
 	public String convertValue(double value, String fromUnitName, String toUnitName) {
 		String convertedValue = "Could not convert";

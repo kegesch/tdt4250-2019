@@ -58,7 +58,7 @@ public class ConverterTest {
 	public void clean() {
 		converter = new TransientConverter();
 		repo = new ConversionRepository();
-		converter.setConversionsRepository(repo);
+		converter.setRepository(repo);
 	}
 	
 	@Test
