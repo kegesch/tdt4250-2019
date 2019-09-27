@@ -10,7 +10,7 @@ import org.osgi.service.component.annotations.*;
 import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardServletPattern;
 
 import no.tdt4250.conversion.api.Conversion;
-import no.tdt4250.conversion.util.Converter;
+import no.tdt4250.conversion.api.Converter;
 
 @Component
 @HttpWhiteboardServletPattern("/conversion/*")
@@ -18,7 +18,7 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 
 	private static final long serialVersionUID = 1L;
 
-	private Converter converter = new Converter();
+	private Converter converter;
 
 	@Reference(
 			cardinality = ReferenceCardinality.MULTIPLE,
@@ -32,6 +32,11 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 	
 	public void removeConversion(Conversion conversion) {
 		converter.removeConversion(conversion);
+	}
+	
+	@Reference
+	public void setConverter(Converter converter) {
+		this.converter = converter;
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

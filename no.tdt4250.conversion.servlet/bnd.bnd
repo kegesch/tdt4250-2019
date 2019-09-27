@@ -3,8 +3,7 @@
 	osgi.core;version=7.0.0,\
 	osgi.cmpn;version=7.0.0,\
 	org.apache.felix.http.servlet-api;version=1.1.2,\
-	no.tdt4250.conversion.api;version=latest,\
-	no.tdt4250.conversion.util;version=latest
+	no.tdt4250.conversion.api;version=latest
 
 -testpath: \
 	${junit},\

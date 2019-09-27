@@ -8,6 +8,5 @@
 			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="/no.tdt4250.conversion.util"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -13,7 +13,8 @@
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
 	bnd.identity;version='latest';id='no.tdt4250.conversion.servlet',\
-	bnd.identity;version='latest';id='no.tdt4250.conversion.temperature'
+	bnd.identity;version='latest';id='no.tdt4250.conversion.temperature',\
+	bnd.identity;version='latest';id='no.tdt4250.conversion.converter'
 -runbundles: \
 	no.tdt4250.conversion.api;version=snapshot,\
 	no.tdt4250.conversion.servlet;version=snapshot,\
@@ -23,4 +24,5 @@
 	org.apache.felix.http.jetty;version='[4.0.6,4.0.7)',\
 	org.apache.felix.http.servlet-api;version='[1.1.2,1.1.3)',\
 	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
-	no.tdt4250.conversion.temperature;version=snapshot
+	no.tdt4250.conversion.temperature;version=snapshot,\
+	no.tdt4250.conversion.converter;version=snapshot
