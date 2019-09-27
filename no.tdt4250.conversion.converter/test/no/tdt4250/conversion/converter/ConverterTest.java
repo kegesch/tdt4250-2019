@@ -6,11 +6,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import no.tdt4250.conversion.api.Conversion;
+import no.tdt4250.conversion.api.ConversionRepository;
 import no.tdt4250.conversion.api.Unit;
 
 public class ConverterTest {
 
 	TransientConverter converter = new TransientConverter();
+	ConversionRepository repo = new ConversionRepository();
 	
 	private Unit createAnonUnit(String unitName) {
 		return new Unit() {
@@ -55,6 +57,8 @@ public class ConverterTest {
 	@Before
 	public void clean() {
 		converter = new TransientConverter();
+		repo = new ConversionRepository();
+		converter.setConversionsRepository(repo);
 	}
 	
 	@Test
@@ -62,7 +66,7 @@ public class ConverterTest {
 		Unit A = createAnonUnit("A");
 		Unit B = createAnonUnit("B");
 		Conversion aToB = createAnonConversion(2, 1, A, B);
-		converter.addConversion(aToB);
+		repo.addConversion(aToB);
 		
 		Double value = 34.2;
 		String expected = 69.4 + "B";
@@ -75,7 +79,7 @@ public class ConverterTest {
 		Unit A = createAnonUnit("A");
 		Unit B = createAnonUnit("B");
 		Conversion aToB = createAnonConversion(2, 1, A, B);
-		converter.addConversion(aToB);
+		repo.addConversion(aToB);
 		
 		String expected = 34.2 + "A";
 		Double value = 69.4;
@@ -90,8 +94,8 @@ public class ConverterTest {
 		Unit C = createAnonUnit("C");
 		Conversion aToB = createAnonConversion(2, 1, A, B);
 		Conversion bToC = createAnonConversion(3, 2, B, C);
-		converter.addConversion(aToB);
-		converter.addConversion(bToC);
+		repo.addConversion(aToB);
+		repo.addConversion(bToC);
 		
 		Double value = 34.2;
 		String expected = 210.2 + "C";
@@ -106,8 +110,8 @@ public class ConverterTest {
 		Unit C = createAnonUnit("C");
 		Conversion aToB = createAnonConversion(2, 1, A, B);
 		Conversion bToC = createAnonConversion(3, 2, B, C);
-		converter.addConversion(aToB);
-		converter.addConversion(bToC);
+		repo.addConversion(aToB);
+		repo.addConversion(bToC);
 		
 		String expected = 34.2 + "A";
 		double value = 210.2;

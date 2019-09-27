@@ -13,6 +13,8 @@
 	org.apache.felix.gogo.shell,\
 	org.apache.felix.gogo.command
 
--runrequires:\
+-runrequires: \
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
-	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)'
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	bnd.identity;version='latest';id='no.tdt4250.conversion.converter'
+-runee: JavaSE-1.8

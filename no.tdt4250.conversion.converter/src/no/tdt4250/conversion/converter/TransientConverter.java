@@ -1,7 +1,6 @@
 package no.tdt4250.conversion.converter;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,26 +10,26 @@ import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 import no.tdt4250.conversion.api.Conversion;
+import no.tdt4250.conversion.api.ConversionRepository;
 import no.tdt4250.conversion.api.Converter;
 
 @Component
 public class TransientConverter implements Converter {
 	
-	private Collection<Conversion> conversions = new ArrayList<Conversion>();
+	private ConversionRepository repo;
 	
-	public void addConversion(Conversion conv) {
-		this.conversions.add(conv);
+	@Reference
+	public void setConversionsRepository(ConversionRepository repo) {
+		this.repo = repo;
 	}
-	
-	public void removeConversion(Conversion conv) {
-		this.conversions.remove(conv);
-	}
+
 	
 	public String convertValue(double value, String fromUnitName, String toUnitName) {
 		String convertedValue = "Could not convert";
-		for(Conversion conv : this.conversions) {
+		for(Conversion conv : this.repo.getAvailableConversions()) {
 			if(conv.getFromUnit().getName().equals(fromUnitName) && 
 					conv.getToUnit().getName().equals(toUnitName)) {
 				convertedValue = conv.convert(value) + "" + conv.getToUnit().getSymbol();
@@ -52,7 +51,7 @@ public class TransientConverter implements Converter {
 		Map<String, Conversion> prev = new HashMap<String, Conversion>();
 		List<String> units = new ArrayList<String>();
 
-		for(Conversion conv : conversions) {
+		for(Conversion conv : this.repo.getAvailableConversions()) {
 			if(!dist.containsKey(conv.getFromUnit().getName())) {
 				dist.put(conv.getFromUnit().getName(), Integer.MAX_VALUE);
 			}
@@ -118,7 +117,18 @@ public class TransientConverter implements Converter {
 	}
 	
 	private List<Conversion> findUnitNeighbors(String unitFrom) {
-		List<Conversion> neighbors = conversions.stream().filter(conv -> conv.getFromUnit().getName().equals(unitFrom) || conv.getToUnit().getName().equals(unitFrom)).collect(Collectors.toList());
+		List<Conversion> neighbors = this.repo.getAvailableConversions().stream().filter(conv -> conv.getFromUnit().getName().equals(unitFrom) || conv.getToUnit().getName().equals(unitFrom)).collect(Collectors.toList());
 		return neighbors;
+	}
+
+	@Override
+	public List<String> listConversions() {
+		return this.repo.getAvailableConversions().stream().map(conv -> "Conversion [" + conv.getFromUnit().getName() + ", " + conv.getToUnit().getName() + "]").collect(Collectors.toList());
+	}
+
+
+	@Override
+	public void setRepository(ConversionRepository repo) {
+		this.repo = repo;
 	}
 }

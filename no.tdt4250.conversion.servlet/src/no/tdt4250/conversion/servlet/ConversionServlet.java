@@ -10,6 +10,7 @@ import org.osgi.service.component.annotations.*;
 import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardServletPattern;
 
 import no.tdt4250.conversion.api.Conversion;
+import no.tdt4250.conversion.api.ConversionRepository;
 import no.tdt4250.conversion.api.Converter;
 
 @Component
@@ -19,7 +20,16 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 	private static final long serialVersionUID = 1L;
 
 	private Converter converter;
+	private ConversionRepository conversions = new ConversionRepository();
 
+	@Reference
+	public void setConverter(Converter converter) {
+		System.out.println("Using converter " + converter.getClass().getName());
+		this.converter = converter;
+		this.converter.setRepository(conversions);
+	}
+	
+	
 	@Reference(
 			cardinality = ReferenceCardinality.MULTIPLE,
 			policy = ReferencePolicy.DYNAMIC,
@@ -27,16 +37,13 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 			unbind = "removeConversion"
 	)
 	public void addConversion(Conversion conversion) {
-		converter.addConversion(conversion);
+		System.out.println("Added Conversion: " +  conversion.getFromUnit().getName() + "-" + conversion.getToUnit().getName());
+		conversions.addConversion(conversion);
 	}
 	
 	public void removeConversion(Conversion conversion) {
-		converter.removeConversion(conversion);
-	}
-	
-	@Reference
-	public void setConverter(Converter converter) {
-		this.converter = converter;
+		System.out.println("Removed Conversion");
+		conversions.removeConversion(conversion);
 	}
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,6 +56,7 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 			String convertedValue = converter.convertValue(value, fromUnit, toUnit);
 			response.setContentType("text/plain");
 			PrintWriter writer = response.getWriter();
+			System.out.println("Available conversions: " + converter.listConversions().toArray().toString());
 			writer.print("Converted Value: " + convertedValue);
 		} else {
 			response.sendError(400, "Please specify parameters 'from', 'to' and 'value'.");
