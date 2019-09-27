@@ -18,3 +18,26 @@ contains the generated and the custom tests for the source code
 ## Get started
 * Install BndTools
 * Import all projects starting with `no.tdt4250.conversion` into the eclipse workspace
+
+## API
+Make an http `GET`-request to `localhost:8080` with parameters:
+ * `value` (Double): the value that should be converted
+ * `from` (String): the unit of value
+ * `to` (String): the unit of the target converted value
+
+For example: `localhost:8080/convert?from=Fahrenheit&to=Kelvin&value=20` returns following: 
+```json
+{
+    "success": true,
+    "value": 20,
+    "converted": 266.4833333333333,
+    "unitFrom": {
+        "name": "Fahrenheit",
+        "symbol": "°F"
+    },
+    "unitTo": {
+        "name": "Kelvin",
+        "symbol": "K"
+    }
+}
+```
