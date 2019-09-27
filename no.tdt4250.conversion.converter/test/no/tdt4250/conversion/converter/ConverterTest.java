@@ -5,8 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import no.tdt4250.conversion.api.BaseUnit;
 import no.tdt4250.conversion.api.Conversion;
 import no.tdt4250.conversion.api.ConversionRepository;
+import no.tdt4250.conversion.api.ConversionResult;
 import no.tdt4250.conversion.api.Unit;
 
 public class ConverterTest {
@@ -14,8 +16,8 @@ public class ConverterTest {
 	TransientConverter converter = new TransientConverter();
 	ConversionRepository repo = new ConversionRepository();
 	
-	private Unit createAnonUnit(String unitName) {
-		return new Unit() {
+	private BaseUnit createAnonUnit(String unitName) {
+		return new BaseUnit() {
 			
 			@Override
 			public String getSymbol() {
@@ -69,9 +71,9 @@ public class ConverterTest {
 		repo.addConversion(aToB);
 		
 		Double value = 34.2;
-		String expected = 69.4 + "B";
-		String calculatedValue = converter.convertValue(value, A.getName(), B.getName());
-		assertEquals(expected, calculatedValue);
+		double expected = 69.4;
+		ConversionResult calculatedValue = converter.convertValue(value, A.getName(), B.getName());
+		assertEquals(expected, calculatedValue.getConvertedValue());
 	}
 	
 	@Test
@@ -81,10 +83,10 @@ public class ConverterTest {
 		Conversion aToB = createAnonConversion(2, 1, A, B);
 		repo.addConversion(aToB);
 		
-		String expected = 34.2 + "A";
+		double expected = 34.2;
 		Double value = 69.4;
-		String calculatedValue = converter.convertValue(value, B.getName(), A.getName());
-		assertEquals(expected, calculatedValue);
+		ConversionResult calculatedValue = converter.convertValue(value, B.getName(), A.getName());
+		assertEquals(expected, calculatedValue.getConvertedValue());
 	}
 	
 	@Test
@@ -98,9 +100,9 @@ public class ConverterTest {
 		repo.addConversion(bToC);
 		
 		Double value = 34.2;
-		String expected = 210.2 + "C";
-		String calculatedValue = converter.convertValue(value, A.getName(), C.getName());
-		assertEquals(expected, calculatedValue);
+		double expected = 210.2;
+		ConversionResult calculatedValue = converter.convertValue(value, A.getName(), C.getName());
+		assertEquals(expected, calculatedValue.getConvertedValue());
 	}
 	
 	@Test
@@ -113,10 +115,10 @@ public class ConverterTest {
 		repo.addConversion(aToB);
 		repo.addConversion(bToC);
 		
-		String expected = 34.2 + "A";
+		double expected = 34.2;
 		double value = 210.2;
-		String calculatedValue = converter.convertValue(value, C.getName(), A.getName());
-		assertEquals(expected, calculatedValue);
+		ConversionResult calculatedValue = converter.convertValue(value, C.getName(), A.getName());
+		assertEquals(expected, calculatedValue.getConvertedValue());
 	}
 	
 }

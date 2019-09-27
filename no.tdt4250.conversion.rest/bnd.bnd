@@ -2,10 +2,10 @@
 	osgi.annotation;version=7.0.0,\
 	osgi.core;version=7.0.0,\
 	osgi.cmpn;version=7.0.0,\
+	org.apache.aries.javax.jax.rs-api,\
 	no.tdt4250.conversion.api;version=latest,\
-	com.fasterxml.jackson.core.jackson-annotations,\
-	com.fasterxml.jackson.core.jackson-core,\
-	com.fasterxml.jackson.core.jackson-databind
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.core.jackson-core
 
 -testpath: \
 	${junit},\

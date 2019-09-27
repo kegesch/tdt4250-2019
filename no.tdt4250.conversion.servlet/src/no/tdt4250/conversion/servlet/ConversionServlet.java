@@ -11,6 +11,7 @@ import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardServletPatte
 
 import no.tdt4250.conversion.api.Conversion;
 import no.tdt4250.conversion.api.ConversionRepository;
+import no.tdt4250.conversion.api.ConversionResult;
 import no.tdt4250.conversion.api.Converter;
 
 @Component
@@ -28,7 +29,6 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 		this.converter = converter;
 		this.converter.setRepository(conversions);
 	}
-	
 	
 	@Reference(
 			cardinality = ReferenceCardinality.MULTIPLE,
@@ -54,10 +54,9 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 			String fromUnit = request.getParameter("from");
 			String toUnit = request.getParameter("to");
 			double value = Double.parseDouble(request.getParameter("value"));
-			String convertedValue = converter.convertValue(value, fromUnit, toUnit);
+			ConversionResult convertedValue = converter.convertValue(value, fromUnit, toUnit);
 			response.setContentType("text/plain");
 			PrintWriter writer = response.getWriter();
-			System.out.println("Available conversions: " + converter.listConversions().toArray().toString());
 			writer.print("Converted Value: " + convertedValue);
 		} else {
 			response.sendError(400, "Please specify parameters 'from', 'to' and 'value'.");
