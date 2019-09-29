@@ -19,6 +19,14 @@ contains the generated and the custom tests for the source code
 * Install BndTools
 * Import all projects starting with `no.tdt4250.conversion` into the eclipse workspace
 
+## Structure
+ * `no.tdt4250.conversion.api`: defines the API for all other components / projects
+ * `no.tdt4250.conversion.converter`: contains the used converter for converting the values (`TransientConverter`, which can convert value transiently)
+ * `no.tdt4250.conversion.gogo`: the service for commands for gogo console
+ * `no.tdt4250.conversion.servlet`: the service to start a servlet for humand readble output of the conversion
+ * `no.tdt4250.conversion.temperature`: contains basic temperature conversions
+ * `no.tdt4250.conversion.rest`: the rest service for converting values
+
 ## API
 Start project `no.tdt.4250.conversion.rest`
 Make an http `GET`-request to `localhost:8080` with parameters:
