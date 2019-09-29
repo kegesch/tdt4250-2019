@@ -45,5 +45,4 @@ For example: `localhost:8080/convert?from=Fahrenheit&to=Kelvin&value=20` returns
 ## Gogo Console
 Commands:
  * `list`: lists all available direct conversions 
- * `add`: add a new conversion e.g.: `add "Centimeter(cm) = Inch(in) * 0.393 + 0"
-
+ * `add`: add a new conversion e.g.: `add "Centimeter(cm) = Inch(in) * 0.393 + 0"`
