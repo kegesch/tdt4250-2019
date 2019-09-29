@@ -20,6 +20,7 @@ contains the generated and the custom tests for the source code
 * Import all projects starting with `no.tdt4250.conversion` into the eclipse workspace
 
 ## API
+Start project `no.tdt.4250.conversion.rest`
 Make an http `GET`-request to `localhost:8080` with parameters:
  * `value` (Double): the value that should be converted
  * `from` (String): the unit of value
@@ -41,3 +42,8 @@ For example: `localhost:8080/convert?from=Fahrenheit&to=Kelvin&value=20` returns
     }
 }
 ```
+## Gogo Console
+Commands:
+ * `list`: lists all available direct conversions 
+ * `add`: add a new conversion e.g.: `add "Centimeter(cm) = Inch(in) * 0.393 + 0"
+

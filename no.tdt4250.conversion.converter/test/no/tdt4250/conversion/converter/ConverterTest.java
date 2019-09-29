@@ -73,7 +73,7 @@ public class ConverterTest {
 		Double value = 34.2;
 		double expected = 69.4;
 		ConversionResult calculatedValue = converter.convertValue(value, A.getName(), B.getName());
-		assertEquals(expected, calculatedValue.getConvertedValue());
+		assertEquals(expected, calculatedValue.getConvertedValue(), 0.0001);
 	}
 	
 	@Test
@@ -86,7 +86,7 @@ public class ConverterTest {
 		double expected = 34.2;
 		Double value = 69.4;
 		ConversionResult calculatedValue = converter.convertValue(value, B.getName(), A.getName());
-		assertEquals(expected, calculatedValue.getConvertedValue());
+		assertEquals(expected, calculatedValue.getConvertedValue(), 0.0001);
 	}
 	
 	@Test
@@ -102,7 +102,7 @@ public class ConverterTest {
 		Double value = 34.2;
 		double expected = 210.2;
 		ConversionResult calculatedValue = converter.convertValue(value, A.getName(), C.getName());
-		assertEquals(expected, calculatedValue.getConvertedValue());
+		assertEquals(expected, calculatedValue.getConvertedValue(), 0.0001);
 	}
 	
 	@Test
@@ -118,7 +118,7 @@ public class ConverterTest {
 		double expected = 34.2;
 		double value = 210.2;
 		ConversionResult calculatedValue = converter.convertValue(value, C.getName(), A.getName());
-		assertEquals(expected, calculatedValue.getConvertedValue());
+		assertEquals(expected, calculatedValue.getConvertedValue(), 0.0001);
 	}
 	
 }

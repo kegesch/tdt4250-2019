@@ -57,7 +57,11 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 			ConversionResult convertedValue = converter.convertValue(value, fromUnit, toUnit);
 			response.setContentType("text/plain");
 			PrintWriter writer = response.getWriter();
-			writer.print("Converted Value: " + convertedValue);
+			if(convertedValue.isSuccess()) {
+				writer.print("Converted Value: " + convertedValue.getConvertedValue() + convertedValue.getToUnit().getSymbol());
+			} else {
+				writer.print("Could not convert value!");
+			}
 		} else {
 			response.sendError(400, "Please specify parameters 'from', 'to' and 'value'.");
 		}
