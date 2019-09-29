@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.osgi.service.component.annotations.Component;
@@ -24,11 +25,11 @@ public class TransientConverter implements Converter {
 	
 	public ConversionResult convertValue(double value, String fromUnitName, String toUnitName) {
 		List<Unit> allAvailableUnits = getAvailableUnits();
-		Unit fromUnitFound = allAvailableUnits.stream().filter(u -> u.getName().equals(fromUnitName)).findAny().get();
-		Unit toUnitFound = allAvailableUnits.stream().filter(u -> u.getName().equals(toUnitName)).findAny().get();
+		Optional<Unit> fromUnitFound = allAvailableUnits.stream().filter(u -> u.getName().equals(fromUnitName)).findAny();
+		Optional<Unit> toUnitFound = allAvailableUnits.stream().filter(u -> u.getName().equals(toUnitName)).findAny();
 		
-		if(fromUnitFound == null || toUnitFound == null) {
-			return new ConversionResult(value, -1, fromUnitFound, toUnitFound, false);
+		if(!fromUnitFound.isPresent() || !toUnitFound.isPresent()) {
+			return new ConversionResult(value, -1, fromUnitFound.isPresent() ? fromUnitFound.get() :  null, toUnitFound.isPresent() ? toUnitFound.get() : null, false);
 		}
 		
 		for(Conversion conv : this.repo.getAvailableConversions()) {

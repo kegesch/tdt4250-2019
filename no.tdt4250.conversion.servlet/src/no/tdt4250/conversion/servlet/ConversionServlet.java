@@ -60,7 +60,7 @@ public class ConversionServlet extends HttpServlet implements Servlet {
 			if(convertedValue.isSuccess()) {
 				writer.print("Converted Value: " + convertedValue.getConvertedValue() + convertedValue.getToUnit().getSymbol());
 			} else {
-				writer.print("Could not convert value!");
+				response.sendError(404, "Could not convert value!");
 			}
 		} else {
 			response.sendError(400, "Please specify parameters 'from', 'to' and 'value'.");
