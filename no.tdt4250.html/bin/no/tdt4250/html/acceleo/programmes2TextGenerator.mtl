@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module programmes2TextGenerator('platform:/plugin/no.tdt4250.model/model/programmes.ecore', 'http://www.eclipse.org/emf/2002/Ecore')/]
+
+[template public programmes2TextGenerator(programmes : Programme)]
+	
+	[comment @main /]
+	[file (programme.name.concat('.html'), false, 'UTF-8')]
+<html>
+<head>
+	<title>[]
+	[/file]
+	
+[/template]
