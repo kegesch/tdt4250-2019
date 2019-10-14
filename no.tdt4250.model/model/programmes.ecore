@@ -47,9 +47,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
         eType="#//Specialization" containment="true" eOpposite="#//Specialization/specializesIn"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYears" upperBound="-1"
-        eType="#//ProgrammeYear" containment="true" eOpposite="#//ProgrammeYear/programme"/>
+        eType="#//Semester" containment="true" eOpposite="#//Semester/programme"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ESemester">
+  <eClassifiers xsi:type="ecore:EEnum" name="SemesterType">
     <eLiterals name="Autumn"/>
     <eLiterals name="Spring" value="1"/>
   </eClassifiers>
@@ -57,41 +57,29 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializesIn" eType="#//Programme"
         eOpposite="#//Programme/specializations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="chosenIn" lowerBound="1"
-        eType="#//ProgrammeYear"/>
+        eType="#//Semester"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeYear">
+  <eClassifiers xsi:type="ecore:EClass" name="Semester">
     <eStructuralFeatures xsi:type="ecore:EReference" name="programme" lowerBound="1"
         eType="#//Programme" eOpposite="#//Programme/programmeYears"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courseReferences" upperBound="-1"
-        eType="#//YearCourseReference" eOpposite="#//YearCourseReference/programmeYear"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yearInProgramme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="YearCourseReference">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" lowerBound="1"
-        eType="#//ProgrammeYear" eOpposite="#//ProgrammeYear/courseReferences"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroup" lowerBound="1"
-        eType="#//SemesterCourseGroup"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesterType" eType="#//ESemester"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SemesterCourseGroup">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//Course"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesterType" eType="#//SemesterType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="year" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Student" eSuperTypes="#//Person">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enrolledIn" eType="#//ProgrammeInstance"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enrolledIn" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="studentNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExamAttempt">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semester" eType="#//ESemester"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" eType="#//ProgrammeYear"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="semester" eType="#//SemesterType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" eType="#//Semester"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="course" lowerBound="1"
         eType="#//Course"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grade" eType="#//EGrade"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="grade" eType="#//Grade"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="EGrade">
+  <eClassifiers xsi:type="ecore:EEnum" name="Grade">
     <eLiterals name="A" literal="A"/>
     <eLiterals name="B" value="1" literal="B"/>
     <eLiterals name="C" value="2" literal="C"/>
@@ -99,21 +87,13 @@
     <eLiterals name="E" value="4" literal="E"/>
     <eLiterals name="F" value="5" literal="F"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programme" lowerBound="1"
-        eType="#//Programme"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYears" upperBound="-1"
-        eType="#//ProgrammeYearInstance" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startingYear" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CourseGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="coursesType" eType="#//CourseType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" eType="#//Course"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ProgrammeYearInstance">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="ConsistsOf60ETCS"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYear" lowerBound="1"
-        eType="#//ProgrammeYear"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="examAttempts" upperBound="-1"
-        eType="#//ExamAttempt" containment="true"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="CourseType">
+    <eLiterals name="MANDATORY"/>
+    <eLiterals name="ELECTIVE" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

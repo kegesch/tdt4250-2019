@@ -6,8 +6,13 @@
 	[comment @main /]
 	[file (programme.name.concat('.html'), false, 'UTF-8')]
 <html>
-<head>
-	<title>[]
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+</html>
 	[/file]
 	
 [/template]

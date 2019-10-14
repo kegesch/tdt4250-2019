@@ -10,7 +10,7 @@
     <ownedModuleElement xsi:type="mtl:Template" name="programmes2TextGenerator" visibility="Public" main="true">
       <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
       <body xsi:type="mtl:FileBlock" openMode="OverWrite">
-        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;html>&#xA;&lt;head>&#xA;&#x9;&lt;title>"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;html>&#xA;&#x9;&lt;head>&#xA;&#x9;&#x9;&lt;title>&lt;/title>&#xA;&#x9;&lt;/head>&#xA;&#x9;&lt;body>&#xA;&#x9;&#x9;&#xA;&#x9;&lt;/body>&#xA;&lt;/html>&#xA;"/>
         <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </charset>
@@ -111,7 +111,7 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/programmes2TextGenerator">
       <details key="start" value="166"/>
-      <details key="end" value="358"/>
+      <details key="end" value="403"/>
       <details key="line" value="4"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/programmes2TextGenerator/%">
@@ -121,12 +121,12 @@
     </eAnnotations>
     <eAnnotations source="positions.2" references="/0/programmes2TextGenerator/%.1">
       <details key="start" value="255"/>
-      <details key="end" value="344"/>
+      <details key="end" value="389"/>
       <details key="line" value="7"/>
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/programmes2TextGenerator/%.1/%">
       <details key="start" value="311"/>
-      <details key="end" value="333"/>
+      <details key="end" value="381"/>
       <details key="line" value="8"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/programmes2TextGenerator/%.1/%.1">
@@ -135,9 +135,9 @@
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/programmes2TextGenerator/%.2">
-      <details key="start" value="345"/>
-      <details key="end" value="346"/>
-      <details key="line" value="12"/>
+      <details key="start" value="390"/>
+      <details key="end" value="391"/>
+      <details key="line" value="17"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/programmes2TextGenerator/programmes">
       <details key="start" value="208"/>
