@@ -15,19 +15,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="credits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="department"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instructor"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="#//StudyLevel"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Programme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
         eType="#//Specialization" containment="true" eOpposite="#//Specialization/specializesIn"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeYears" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="programmeSemester" upperBound="-1"
         eType="#//Semester" containment="true" eOpposite="#//Semester/programme"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroups" eType="#//CourseGroup"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courseGroups" upperBound="-1"
+        eType="#//CourseGroup" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="SemesterType">
     <eLiterals name="Autumn"/>
@@ -47,7 +45,7 @@
       <details key="constraints" value="minECTS"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="programme" lowerBound="1"
-        eType="#//Programme" eOpposite="#//Programme/programmeYears"/>
+        eType="#//Programme" eOpposite="#//Programme/programmeSemester"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
         eType="#//Course"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="semesterType" eType="#//SemesterType"/>
@@ -56,7 +54,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="CourseGroup">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coursesType" eType="#//CourseType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" eType="#//Course"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+        eType="#//Course"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CourseType">
     <eLiterals name="MANDATORY"/>
@@ -64,9 +63,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="University">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="studyProgrammes" eType="#//Programme"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" eType="#//Course"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="studyProgrammes" upperBound="-1"
+        eType="#//Programme" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="courses" upperBound="-1"
+        eType="#//Course" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StudyLevel">
+    <eLiterals name="FIRST_YEAR"/>
+    <eLiterals name="SECOND_YEAR" value="1"/>
+    <eLiterals name="THIRD_YEAR" value="2"/>
+    <eLiterals name="SECOND_DEGREE" value="3"/>
+    <eLiterals name="POST_GRAD" value="4"/>
   </eClassifiers>
 </ecore:EPackage>

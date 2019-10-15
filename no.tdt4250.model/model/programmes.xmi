@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<programmes:University
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:programmes="platform:/plugin/no.tdt4250.model/model/programmes.ecore"
+    xsi:schemaLocation="platform:/plugin/no.tdt4250.model/model/programmes.ecore programmes.ecore"
+    name="NTNU">
+  <studyProgrammes
+      name="Datateknologi"
+      code="MIDT">
+    <specializations
+        name="Algoritmer og HPC"
+        code="MIDTAH"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0">
+      <courseGroups
+          name="O"
+          courses="//@courses.0 //@courses.1 //@courses.2 //@courses.5"/>
+      <courseGroups
+          name="VA"
+          coursesType="ELECTIVE"
+          courses="//@courses.3 //@courses.4 //@courses.6 //@courses.7 //@courses.8 //@courses.9"/>
+    </specializations>
+    <specializations
+        name="Databaser og søk"
+        code="MIDTDS"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Datamaskiner og systemprogramvare"
+        code="MIDTDSY"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Digital virksomhetsutvikling"
+        code="MIDTDVI"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Interaksjonsdesign og spillteknologi"
+        code="MIDTIDS"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Kunstig intelligens"
+        code="MIDTKI"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Programvareutvikling"
+        code="MIDTPRU"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Visuell databehandling"
+        code="MIDTVD"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <programmeSemester
+        courses="//@courses.0 //@courses.1 //@courses.2 //@courses.3 //@courses.4"
+        year="2019"/>
+    <programmeSemester
+        courses="//@courses.5 //@courses.6 //@courses.7 //@courses.8 //@courses.9"
+        semesterType="Spring"
+        year="2020"/>
+  </studyProgrammes>
+  <studyProgrammes
+      name="Master of Science in Informatics"
+      code="MSIT">
+    <specializations
+        name="Software"
+        code="MSIT-SWE"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0">
+      <courseGroups
+          name="O"
+          courses="//@courses.10 //@courses.17 //@courses.18 //@courses.22"/>
+      <courseGroups
+          name="M2A"
+          coursesType="ELECTIVE"
+          courses="//@courses.11 //@courses.12 //@courses.13 //@courses.16 //@courses.19 //@courses.20"/>
+      <courseGroups
+          name="VA"
+          coursesType="ELECTIVE"
+          courses="//@courses.14 //@courses.15"/>
+      <courseGroups
+          name="V"
+          courses="//@courses.21"/>
+    </specializations>
+    <specializations
+        name="Interaction Design, Game and Learning Technology"
+        code="MSIT-IXDGLT"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Databases and Search"
+        code="MSIT-DBS"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <specializations
+        name="Artificial Intelligence"
+        code="MSIT-AI"
+        chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
+    <programmeSemester
+        courses="//@courses.10 //@courses.11 //@courses.12 //@courses.13 //@courses.14 //@courses.15"
+        year="2019"/>
+    <programmeSemester
+        courses="//@courses.16 //@courses.17 //@courses.18 //@courses.19 //@courses.20 //@courses.21"
+        semesterType="Spring"
+        year="2020"/>
+    <programmeSemester
+        courses="//@courses.22"
+        year="2020"/>
+    <programmeSemester
+        courses="//@courses.22"
+        semesterType="Spring"
+        year="2021"/>
+  </studyProgrammes>
+  <courses code="TDT4136"
+      name="Introduksjon til kunstig intelligens"
+      credits="7.5"
+      level="THIRD_YEAR"/>
+  <courses code="TDT4200"
+      name="Parallelle beregninger"
+      credits="7.5"/>
+  <courses code="TDT4258"
+      name="Maskinnær programmering"
+      credits="7.5"/>
+  <courses code="TDT4195"
+      name="Grunnleggende visuell databehandling"
+      credits="7.5"/>
+  <courses code="TDT4287"
+      name="Algoritmer for bioinformatikk"
+      credits="7.5"/>
+  <courses code="TDT4125"
+      name="Algoritmekonstruksjon"
+      credits="7.5"
+      level="THIRD_YEAR"/>
+  <courses code="TDT4205"
+      name="Kompilatorteknikk"
+      credits="7.5"
+      level="THIRD_YEAR"/>
+  <courses code="TDT4230"
+      name="Grafikk og visualisering"
+      credits="7.5"
+      level="THIRD_YEAR"/>
+  <courses code="TDT4260"
+      name="Datamaskinarkitektur"
+      credits="7.5"
+      level="THIRD_YEAR"/>
+  <courses code="TDT4265"
+      name="Datasyn og dyp læring"
+      credits="7.5"
+      level="THIRD_YEAR"/>
+  <courses code="TDT4175"
+      name="Information Systems"
+      credits="7.5"
+      level="THIRD_YEAR"/>
+  <courses code="TDT4250"
+      name="Advanced Software Design"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4252"
+      name="Enterprise Architecture for Enterprise Innovation"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4165"
+      name="Programming Languages"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4117"
+      name="Information Retrieval"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4136"
+      name="Introduction to Artificial Intelligence"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4237"
+      name="Software Security"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="IT3010"
+      name="Research-based Innovation Methodologies in Computer Science"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4240"
+      name="Software Architecture"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4257"
+      name="Digital Service Innovation"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="TDT4242"
+      name="Advanced Software Engineering"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="AAR4911"
+      name="Experts in Teamwork"
+      credits="7.5"
+      level="SECOND_DEGREE"/>
+  <courses code="IT3901"
+      name="Informatics Postgraduate Thesis"
+      credits="30.0"
+      level="SECOND_DEGREE"/>
+</programmes:University>
