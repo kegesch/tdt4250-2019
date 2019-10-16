@@ -15,12 +15,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import programmes.CourseGroup;
 import programmes.Programme;
-import programmes.ProgrammeYear;
 import programmes.ProgrammesPackage;
+import programmes.Semester;
 import programmes.Specialization;
 
 /**
@@ -34,7 +35,8 @@ import programmes.Specialization;
  *   <li>{@link programmes.impl.ProgrammeImpl#getName <em>Name</em>}</li>
  *   <li>{@link programmes.impl.ProgrammeImpl#getCode <em>Code</em>}</li>
  *   <li>{@link programmes.impl.ProgrammeImpl#getSpecializations <em>Specializations</em>}</li>
- *   <li>{@link programmes.impl.ProgrammeImpl#getProgrammeYears <em>Programme Years</em>}</li>
+ *   <li>{@link programmes.impl.ProgrammeImpl#getProgrammeSemester <em>Programme Semester</em>}</li>
+ *   <li>{@link programmes.impl.ProgrammeImpl#getCourseGroups <em>Course Groups</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,14 +93,24 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected EList<Specialization> specializations;
 
 	/**
-	 * The cached value of the '{@link #getProgrammeYears() <em>Programme Years</em>}' reference list.
+	 * The cached value of the '{@link #getProgrammeSemester() <em>Programme Semester</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getProgrammeYears()
+	 * @see #getProgrammeSemester()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ProgrammeYear> programmeYears;
+	protected EList<Semester> programmeSemester;
+
+	/**
+	 * The cached value of the '{@link #getCourseGroups() <em>Course Groups</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCourseGroups()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<CourseGroup> courseGroups;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,11 +196,24 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	 * @generated
 	 */
 	@Override
-	public EList<ProgrammeYear> getProgrammeYears() {
-		if (programmeYears == null) {
-			programmeYears = new EObjectWithInverseResolvingEList<ProgrammeYear>(ProgrammeYear.class, this, ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS, ProgrammesPackage.PROGRAMME_YEAR__PROGRAMME);
+	public EList<Semester> getProgrammeSemester() {
+		if (programmeSemester == null) {
+			programmeSemester = new EObjectContainmentWithInverseEList<Semester>(Semester.class, this, ProgrammesPackage.PROGRAMME__PROGRAMME_SEMESTER, ProgrammesPackage.SEMESTER__PROGRAMME);
 		}
-		return programmeYears;
+		return programmeSemester;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<CourseGroup> getCourseGroups() {
+		if (courseGroups == null) {
+			courseGroups = new EObjectContainmentEList<CourseGroup>(CourseGroup.class, this, ProgrammesPackage.PROGRAMME__COURSE_GROUPS);
+		}
+		return courseGroups;
 	}
 
 	/**
@@ -202,8 +227,8 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		switch (featureID) {
 			case ProgrammesPackage.PROGRAMME__SPECIALIZATIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSpecializations()).basicAdd(otherEnd, msgs);
-			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProgrammeYears()).basicAdd(otherEnd, msgs);
+			case ProgrammesPackage.PROGRAMME__PROGRAMME_SEMESTER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProgrammeSemester()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -218,8 +243,10 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		switch (featureID) {
 			case ProgrammesPackage.PROGRAMME__SPECIALIZATIONS:
 				return ((InternalEList<?>)getSpecializations()).basicRemove(otherEnd, msgs);
-			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
-				return ((InternalEList<?>)getProgrammeYears()).basicRemove(otherEnd, msgs);
+			case ProgrammesPackage.PROGRAMME__PROGRAMME_SEMESTER:
+				return ((InternalEList<?>)getProgrammeSemester()).basicRemove(otherEnd, msgs);
+			case ProgrammesPackage.PROGRAMME__COURSE_GROUPS:
+				return ((InternalEList<?>)getCourseGroups()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -238,8 +265,10 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return getCode();
 			case ProgrammesPackage.PROGRAMME__SPECIALIZATIONS:
 				return getSpecializations();
-			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
-				return getProgrammeYears();
+			case ProgrammesPackage.PROGRAMME__PROGRAMME_SEMESTER:
+				return getProgrammeSemester();
+			case ProgrammesPackage.PROGRAMME__COURSE_GROUPS:
+				return getCourseGroups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -263,9 +292,13 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				getSpecializations().clear();
 				getSpecializations().addAll((Collection<? extends Specialization>)newValue);
 				return;
-			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
-				getProgrammeYears().clear();
-				getProgrammeYears().addAll((Collection<? extends ProgrammeYear>)newValue);
+			case ProgrammesPackage.PROGRAMME__PROGRAMME_SEMESTER:
+				getProgrammeSemester().clear();
+				getProgrammeSemester().addAll((Collection<? extends Semester>)newValue);
+				return;
+			case ProgrammesPackage.PROGRAMME__COURSE_GROUPS:
+				getCourseGroups().clear();
+				getCourseGroups().addAll((Collection<? extends CourseGroup>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -288,8 +321,11 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case ProgrammesPackage.PROGRAMME__SPECIALIZATIONS:
 				getSpecializations().clear();
 				return;
-			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
-				getProgrammeYears().clear();
+			case ProgrammesPackage.PROGRAMME__PROGRAMME_SEMESTER:
+				getProgrammeSemester().clear();
+				return;
+			case ProgrammesPackage.PROGRAMME__COURSE_GROUPS:
+				getCourseGroups().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -309,8 +345,10 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
 			case ProgrammesPackage.PROGRAMME__SPECIALIZATIONS:
 				return specializations != null && !specializations.isEmpty();
-			case ProgrammesPackage.PROGRAMME__PROGRAMME_YEARS:
-				return programmeYears != null && !programmeYears.isEmpty();
+			case ProgrammesPackage.PROGRAMME__PROGRAMME_SEMESTER:
+				return programmeSemester != null && !programmeSemester.isEmpty();
+			case ProgrammesPackage.PROGRAMME__COURSE_GROUPS:
+				return courseGroups != null && !courseGroups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

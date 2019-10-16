@@ -1,9 +1,20 @@
 [comment encoding = UTF-8 /]
-[module programmes2TextGenerator('platform:/plugin/no.tdt4250.model/model/programmes.ecore', 'http://www.eclipse.org/emf/2002/Ecore')/]
+[module programmes2TextGenerator('http://www.eclipse.org/emf/2002/Ecore', 'platform:/plugin/no.tdt4250.model/model/programmes.ecore')/]
 
-[template public programmes2TextGenerator(uni : University)]
+[template public generateHTML(obj: EObject)]
+[generate(resolveUniversity(obj))/]
+[/template]
+
+[query public resolveUniversity(eObject : EObject) : University =
+	if eObject = null
+	then null
+	else if oclIsKindOf(University) then oclAsType(University) else eObject endif
+	endif 
+/]
+
+[template public generate(uni: University)]
 	
-	[comment @main /]
+	[comment @main /] 
 	[file (uni.name.concat('.html'), false, 'UTF-8')]
 <html>
 	<head>

@@ -57,19 +57,12 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ProgrammesPackage.DEPARTMENT: return createDepartment();
 			case ProgrammesPackage.COURSE: return createCourse();
-			case ProgrammesPackage.PERSON: return createPerson();
-			case ProgrammesPackage.INSTRUCTOR: return createInstructor();
 			case ProgrammesPackage.PROGRAMME: return createProgramme();
 			case ProgrammesPackage.SPECIALIZATION: return createSpecialization();
-			case ProgrammesPackage.PROGRAMME_YEAR: return createProgrammeYear();
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE: return createYearCourseReference();
-			case ProgrammesPackage.SEMESTER_COURSE_GROUP: return createSemesterCourseGroup();
-			case ProgrammesPackage.STUDENT: return createStudent();
-			case ProgrammesPackage.EXAM_ATTEMPT: return createExamAttempt();
-			case ProgrammesPackage.PROGRAMME_INSTANCE: return createProgrammeInstance();
-			case ProgrammesPackage.PROGRAMME_YEAR_INSTANCE: return createProgrammeYearInstance();
+			case ProgrammesPackage.SEMESTER: return createSemester();
+			case ProgrammesPackage.COURSE_GROUP: return createCourseGroup();
+			case ProgrammesPackage.UNIVERSITY: return createUniversity();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,10 +76,12 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ProgrammesPackage.ESEMESTER:
-				return createESemesterFromString(eDataType, initialValue);
-			case ProgrammesPackage.EGRADE:
-				return createEGradeFromString(eDataType, initialValue);
+			case ProgrammesPackage.SEMESTER_TYPE:
+				return createSemesterTypeFromString(eDataType, initialValue);
+			case ProgrammesPackage.COURSE_TYPE:
+				return createCourseTypeFromString(eDataType, initialValue);
+			case ProgrammesPackage.STUDY_LEVEL:
+				return createStudyLevelFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -100,10 +95,12 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ProgrammesPackage.ESEMESTER:
-				return convertESemesterToString(eDataType, instanceValue);
-			case ProgrammesPackage.EGRADE:
-				return convertEGradeToString(eDataType, instanceValue);
+			case ProgrammesPackage.SEMESTER_TYPE:
+				return convertSemesterTypeToString(eDataType, instanceValue);
+			case ProgrammesPackage.COURSE_TYPE:
+				return convertCourseTypeToString(eDataType, instanceValue);
+			case ProgrammesPackage.STUDY_LEVEL:
+				return convertStudyLevelToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -115,42 +112,9 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * @generated
 	 */
 	@Override
-	public Department createDepartment() {
-		DepartmentImpl department = new DepartmentImpl();
-		return department;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Course createCourse() {
 		CourseImpl course = new CourseImpl();
 		return course;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Person createPerson() {
-		PersonImpl person = new PersonImpl();
-		return person;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Instructor createInstructor() {
-		InstructorImpl instructor = new InstructorImpl();
-		return instructor;
 	}
 
 	/**
@@ -181,9 +145,9 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * @generated
 	 */
 	@Override
-	public ProgrammeYear createProgrammeYear() {
-		ProgrammeYearImpl programmeYear = new ProgrammeYearImpl();
-		return programmeYear;
+	public Semester createSemester() {
+		SemesterImpl semester = new SemesterImpl();
+		return semester;
 	}
 
 	/**
@@ -192,9 +156,9 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * @generated
 	 */
 	@Override
-	public YearCourseReference createYearCourseReference() {
-		YearCourseReferenceImpl yearCourseReference = new YearCourseReferenceImpl();
-		return yearCourseReference;
+	public CourseGroup createCourseGroup() {
+		CourseGroupImpl courseGroup = new CourseGroupImpl();
+		return courseGroup;
 	}
 
 	/**
@@ -203,9 +167,9 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * @generated
 	 */
 	@Override
-	public SemesterCourseGroup createSemesterCourseGroup() {
-		SemesterCourseGroupImpl semesterCourseGroup = new SemesterCourseGroupImpl();
-		return semesterCourseGroup;
+	public University createUniversity() {
+		UniversityImpl university = new UniversityImpl();
+		return university;
 	}
 
 	/**
@@ -213,52 +177,8 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Student createStudent() {
-		StudentImpl student = new StudentImpl();
-		return student;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ExamAttempt createExamAttempt() {
-		ExamAttemptImpl examAttempt = new ExamAttemptImpl();
-		return examAttempt;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ProgrammeInstance createProgrammeInstance() {
-		ProgrammeInstanceImpl programmeInstance = new ProgrammeInstanceImpl();
-		return programmeInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ProgrammeYearInstance createProgrammeYearInstance() {
-		ProgrammeYearInstanceImpl programmeYearInstance = new ProgrammeYearInstanceImpl();
-		return programmeYearInstance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ESemester createESemesterFromString(EDataType eDataType, String initialValue) {
-		ESemester result = ESemester.get(initialValue);
+	public SemesterType createSemesterTypeFromString(EDataType eDataType, String initialValue) {
+		SemesterType result = SemesterType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -268,7 +188,7 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertESemesterToString(EDataType eDataType, Object instanceValue) {
+	public String convertSemesterTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -277,8 +197,8 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EGrade createEGradeFromString(EDataType eDataType, String initialValue) {
-		EGrade result = EGrade.get(initialValue);
+	public CourseType createCourseTypeFromString(EDataType eDataType, String initialValue) {
+		CourseType result = CourseType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -288,7 +208,27 @@ public class ProgrammesFactoryImpl extends EFactoryImpl implements ProgrammesFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertEGradeToString(EDataType eDataType, Object instanceValue) {
+	public String convertCourseTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StudyLevel createStudyLevelFromString(EDataType eDataType, String initialValue) {
+		StudyLevel result = StudyLevel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertStudyLevelToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

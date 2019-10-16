@@ -87,48 +87,27 @@ public class ProgrammesValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case ProgrammesPackage.DEPARTMENT:
-				return validateDepartment((Department)value, diagnostics, context);
 			case ProgrammesPackage.COURSE:
 				return validateCourse((Course)value, diagnostics, context);
-			case ProgrammesPackage.PERSON:
-				return validatePerson((Person)value, diagnostics, context);
-			case ProgrammesPackage.INSTRUCTOR:
-				return validateInstructor((Instructor)value, diagnostics, context);
 			case ProgrammesPackage.PROGRAMME:
 				return validateProgramme((Programme)value, diagnostics, context);
 			case ProgrammesPackage.SPECIALIZATION:
 				return validateSpecialization((Specialization)value, diagnostics, context);
-			case ProgrammesPackage.PROGRAMME_YEAR:
-				return validateProgrammeYear((ProgrammeYear)value, diagnostics, context);
-			case ProgrammesPackage.YEAR_COURSE_REFERENCE:
-				return validateYearCourseReference((YearCourseReference)value, diagnostics, context);
-			case ProgrammesPackage.SEMESTER_COURSE_GROUP:
-				return validateSemesterCourseGroup((SemesterCourseGroup)value, diagnostics, context);
-			case ProgrammesPackage.STUDENT:
-				return validateStudent((Student)value, diagnostics, context);
-			case ProgrammesPackage.EXAM_ATTEMPT:
-				return validateExamAttempt((ExamAttempt)value, diagnostics, context);
-			case ProgrammesPackage.PROGRAMME_INSTANCE:
-				return validateProgrammeInstance((ProgrammeInstance)value, diagnostics, context);
-			case ProgrammesPackage.PROGRAMME_YEAR_INSTANCE:
-				return validateProgrammeYearInstance((ProgrammeYearInstance)value, diagnostics, context);
-			case ProgrammesPackage.ESEMESTER:
-				return validateESemester((ESemester)value, diagnostics, context);
-			case ProgrammesPackage.EGRADE:
-				return validateEGrade((EGrade)value, diagnostics, context);
+			case ProgrammesPackage.SEMESTER:
+				return validateSemester((Semester)value, diagnostics, context);
+			case ProgrammesPackage.COURSE_GROUP:
+				return validateCourseGroup((CourseGroup)value, diagnostics, context);
+			case ProgrammesPackage.UNIVERSITY:
+				return validateUniversity((University)value, diagnostics, context);
+			case ProgrammesPackage.SEMESTER_TYPE:
+				return validateSemesterType((SemesterType)value, diagnostics, context);
+			case ProgrammesPackage.COURSE_TYPE:
+				return validateCourseType((CourseType)value, diagnostics, context);
+			case ProgrammesPackage.STUDY_LEVEL:
+				return validateStudyLevel((StudyLevel)value, diagnostics, context);
 			default:
 				return true;
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDepartment(Department department, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(department, diagnostics, context);
 	}
 
 	/**
@@ -151,50 +130,31 @@ public class ProgrammesValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the ECTSConstrained constraint of '<em>Course</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COURSE__ECTS_CONSTRAINED__EEXPRESSION = "self.credits = 5.0 OR self.credits = 7.5 OR self.credits = 10.0";
-
-	/**
 	 * Validates the ECTSConstrained constraint of '<em>Course</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateCourse_ECTSConstrained(Course course, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(ProgrammesPackage.Literals.COURSE,
-				 course,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/acceleo/query/1.0",
-				 "ECTSConstrained",
-				 COURSE__ECTS_CONSTRAINED__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePerson(Person person, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(person, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateInstructor(Instructor instructor, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(instructor, diagnostics, context);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "ECTSConstrained", getObjectLabel(course, context) },
+						 new Object[] { course },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -220,72 +180,91 @@ public class ProgrammesValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateProgrammeYear(ProgrammeYear programmeYear, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programmeYear, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateYearCourseReference(YearCourseReference yearCourseReference, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(yearCourseReference, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateSemesterCourseGroup(SemesterCourseGroup semesterCourseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(semesterCourseGroup, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStudent(Student student, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(student, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateExamAttempt(ExamAttempt examAttempt, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(examAttempt, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProgrammeInstance(ProgrammeInstance programmeInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programmeInstance, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateProgrammeYearInstance(ProgrammeYearInstance programmeYearInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(programmeYearInstance, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(programmeYearInstance, diagnostics, context);
-		if (result || diagnostics != null) result &= validateProgrammeYearInstance_ConsistsOf60ETCS(programmeYearInstance, diagnostics, context);
+	public boolean validateSemester(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(semester, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(semester, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSemester_minECTS(semester, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * Validates the minECTS constraint of '<em>Semester</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemester_minECTS(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "minECTS", getObjectLabel(semester, context) },
+						 new Object[] { semester },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseGroup(CourseGroup courseGroup, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(courseGroup, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateUniversity(University university, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(university, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSemesterType(SemesterType semesterType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCourseType(CourseType courseType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStudyLevel(StudyLevel studyLevel, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**
@@ -315,24 +294,6 @@ public class ProgrammesValidator extends EObjectValidator {
 			}
 			return false;
 		}
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateESemester(ESemester eSemester, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateEGrade(EGrade eGrade, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

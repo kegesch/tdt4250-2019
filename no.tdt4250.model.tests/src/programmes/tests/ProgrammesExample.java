@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import programmes.Department;
+import programmes.Course;
 import programmes.ProgrammesFactory;
 import programmes.ProgrammesPackage;
 
@@ -60,7 +60,7 @@ public class ProgrammesExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.programmes"));
-				Department root = ProgrammesFactory.eINSTANCE.createDepartment();
+				Course root = ProgrammesFactory.eINSTANCE.createCourse();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

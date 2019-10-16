@@ -68,20 +68,8 @@ public class ProgrammesAdapterFactory extends AdapterFactoryImpl {
 	protected ProgrammesSwitch<Adapter> modelSwitch =
 		new ProgrammesSwitch<Adapter>() {
 			@Override
-			public Adapter caseDepartment(Department object) {
-				return createDepartmentAdapter();
-			}
-			@Override
 			public Adapter caseCourse(Course object) {
 				return createCourseAdapter();
-			}
-			@Override
-			public Adapter casePerson(Person object) {
-				return createPersonAdapter();
-			}
-			@Override
-			public Adapter caseInstructor(Instructor object) {
-				return createInstructorAdapter();
 			}
 			@Override
 			public Adapter caseProgramme(Programme object) {
@@ -92,32 +80,16 @@ public class ProgrammesAdapterFactory extends AdapterFactoryImpl {
 				return createSpecializationAdapter();
 			}
 			@Override
-			public Adapter caseProgrammeYear(ProgrammeYear object) {
-				return createProgrammeYearAdapter();
+			public Adapter caseSemester(Semester object) {
+				return createSemesterAdapter();
 			}
 			@Override
-			public Adapter caseYearCourseReference(YearCourseReference object) {
-				return createYearCourseReferenceAdapter();
+			public Adapter caseCourseGroup(CourseGroup object) {
+				return createCourseGroupAdapter();
 			}
 			@Override
-			public Adapter caseSemesterCourseGroup(SemesterCourseGroup object) {
-				return createSemesterCourseGroupAdapter();
-			}
-			@Override
-			public Adapter caseStudent(Student object) {
-				return createStudentAdapter();
-			}
-			@Override
-			public Adapter caseExamAttempt(ExamAttempt object) {
-				return createExamAttemptAdapter();
-			}
-			@Override
-			public Adapter caseProgrammeInstance(ProgrammeInstance object) {
-				return createProgrammeInstanceAdapter();
-			}
-			@Override
-			public Adapter caseProgrammeYearInstance(ProgrammeYearInstance object) {
-				return createProgrammeYearInstanceAdapter();
+			public Adapter caseUniversity(University object) {
+				return createUniversityAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -140,20 +112,6 @@ public class ProgrammesAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link programmes.Department <em>Department</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.Department
-	 * @generated
-	 */
-	public Adapter createDepartmentAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link programmes.Course <em>Course</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -164,34 +122,6 @@ public class ProgrammesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCourseAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.Person <em>Person</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.Person
-	 * @generated
-	 */
-	public Adapter createPersonAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.Instructor <em>Instructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.Instructor
-	 * @generated
-	 */
-	public Adapter createInstructorAdapter() {
 		return null;
 	}
 
@@ -224,100 +154,44 @@ public class ProgrammesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link programmes.ProgrammeYear <em>Programme Year</em>}'.
+	 * Creates a new adapter for an object of class '{@link programmes.Semester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see programmes.ProgrammeYear
+	 * @see programmes.Semester
 	 * @generated
 	 */
-	public Adapter createProgrammeYearAdapter() {
+	public Adapter createSemesterAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link programmes.YearCourseReference <em>Year Course Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link programmes.CourseGroup <em>Course Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see programmes.YearCourseReference
+	 * @see programmes.CourseGroup
 	 * @generated
 	 */
-	public Adapter createYearCourseReferenceAdapter() {
+	public Adapter createCourseGroupAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link programmes.SemesterCourseGroup <em>Semester Course Group</em>}'.
+	 * Creates a new adapter for an object of class '{@link programmes.University <em>University</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see programmes.SemesterCourseGroup
+	 * @see programmes.University
 	 * @generated
 	 */
-	public Adapter createSemesterCourseGroupAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.Student <em>Student</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.Student
-	 * @generated
-	 */
-	public Adapter createStudentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.ExamAttempt <em>Exam Attempt</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.ExamAttempt
-	 * @generated
-	 */
-	public Adapter createExamAttemptAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.ProgrammeInstance <em>Programme Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.ProgrammeInstance
-	 * @generated
-	 */
-	public Adapter createProgrammeInstanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link programmes.ProgrammeYearInstance <em>Programme Year Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see programmes.ProgrammeYearInstance
-	 * @generated
-	 */
-	public Adapter createProgrammeYearInstanceAdapter() {
+	public Adapter createUniversityAdapter() {
 		return null;
 	}
 

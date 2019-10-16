@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see programmes.ProgrammesFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/acceleo/query/1.0'"
  * @generated
  */
 public interface ProgrammesPackage extends EPackage {
@@ -40,7 +39,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "platform:/plugin/no.tdt4250.model/model/programmes.ecore";
+	String eNS_URI = "platform:/plugin/no.tdt4250.model/model/programmes.";
 
 	/**
 	 * The package namespace name.
@@ -59,70 +58,6 @@ public interface ProgrammesPackage extends EPackage {
 	ProgrammesPackage eINSTANCE = programmes.impl.ProgrammesPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link programmes.impl.DepartmentImpl <em>Department</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.DepartmentImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getDepartment()
-	 * @generated
-	 */
-	int DEPARTMENT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Short Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__SHORT_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__COURSES = 2;
-
-	/**
-	 * The feature id for the '<em><b>Employees</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT__EMPLOYEES = 3;
-
-	/**
-	 * The number of structural features of the '<em>Department</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Department</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link programmes.impl.CourseImpl <em>Course</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +65,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getCourse()
 	 * @generated
 	 */
-	int COURSE = 1;
+	int COURSE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -169,31 +104,13 @@ public interface ProgrammesPackage extends EPackage {
 	int COURSE__LEVEL = 3;
 
 	/**
-	 * The feature id for the '<em><b>Department</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE__DEPARTMENT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Instructor</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COURSE__INSTRUCTOR = 5;
-
-	/**
 	 * The number of structural features of the '<em>Course</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COURSE_FEATURE_COUNT = 6;
+	int COURSE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Course</em>' class.
@@ -205,134 +122,6 @@ public interface ProgrammesPackage extends EPackage {
 	int COURSE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link programmes.impl.PersonImpl <em>Person</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.PersonImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getPerson()
-	 * @generated
-	 */
-	int PERSON = 2;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON__FIRST_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Sur Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON__SUR_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Full Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON__FULL_NAME = 2;
-
-	/**
-	 * The number of structural features of the '<em>Person</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Person</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PERSON_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.InstructorImpl <em>Instructor</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.InstructorImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getInstructor()
-	 * @generated
-	 */
-	int INSTRUCTOR = 3;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTOR__FIRST_NAME = PERSON__FIRST_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Sur Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTOR__SUR_NAME = PERSON__SUR_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Full Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTOR__FULL_NAME = PERSON__FULL_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Lectured Courses</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTOR__LECTURED_COURSES = PERSON_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Department</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTOR__DEPARTMENT = PERSON_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Instructor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTOR_FEATURE_COUNT = PERSON_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Instructor</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTOR_OPERATION_COUNT = PERSON_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link programmes.impl.ProgrammeImpl <em>Programme</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,7 +129,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getProgramme()
 	 * @generated
 	 */
-	int PROGRAMME = 4;
+	int PROGRAMME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -370,13 +159,22 @@ public interface ProgrammesPackage extends EPackage {
 	int PROGRAMME__SPECIALIZATIONS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Programme Years</b></em>' reference list.
+	 * The feature id for the '<em><b>Programme Semester</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__PROGRAMME_YEARS = 3;
+	int PROGRAMME__PROGRAMME_SEMESTER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Course Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__COURSE_GROUPS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Programme</em>' class.
@@ -385,7 +183,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_FEATURE_COUNT = 4;
+	int PROGRAMME_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Programme</em>' class.
@@ -404,7 +202,7 @@ public interface ProgrammesPackage extends EPackage {
 	 * @see programmes.impl.ProgrammesPackageImpl#getSpecialization()
 	 * @generated
 	 */
-	int SPECIALIZATION = 5;
+	int SPECIALIZATION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -434,13 +232,22 @@ public interface ProgrammesPackage extends EPackage {
 	int SPECIALIZATION__SPECIALIZATIONS = PROGRAMME__SPECIALIZATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Programme Years</b></em>' reference list.
+	 * The feature id for the '<em><b>Programme Semester</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION__PROGRAMME_YEARS = PROGRAMME__PROGRAMME_YEARS;
+	int SPECIALIZATION__PROGRAMME_SEMESTER = PROGRAMME__PROGRAMME_SEMESTER;
+
+	/**
+	 * The feature id for the '<em><b>Course Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPECIALIZATION__COURSE_GROUPS = PROGRAMME__COURSE_GROUPS;
 
 	/**
 	 * The feature id for the '<em><b>Specializes In</b></em>' container reference.
@@ -479,133 +286,23 @@ public interface ProgrammesPackage extends EPackage {
 	int SPECIALIZATION_OPERATION_COUNT = PROGRAMME_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link programmes.impl.ProgrammeYearImpl <em>Programme Year</em>}' class.
+	 * The meta object id for the '{@link programmes.impl.SemesterImpl <em>Semester</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see programmes.impl.ProgrammeYearImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeYear()
+	 * @see programmes.impl.SemesterImpl
+	 * @see programmes.impl.ProgrammesPackageImpl#getSemester()
 	 * @generated
 	 */
-	int PROGRAMME_YEAR = 6;
+	int SEMESTER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Programme</b></em>' reference.
+	 * The feature id for the '<em><b>Programme</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_YEAR__PROGRAMME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Course References</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR__COURSE_REFERENCES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Year In Programme</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR__YEAR_IN_PROGRAMME = 2;
-
-	/**
-	 * The number of structural features of the '<em>Programme Year</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Programme Year</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.YearCourseReferenceImpl <em>Year Course Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.YearCourseReferenceImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getYearCourseReference()
-	 * @generated
-	 */
-	int YEAR_COURSE_REFERENCE = 7;
-
-	/**
-	 * The feature id for the '<em><b>Programme Year</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_COURSE_REFERENCE__PROGRAMME_YEAR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Course Group</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_COURSE_REFERENCE__COURSE_GROUP = 1;
-
-	/**
-	 * The feature id for the '<em><b>Semester Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_COURSE_REFERENCE__SEMESTER_TYPE = 2;
-
-	/**
-	 * The number of structural features of the '<em>Year Course Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_COURSE_REFERENCE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Year Course Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_COURSE_REFERENCE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.SemesterCourseGroupImpl <em>Semester Course Group</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.SemesterCourseGroupImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getSemesterCourseGroup()
-	 * @generated
-	 */
-	int SEMESTER_COURSE_GROUP = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMESTER_COURSE_GROUP__NAME = 0;
+	int SEMESTER__PROGRAMME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Courses</b></em>' reference list.
@@ -614,347 +311,183 @@ public interface ProgrammesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_COURSE_GROUP__COURSES = 1;
+	int SEMESTER__COURSES = 1;
 
 	/**
-	 * The number of structural features of the '<em>Semester Course Group</em>' class.
+	 * The feature id for the '<em><b>Semester Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_COURSE_GROUP_FEATURE_COUNT = 2;
+	int SEMESTER__SEMESTER_TYPE = 2;
 
 	/**
-	 * The number of operations of the '<em>Semester Course Group</em>' class.
+	 * The feature id for the '<em><b>Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMESTER_COURSE_GROUP_OPERATION_COUNT = 0;
+	int SEMESTER__YEAR = 3;
 
 	/**
-	 * The meta object id for the '{@link programmes.impl.StudentImpl <em>Student</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.StudentImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getStudent()
-	 * @generated
-	 */
-	int STUDENT = 9;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * The number of structural features of the '<em>Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__FIRST_NAME = PERSON__FIRST_NAME;
+	int SEMESTER_FEATURE_COUNT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Sur Name</b></em>' attribute.
+	 * The number of operations of the '<em>Semester</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__SUR_NAME = PERSON__SUR_NAME;
+	int SEMESTER_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Full Name</b></em>' attribute.
+	 * The meta object id for the '{@link programmes.impl.CourseGroupImpl <em>Course Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see programmes.impl.CourseGroupImpl
+	 * @see programmes.impl.ProgrammesPackageImpl#getCourseGroup()
+	 * @generated
+	 */
+	int COURSE_GROUP = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__FULL_NAME = PERSON__FULL_NAME;
+	int COURSE_GROUP__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Enrolled In</b></em>' reference.
+	 * The feature id for the '<em><b>Courses Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__ENROLLED_IN = PERSON_FEATURE_COUNT + 0;
+	int COURSE_GROUP__COURSES_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Student Number</b></em>' attribute.
+	 * The feature id for the '<em><b>Courses</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT__STUDENT_NUMBER = PERSON_FEATURE_COUNT + 1;
+	int COURSE_GROUP__COURSES = 2;
 
 	/**
-	 * The number of structural features of the '<em>Student</em>' class.
+	 * The number of structural features of the '<em>Course Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_FEATURE_COUNT = PERSON_FEATURE_COUNT + 2;
+	int COURSE_GROUP_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Student</em>' class.
+	 * The number of operations of the '<em>Course Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STUDENT_OPERATION_COUNT = PERSON_OPERATION_COUNT + 0;
+	int COURSE_GROUP_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link programmes.impl.ExamAttemptImpl <em>Exam Attempt</em>}' class.
+	 * The meta object id for the '{@link programmes.impl.UniversityImpl <em>University</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see programmes.impl.ExamAttemptImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getExamAttempt()
+	 * @see programmes.impl.UniversityImpl
+	 * @see programmes.impl.ProgrammesPackageImpl#getUniversity()
 	 * @generated
 	 */
-	int EXAM_ATTEMPT = 10;
+	int UNIVERSITY = 5;
 
 	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXAM_ATTEMPT__DATE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Semester</b></em>' attribute.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXAM_ATTEMPT__SEMESTER = 1;
+	int UNIVERSITY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Programme Year</b></em>' reference.
+	 * The feature id for the '<em><b>Study Programmes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXAM_ATTEMPT__PROGRAMME_YEAR = 2;
+	int UNIVERSITY__STUDY_PROGRAMMES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Course</b></em>' reference.
+	 * The feature id for the '<em><b>Courses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXAM_ATTEMPT__COURSE = 3;
+	int UNIVERSITY__COURSES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Grade</b></em>' attribute.
+	 * The number of structural features of the '<em>University</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXAM_ATTEMPT__GRADE = 4;
+	int UNIVERSITY_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of structural features of the '<em>Exam Attempt</em>' class.
+	 * The number of operations of the '<em>University</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXAM_ATTEMPT_FEATURE_COUNT = 5;
+	int UNIVERSITY_OPERATION_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Exam Attempt</em>' class.
+	 * The meta object id for the '{@link programmes.SemesterType <em>Semester Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see programmes.SemesterType
+	 * @see programmes.impl.ProgrammesPackageImpl#getSemesterType()
 	 * @generated
-	 * @ordered
 	 */
-	int EXAM_ATTEMPT_OPERATION_COUNT = 0;
+	int SEMESTER_TYPE = 6;
 
 	/**
-	 * The meta object id for the '{@link programmes.impl.ProgrammeInstanceImpl <em>Programme Instance</em>}' class.
+	 * The meta object id for the '{@link programmes.CourseType <em>Course Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see programmes.impl.ProgrammeInstanceImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeInstance()
+	 * @see programmes.CourseType
+	 * @see programmes.impl.ProgrammesPackageImpl#getCourseType()
 	 * @generated
 	 */
-	int PROGRAMME_INSTANCE = 11;
+	int COURSE_TYPE = 7;
 
 	/**
-	 * The feature id for the '<em><b>Programme</b></em>' reference.
+	 * The meta object id for the '{@link programmes.StudyLevel <em>Study Level</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_INSTANCE__PROGRAMME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Programme Years</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_INSTANCE__PROGRAMME_YEARS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Starting Year</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_INSTANCE__STARTING_YEAR = 2;
-
-	/**
-	 * The number of structural features of the '<em>Programme Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_INSTANCE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Programme Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_INSTANCE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.impl.ProgrammeYearInstanceImpl <em>Programme Year Instance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.impl.ProgrammeYearInstanceImpl
-	 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeYearInstance()
+	 * @see programmes.StudyLevel
+	 * @see programmes.impl.ProgrammesPackageImpl#getStudyLevel()
 	 * @generated
 	 */
-	int PROGRAMME_YEAR_INSTANCE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Programme Year</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR_INSTANCE__PROGRAMME_YEAR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Exam Attempts</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR_INSTANCE__EXAM_ATTEMPTS = 1;
-
-	/**
-	 * The number of structural features of the '<em>Programme Year Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR_INSTANCE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Programme Year Instance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME_YEAR_INSTANCE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link programmes.ESemester <em>ESemester</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.ESemester
-	 * @see programmes.impl.ProgrammesPackageImpl#getESemester()
-	 * @generated
-	 */
-	int ESEMESTER = 13;
-
-	/**
-	 * The meta object id for the '{@link programmes.EGrade <em>EGrade</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see programmes.EGrade
-	 * @see programmes.impl.ProgrammesPackageImpl#getEGrade()
-	 * @generated
-	 */
-	int EGRADE = 14;
-
-
-	/**
-	 * Returns the meta object for class '{@link programmes.Department <em>Department</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Department</em>'.
-	 * @see programmes.Department
-	 * @generated
-	 */
-	EClass getDepartment();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.Department#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see programmes.Department#getName()
-	 * @see #getDepartment()
-	 * @generated
-	 */
-	EAttribute getDepartment_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.Department#getShortName <em>Short Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Short Name</em>'.
-	 * @see programmes.Department#getShortName()
-	 * @see #getDepartment()
-	 * @generated
-	 */
-	EAttribute getDepartment_ShortName();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link programmes.Department#getCourses <em>Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Courses</em>'.
-	 * @see programmes.Department#getCourses()
-	 * @see #getDepartment()
-	 * @generated
-	 */
-	EReference getDepartment_Courses();
-
-	/**
-	 * Returns the meta object for the reference list '{@link programmes.Department#getEmployees <em>Employees</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Employees</em>'.
-	 * @see programmes.Department#getEmployees()
-	 * @see #getDepartment()
-	 * @generated
-	 */
-	EReference getDepartment_Employees();
+	int STUDY_LEVEL = 8;
 
 	/**
 	 * Returns the meta object for class '{@link programmes.Course <em>Course</em>}'.
@@ -1011,103 +544,6 @@ public interface ProgrammesPackage extends EPackage {
 	EAttribute getCourse_Level();
 
 	/**
-	 * Returns the meta object for the container reference '{@link programmes.Course#getDepartment <em>Department</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Department</em>'.
-	 * @see programmes.Course#getDepartment()
-	 * @see #getCourse()
-	 * @generated
-	 */
-	EReference getCourse_Department();
-
-	/**
-	 * Returns the meta object for the reference '{@link programmes.Course#getInstructor <em>Instructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Instructor</em>'.
-	 * @see programmes.Course#getInstructor()
-	 * @see #getCourse()
-	 * @generated
-	 */
-	EReference getCourse_Instructor();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.Person <em>Person</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Person</em>'.
-	 * @see programmes.Person
-	 * @generated
-	 */
-	EClass getPerson();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.Person#getFirstName <em>First Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>First Name</em>'.
-	 * @see programmes.Person#getFirstName()
-	 * @see #getPerson()
-	 * @generated
-	 */
-	EAttribute getPerson_FirstName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.Person#getSurName <em>Sur Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Sur Name</em>'.
-	 * @see programmes.Person#getSurName()
-	 * @see #getPerson()
-	 * @generated
-	 */
-	EAttribute getPerson_SurName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.Person#getFullName <em>Full Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Full Name</em>'.
-	 * @see programmes.Person#getFullName()
-	 * @see #getPerson()
-	 * @generated
-	 */
-	EAttribute getPerson_FullName();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.Instructor <em>Instructor</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Instructor</em>'.
-	 * @see programmes.Instructor
-	 * @generated
-	 */
-	EClass getInstructor();
-
-	/**
-	 * Returns the meta object for the reference list '{@link programmes.Instructor#getLecturedCourses <em>Lectured Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Lectured Courses</em>'.
-	 * @see programmes.Instructor#getLecturedCourses()
-	 * @see #getInstructor()
-	 * @generated
-	 */
-	EReference getInstructor_LecturedCourses();
-
-	/**
-	 * Returns the meta object for the reference '{@link programmes.Instructor#getDepartment <em>Department</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Department</em>'.
-	 * @see programmes.Instructor#getDepartment()
-	 * @see #getInstructor()
-	 * @generated
-	 */
-	EReference getInstructor_Department();
-
-	/**
 	 * Returns the meta object for class '{@link programmes.Programme <em>Programme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1151,15 +587,26 @@ public interface ProgrammesPackage extends EPackage {
 	EReference getProgramme_Specializations();
 
 	/**
-	 * Returns the meta object for the reference list '{@link programmes.Programme#getProgrammeYears <em>Programme Years</em>}'.
+	 * Returns the meta object for the containment reference list '{@link programmes.Programme#getProgrammeSemester <em>Programme Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Programme Years</em>'.
-	 * @see programmes.Programme#getProgrammeYears()
+	 * @return the meta object for the containment reference list '<em>Programme Semester</em>'.
+	 * @see programmes.Programme#getProgrammeSemester()
 	 * @see #getProgramme()
 	 * @generated
 	 */
-	EReference getProgramme_ProgrammeYears();
+	EReference getProgramme_ProgrammeSemester();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link programmes.Programme#getCourseGroups <em>Course Groups</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Course Groups</em>'.
+	 * @see programmes.Programme#getCourseGroups()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EReference getProgramme_CourseGroups();
 
 	/**
 	 * Returns the meta object for class '{@link programmes.Specialization <em>Specialization</em>}'.
@@ -1194,314 +641,174 @@ public interface ProgrammesPackage extends EPackage {
 	EReference getSpecialization_ChosenIn();
 
 	/**
-	 * Returns the meta object for class '{@link programmes.ProgrammeYear <em>Programme Year</em>}'.
+	 * Returns the meta object for class '{@link programmes.Semester <em>Semester</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Programme Year</em>'.
-	 * @see programmes.ProgrammeYear
+	 * @return the meta object for class '<em>Semester</em>'.
+	 * @see programmes.Semester
 	 * @generated
 	 */
-	EClass getProgrammeYear();
+	EClass getSemester();
 
 	/**
-	 * Returns the meta object for the reference '{@link programmes.ProgrammeYear#getProgramme <em>Programme</em>}'.
+	 * Returns the meta object for the container reference '{@link programmes.Semester#getProgramme <em>Programme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme</em>'.
-	 * @see programmes.ProgrammeYear#getProgramme()
-	 * @see #getProgrammeYear()
+	 * @return the meta object for the container reference '<em>Programme</em>'.
+	 * @see programmes.Semester#getProgramme()
+	 * @see #getSemester()
 	 * @generated
 	 */
-	EReference getProgrammeYear_Programme();
+	EReference getSemester_Programme();
 
 	/**
-	 * Returns the meta object for the reference list '{@link programmes.ProgrammeYear#getCourseReferences <em>Course References</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Course References</em>'.
-	 * @see programmes.ProgrammeYear#getCourseReferences()
-	 * @see #getProgrammeYear()
-	 * @generated
-	 */
-	EReference getProgrammeYear_CourseReferences();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.ProgrammeYear#getYearInProgramme <em>Year In Programme</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Year In Programme</em>'.
-	 * @see programmes.ProgrammeYear#getYearInProgramme()
-	 * @see #getProgrammeYear()
-	 * @generated
-	 */
-	EAttribute getProgrammeYear_YearInProgramme();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.YearCourseReference <em>Year Course Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Year Course Reference</em>'.
-	 * @see programmes.YearCourseReference
-	 * @generated
-	 */
-	EClass getYearCourseReference();
-
-	/**
-	 * Returns the meta object for the reference '{@link programmes.YearCourseReference#getProgrammeYear <em>Programme Year</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme Year</em>'.
-	 * @see programmes.YearCourseReference#getProgrammeYear()
-	 * @see #getYearCourseReference()
-	 * @generated
-	 */
-	EReference getYearCourseReference_ProgrammeYear();
-
-	/**
-	 * Returns the meta object for the reference '{@link programmes.YearCourseReference#getCourseGroup <em>Course Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Course Group</em>'.
-	 * @see programmes.YearCourseReference#getCourseGroup()
-	 * @see #getYearCourseReference()
-	 * @generated
-	 */
-	EReference getYearCourseReference_CourseGroup();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.YearCourseReference#getSemesterType <em>Semester Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Semester Type</em>'.
-	 * @see programmes.YearCourseReference#getSemesterType()
-	 * @see #getYearCourseReference()
-	 * @generated
-	 */
-	EAttribute getYearCourseReference_SemesterType();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.SemesterCourseGroup <em>Semester Course Group</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Semester Course Group</em>'.
-	 * @see programmes.SemesterCourseGroup
-	 * @generated
-	 */
-	EClass getSemesterCourseGroup();
-
-	/**
-	 * Returns the meta object for the attribute '{@link programmes.SemesterCourseGroup#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see programmes.SemesterCourseGroup#getName()
-	 * @see #getSemesterCourseGroup()
-	 * @generated
-	 */
-	EAttribute getSemesterCourseGroup_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link programmes.SemesterCourseGroup#getCourses <em>Courses</em>}'.
+	 * Returns the meta object for the reference list '{@link programmes.Semester#getCourses <em>Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Courses</em>'.
-	 * @see programmes.SemesterCourseGroup#getCourses()
-	 * @see #getSemesterCourseGroup()
+	 * @see programmes.Semester#getCourses()
+	 * @see #getSemester()
 	 * @generated
 	 */
-	EReference getSemesterCourseGroup_Courses();
+	EReference getSemester_Courses();
 
 	/**
-	 * Returns the meta object for class '{@link programmes.Student <em>Student</em>}'.
+	 * Returns the meta object for the attribute '{@link programmes.Semester#getSemesterType <em>Semester Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Student</em>'.
-	 * @see programmes.Student
+	 * @return the meta object for the attribute '<em>Semester Type</em>'.
+	 * @see programmes.Semester#getSemesterType()
+	 * @see #getSemester()
 	 * @generated
 	 */
-	EClass getStudent();
+	EAttribute getSemester_SemesterType();
 
 	/**
-	 * Returns the meta object for the reference '{@link programmes.Student#getEnrolledIn <em>Enrolled In</em>}'.
+	 * Returns the meta object for the attribute '{@link programmes.Semester#getYear <em>Year</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Enrolled In</em>'.
-	 * @see programmes.Student#getEnrolledIn()
-	 * @see #getStudent()
+	 * @return the meta object for the attribute '<em>Year</em>'.
+	 * @see programmes.Semester#getYear()
+	 * @see #getSemester()
 	 * @generated
 	 */
-	EReference getStudent_EnrolledIn();
+	EAttribute getSemester_Year();
 
 	/**
-	 * Returns the meta object for the attribute '{@link programmes.Student#getStudentNumber <em>Student Number</em>}'.
+	 * Returns the meta object for class '{@link programmes.CourseGroup <em>Course Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Student Number</em>'.
-	 * @see programmes.Student#getStudentNumber()
-	 * @see #getStudent()
+	 * @return the meta object for class '<em>Course Group</em>'.
+	 * @see programmes.CourseGroup
 	 * @generated
 	 */
-	EAttribute getStudent_StudentNumber();
+	EClass getCourseGroup();
 
 	/**
-	 * Returns the meta object for class '{@link programmes.ExamAttempt <em>Exam Attempt</em>}'.
+	 * Returns the meta object for the attribute '{@link programmes.CourseGroup#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Exam Attempt</em>'.
-	 * @see programmes.ExamAttempt
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see programmes.CourseGroup#getName()
+	 * @see #getCourseGroup()
 	 * @generated
 	 */
-	EClass getExamAttempt();
+	EAttribute getCourseGroup_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link programmes.ExamAttempt#getDate <em>Date</em>}'.
+	 * Returns the meta object for the attribute '{@link programmes.CourseGroup#getCoursesType <em>Courses Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date</em>'.
-	 * @see programmes.ExamAttempt#getDate()
-	 * @see #getExamAttempt()
+	 * @return the meta object for the attribute '<em>Courses Type</em>'.
+	 * @see programmes.CourseGroup#getCoursesType()
+	 * @see #getCourseGroup()
 	 * @generated
 	 */
-	EAttribute getExamAttempt_Date();
+	EAttribute getCourseGroup_CoursesType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link programmes.ExamAttempt#getSemester <em>Semester</em>}'.
+	 * Returns the meta object for the reference list '{@link programmes.CourseGroup#getCourses <em>Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Semester</em>'.
-	 * @see programmes.ExamAttempt#getSemester()
-	 * @see #getExamAttempt()
+	 * @return the meta object for the reference list '<em>Courses</em>'.
+	 * @see programmes.CourseGroup#getCourses()
+	 * @see #getCourseGroup()
 	 * @generated
 	 */
-	EAttribute getExamAttempt_Semester();
+	EReference getCourseGroup_Courses();
 
 	/**
-	 * Returns the meta object for the reference '{@link programmes.ExamAttempt#getProgrammeYear <em>Programme Year</em>}'.
+	 * Returns the meta object for class '{@link programmes.University <em>University</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme Year</em>'.
-	 * @see programmes.ExamAttempt#getProgrammeYear()
-	 * @see #getExamAttempt()
+	 * @return the meta object for class '<em>University</em>'.
+	 * @see programmes.University
 	 * @generated
 	 */
-	EReference getExamAttempt_ProgrammeYear();
+	EClass getUniversity();
 
 	/**
-	 * Returns the meta object for the reference '{@link programmes.ExamAttempt#getCourse <em>Course</em>}'.
+	 * Returns the meta object for the attribute '{@link programmes.University#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Course</em>'.
-	 * @see programmes.ExamAttempt#getCourse()
-	 * @see #getExamAttempt()
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see programmes.University#getName()
+	 * @see #getUniversity()
 	 * @generated
 	 */
-	EReference getExamAttempt_Course();
+	EAttribute getUniversity_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link programmes.ExamAttempt#getGrade <em>Grade</em>}'.
+	 * Returns the meta object for the containment reference list '{@link programmes.University#getStudyProgrammes <em>Study Programmes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Grade</em>'.
-	 * @see programmes.ExamAttempt#getGrade()
-	 * @see #getExamAttempt()
+	 * @return the meta object for the containment reference list '<em>Study Programmes</em>'.
+	 * @see programmes.University#getStudyProgrammes()
+	 * @see #getUniversity()
 	 * @generated
 	 */
-	EAttribute getExamAttempt_Grade();
+	EReference getUniversity_StudyProgrammes();
 
 	/**
-	 * Returns the meta object for class '{@link programmes.ProgrammeInstance <em>Programme Instance</em>}'.
+	 * Returns the meta object for the containment reference list '{@link programmes.University#getCourses <em>Courses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Programme Instance</em>'.
-	 * @see programmes.ProgrammeInstance
+	 * @return the meta object for the containment reference list '<em>Courses</em>'.
+	 * @see programmes.University#getCourses()
+	 * @see #getUniversity()
 	 * @generated
 	 */
-	EClass getProgrammeInstance();
+	EReference getUniversity_Courses();
 
 	/**
-	 * Returns the meta object for the reference '{@link programmes.ProgrammeInstance#getProgramme <em>Programme</em>}'.
+	 * Returns the meta object for enum '{@link programmes.SemesterType <em>Semester Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme</em>'.
-	 * @see programmes.ProgrammeInstance#getProgramme()
-	 * @see #getProgrammeInstance()
+	 * @return the meta object for enum '<em>Semester Type</em>'.
+	 * @see programmes.SemesterType
 	 * @generated
 	 */
-	EReference getProgrammeInstance_Programme();
+	EEnum getSemesterType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link programmes.ProgrammeInstance#getProgrammeYears <em>Programme Years</em>}'.
+	 * Returns the meta object for enum '{@link programmes.CourseType <em>Course Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Programme Years</em>'.
-	 * @see programmes.ProgrammeInstance#getProgrammeYears()
-	 * @see #getProgrammeInstance()
+	 * @return the meta object for enum '<em>Course Type</em>'.
+	 * @see programmes.CourseType
 	 * @generated
 	 */
-	EReference getProgrammeInstance_ProgrammeYears();
+	EEnum getCourseType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link programmes.ProgrammeInstance#getStartingYear <em>Starting Year</em>}'.
+	 * Returns the meta object for enum '{@link programmes.StudyLevel <em>Study Level</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Starting Year</em>'.
-	 * @see programmes.ProgrammeInstance#getStartingYear()
-	 * @see #getProgrammeInstance()
+	 * @return the meta object for enum '<em>Study Level</em>'.
+	 * @see programmes.StudyLevel
 	 * @generated
 	 */
-	EAttribute getProgrammeInstance_StartingYear();
-
-	/**
-	 * Returns the meta object for class '{@link programmes.ProgrammeYearInstance <em>Programme Year Instance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Programme Year Instance</em>'.
-	 * @see programmes.ProgrammeYearInstance
-	 * @generated
-	 */
-	EClass getProgrammeYearInstance();
-
-	/**
-	 * Returns the meta object for the reference '{@link programmes.ProgrammeYearInstance#getProgrammeYear <em>Programme Year</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Programme Year</em>'.
-	 * @see programmes.ProgrammeYearInstance#getProgrammeYear()
-	 * @see #getProgrammeYearInstance()
-	 * @generated
-	 */
-	EReference getProgrammeYearInstance_ProgrammeYear();
-
-	/**
-	 * Returns the meta object for the reference list '{@link programmes.ProgrammeYearInstance#getExamAttempts <em>Exam Attempts</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Exam Attempts</em>'.
-	 * @see programmes.ProgrammeYearInstance#getExamAttempts()
-	 * @see #getProgrammeYearInstance()
-	 * @generated
-	 */
-	EReference getProgrammeYearInstance_ExamAttempts();
-
-	/**
-	 * Returns the meta object for enum '{@link programmes.ESemester <em>ESemester</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>ESemester</em>'.
-	 * @see programmes.ESemester
-	 * @generated
-	 */
-	EEnum getESemester();
-
-	/**
-	 * Returns the meta object for enum '{@link programmes.EGrade <em>EGrade</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>EGrade</em>'.
-	 * @see programmes.EGrade
-	 * @generated
-	 */
-	EEnum getEGrade();
+	EEnum getStudyLevel();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1526,48 +833,6 @@ public interface ProgrammesPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link programmes.impl.DepartmentImpl <em>Department</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.DepartmentImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getDepartment()
-		 * @generated
-		 */
-		EClass DEPARTMENT = eINSTANCE.getDepartment();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEPARTMENT__NAME = eINSTANCE.getDepartment_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Short Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DEPARTMENT__SHORT_NAME = eINSTANCE.getDepartment_ShortName();
-
-		/**
-		 * The meta object literal for the '<em><b>Courses</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEPARTMENT__COURSES = eINSTANCE.getDepartment_Courses();
-
-		/**
-		 * The meta object literal for the '<em><b>Employees</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DEPARTMENT__EMPLOYEES = eINSTANCE.getDepartment_Employees();
-
 		/**
 		 * The meta object literal for the '{@link programmes.impl.CourseImpl <em>Course</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -1611,82 +876,6 @@ public interface ProgrammesPackage extends EPackage {
 		EAttribute COURSE__LEVEL = eINSTANCE.getCourse_Level();
 
 		/**
-		 * The meta object literal for the '<em><b>Department</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COURSE__DEPARTMENT = eINSTANCE.getCourse_Department();
-
-		/**
-		 * The meta object literal for the '<em><b>Instructor</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COURSE__INSTRUCTOR = eINSTANCE.getCourse_Instructor();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.PersonImpl <em>Person</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.PersonImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getPerson()
-		 * @generated
-		 */
-		EClass PERSON = eINSTANCE.getPerson();
-
-		/**
-		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSON__FIRST_NAME = eINSTANCE.getPerson_FirstName();
-
-		/**
-		 * The meta object literal for the '<em><b>Sur Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSON__SUR_NAME = eINSTANCE.getPerson_SurName();
-
-		/**
-		 * The meta object literal for the '<em><b>Full Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PERSON__FULL_NAME = eINSTANCE.getPerson_FullName();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.InstructorImpl <em>Instructor</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.InstructorImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getInstructor()
-		 * @generated
-		 */
-		EClass INSTRUCTOR = eINSTANCE.getInstructor();
-
-		/**
-		 * The meta object literal for the '<em><b>Lectured Courses</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INSTRUCTOR__LECTURED_COURSES = eINSTANCE.getInstructor_LecturedCourses();
-
-		/**
-		 * The meta object literal for the '<em><b>Department</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INSTRUCTOR__DEPARTMENT = eINSTANCE.getInstructor_Department();
-
-		/**
 		 * The meta object literal for the '{@link programmes.impl.ProgrammeImpl <em>Programme</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1721,12 +910,20 @@ public interface ProgrammesPackage extends EPackage {
 		EReference PROGRAMME__SPECIALIZATIONS = eINSTANCE.getProgramme_Specializations();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Years</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Programme Semester</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME__PROGRAMME_YEARS = eINSTANCE.getProgramme_ProgrammeYears();
+		EReference PROGRAMME__PROGRAMME_SEMESTER = eINSTANCE.getProgramme_ProgrammeSemester();
+
+		/**
+		 * The meta object literal for the '<em><b>Course Groups</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAMME__COURSE_GROUPS = eINSTANCE.getProgramme_CourseGroups();
 
 		/**
 		 * The meta object literal for the '{@link programmes.impl.SpecializationImpl <em>Specialization</em>}' class.
@@ -1755,90 +952,22 @@ public interface ProgrammesPackage extends EPackage {
 		EReference SPECIALIZATION__CHOSEN_IN = eINSTANCE.getSpecialization_ChosenIn();
 
 		/**
-		 * The meta object literal for the '{@link programmes.impl.ProgrammeYearImpl <em>Programme Year</em>}' class.
+		 * The meta object literal for the '{@link programmes.impl.SemesterImpl <em>Semester</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see programmes.impl.ProgrammeYearImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeYear()
+		 * @see programmes.impl.SemesterImpl
+		 * @see programmes.impl.ProgrammesPackageImpl#getSemester()
 		 * @generated
 		 */
-		EClass PROGRAMME_YEAR = eINSTANCE.getProgrammeYear();
+		EClass SEMESTER = eINSTANCE.getSemester();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Programme</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_YEAR__PROGRAMME = eINSTANCE.getProgrammeYear_Programme();
-
-		/**
-		 * The meta object literal for the '<em><b>Course References</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROGRAMME_YEAR__COURSE_REFERENCES = eINSTANCE.getProgrammeYear_CourseReferences();
-
-		/**
-		 * The meta object literal for the '<em><b>Year In Programme</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROGRAMME_YEAR__YEAR_IN_PROGRAMME = eINSTANCE.getProgrammeYear_YearInProgramme();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.YearCourseReferenceImpl <em>Year Course Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.YearCourseReferenceImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getYearCourseReference()
-		 * @generated
-		 */
-		EClass YEAR_COURSE_REFERENCE = eINSTANCE.getYearCourseReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Programme Year</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference YEAR_COURSE_REFERENCE__PROGRAMME_YEAR = eINSTANCE.getYearCourseReference_ProgrammeYear();
-
-		/**
-		 * The meta object literal for the '<em><b>Course Group</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference YEAR_COURSE_REFERENCE__COURSE_GROUP = eINSTANCE.getYearCourseReference_CourseGroup();
-
-		/**
-		 * The meta object literal for the '<em><b>Semester Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute YEAR_COURSE_REFERENCE__SEMESTER_TYPE = eINSTANCE.getYearCourseReference_SemesterType();
-
-		/**
-		 * The meta object literal for the '{@link programmes.impl.SemesterCourseGroupImpl <em>Semester Course Group</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.SemesterCourseGroupImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getSemesterCourseGroup()
-		 * @generated
-		 */
-		EClass SEMESTER_COURSE_GROUP = eINSTANCE.getSemesterCourseGroup();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEMESTER_COURSE_GROUP__NAME = eINSTANCE.getSemesterCourseGroup_Name();
+		EReference SEMESTER__PROGRAMME = eINSTANCE.getSemester_Programme();
 
 		/**
 		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
@@ -1846,163 +975,121 @@ public interface ProgrammesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SEMESTER_COURSE_GROUP__COURSES = eINSTANCE.getSemesterCourseGroup_Courses();
+		EReference SEMESTER__COURSES = eINSTANCE.getSemester_Courses();
 
 		/**
-		 * The meta object literal for the '{@link programmes.impl.StudentImpl <em>Student</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.StudentImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getStudent()
-		 * @generated
-		 */
-		EClass STUDENT = eINSTANCE.getStudent();
-
-		/**
-		 * The meta object literal for the '<em><b>Enrolled In</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Semester Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STUDENT__ENROLLED_IN = eINSTANCE.getStudent_EnrolledIn();
+		EAttribute SEMESTER__SEMESTER_TYPE = eINSTANCE.getSemester_SemesterType();
 
 		/**
-		 * The meta object literal for the '<em><b>Student Number</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Year</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STUDENT__STUDENT_NUMBER = eINSTANCE.getStudent_StudentNumber();
+		EAttribute SEMESTER__YEAR = eINSTANCE.getSemester_Year();
 
 		/**
-		 * The meta object literal for the '{@link programmes.impl.ExamAttemptImpl <em>Exam Attempt</em>}' class.
+		 * The meta object literal for the '{@link programmes.impl.CourseGroupImpl <em>Course Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see programmes.impl.ExamAttemptImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getExamAttempt()
+		 * @see programmes.impl.CourseGroupImpl
+		 * @see programmes.impl.ProgrammesPackageImpl#getCourseGroup()
 		 * @generated
 		 */
-		EClass EXAM_ATTEMPT = eINSTANCE.getExamAttempt();
+		EClass COURSE_GROUP = eINSTANCE.getCourseGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute EXAM_ATTEMPT__DATE = eINSTANCE.getExamAttempt_Date();
-
-		/**
-		 * The meta object literal for the '<em><b>Semester</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXAM_ATTEMPT__SEMESTER = eINSTANCE.getExamAttempt_Semester();
+		EAttribute COURSE_GROUP__NAME = eINSTANCE.getCourseGroup_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Year</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Courses Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXAM_ATTEMPT__PROGRAMME_YEAR = eINSTANCE.getExamAttempt_ProgrammeYear();
+		EAttribute COURSE_GROUP__COURSES_TYPE = eINSTANCE.getCourseGroup_CoursesType();
 
 		/**
-		 * The meta object literal for the '<em><b>Course</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Courses</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EXAM_ATTEMPT__COURSE = eINSTANCE.getExamAttempt_Course();
+		EReference COURSE_GROUP__COURSES = eINSTANCE.getCourseGroup_Courses();
 
 		/**
-		 * The meta object literal for the '<em><b>Grade</b></em>' attribute feature.
+		 * The meta object literal for the '{@link programmes.impl.UniversityImpl <em>University</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see programmes.impl.UniversityImpl
+		 * @see programmes.impl.ProgrammesPackageImpl#getUniversity()
+		 * @generated
+		 */
+		EClass UNIVERSITY = eINSTANCE.getUniversity();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EXAM_ATTEMPT__GRADE = eINSTANCE.getExamAttempt_Grade();
+		EAttribute UNIVERSITY__NAME = eINSTANCE.getUniversity_Name();
 
 		/**
-		 * The meta object literal for the '{@link programmes.impl.ProgrammeInstanceImpl <em>Programme Instance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.impl.ProgrammeInstanceImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeInstance()
-		 * @generated
-		 */
-		EClass PROGRAMME_INSTANCE = eINSTANCE.getProgrammeInstance();
-
-		/**
-		 * The meta object literal for the '<em><b>Programme</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Study Programmes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_INSTANCE__PROGRAMME = eINSTANCE.getProgrammeInstance_Programme();
+		EReference UNIVERSITY__STUDY_PROGRAMMES = eINSTANCE.getUniversity_StudyProgrammes();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Years</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Courses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROGRAMME_INSTANCE__PROGRAMME_YEARS = eINSTANCE.getProgrammeInstance_ProgrammeYears();
+		EReference UNIVERSITY__COURSES = eINSTANCE.getUniversity_Courses();
 
 		/**
-		 * The meta object literal for the '<em><b>Starting Year</b></em>' attribute feature.
+		 * The meta object literal for the '{@link programmes.SemesterType <em>Semester Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see programmes.SemesterType
+		 * @see programmes.impl.ProgrammesPackageImpl#getSemesterType()
 		 * @generated
 		 */
-		EAttribute PROGRAMME_INSTANCE__STARTING_YEAR = eINSTANCE.getProgrammeInstance_StartingYear();
+		EEnum SEMESTER_TYPE = eINSTANCE.getSemesterType();
 
 		/**
-		 * The meta object literal for the '{@link programmes.impl.ProgrammeYearInstanceImpl <em>Programme Year Instance</em>}' class.
+		 * The meta object literal for the '{@link programmes.CourseType <em>Course Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see programmes.impl.ProgrammeYearInstanceImpl
-		 * @see programmes.impl.ProgrammesPackageImpl#getProgrammeYearInstance()
+		 * @see programmes.CourseType
+		 * @see programmes.impl.ProgrammesPackageImpl#getCourseType()
 		 * @generated
 		 */
-		EClass PROGRAMME_YEAR_INSTANCE = eINSTANCE.getProgrammeYearInstance();
+		EEnum COURSE_TYPE = eINSTANCE.getCourseType();
 
 		/**
-		 * The meta object literal for the '<em><b>Programme Year</b></em>' reference feature.
+		 * The meta object literal for the '{@link programmes.StudyLevel <em>Study Level</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see programmes.StudyLevel
+		 * @see programmes.impl.ProgrammesPackageImpl#getStudyLevel()
 		 * @generated
 		 */
-		EReference PROGRAMME_YEAR_INSTANCE__PROGRAMME_YEAR = eINSTANCE.getProgrammeYearInstance_ProgrammeYear();
-
-		/**
-		 * The meta object literal for the '<em><b>Exam Attempts</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROGRAMME_YEAR_INSTANCE__EXAM_ATTEMPTS = eINSTANCE.getProgrammeYearInstance_ExamAttempts();
-
-		/**
-		 * The meta object literal for the '{@link programmes.ESemester <em>ESemester</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.ESemester
-		 * @see programmes.impl.ProgrammesPackageImpl#getESemester()
-		 * @generated
-		 */
-		EEnum ESEMESTER = eINSTANCE.getESemester();
-
-		/**
-		 * The meta object literal for the '{@link programmes.EGrade <em>EGrade</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see programmes.EGrade
-		 * @see programmes.impl.ProgrammesPackageImpl#getEGrade()
-		 * @generated
-		 */
-		EEnum EGRADE = eINSTANCE.getEGrade();
+		EEnum STUDY_LEVEL = eINSTANCE.getStudyLevel();
 
 	}
 

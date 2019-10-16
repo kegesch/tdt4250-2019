@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link programmes.Course#getName <em>Name</em>}</li>
  *   <li>{@link programmes.Course#getCredits <em>Credits</em>}</li>
  *   <li>{@link programmes.Course#getLevel <em>Level</em>}</li>
- *   <li>{@link programmes.Course#getDepartment <em>Department</em>}</li>
- *   <li>{@link programmes.Course#getInstructor <em>Instructor</em>}</li>
  * </ul>
  *
  * @see programmes.ProgrammesPackage#getCourse()
@@ -95,72 +93,27 @@ public interface Course extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Level</b></em>' attribute.
+	 * The literals are from the enumeration {@link programmes.StudyLevel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Level</em>' attribute.
-	 * @see #setLevel(String)
+	 * @see programmes.StudyLevel
+	 * @see #setLevel(StudyLevel)
 	 * @see programmes.ProgrammesPackage#getCourse_Level()
 	 * @model
 	 * @generated
 	 */
-	String getLevel();
+	StudyLevel getLevel();
 
 	/**
 	 * Sets the value of the '{@link programmes.Course#getLevel <em>Level</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Level</em>' attribute.
+	 * @see programmes.StudyLevel
 	 * @see #getLevel()
 	 * @generated
 	 */
-	void setLevel(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Department</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link programmes.Department#getCourses <em>Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Department</em>' container reference.
-	 * @see #setDepartment(Department)
-	 * @see programmes.ProgrammesPackage#getCourse_Department()
-	 * @see programmes.Department#getCourses
-	 * @model opposite="courses" transient="false"
-	 * @generated
-	 */
-	Department getDepartment();
-
-	/**
-	 * Sets the value of the '{@link programmes.Course#getDepartment <em>Department</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Department</em>' container reference.
-	 * @see #getDepartment()
-	 * @generated
-	 */
-	void setDepartment(Department value);
-
-	/**
-	 * Returns the value of the '<em><b>Instructor</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link programmes.Instructor#getLecturedCourses <em>Lectured Courses</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instructor</em>' reference.
-	 * @see #setInstructor(Instructor)
-	 * @see programmes.ProgrammesPackage#getCourse_Instructor()
-	 * @see programmes.Instructor#getLecturedCourses
-	 * @model opposite="lecturedCourses"
-	 * @generated
-	 */
-	Instructor getInstructor();
-
-	/**
-	 * Sets the value of the '{@link programmes.Course#getInstructor <em>Instructor</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Instructor</em>' reference.
-	 * @see #getInstructor()
-	 * @generated
-	 */
-	void setInstructor(Instructor value);
+	void setLevel(StudyLevel value);
 
 } // Course

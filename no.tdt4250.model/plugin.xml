@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated programmes -->
       <package
-            uri="platform:/plugin/no.tdt4250.model/model/programmes.ecore"
+            uri="platform:/plugin/no.tdt4250.model/model/programmes."
             class="programmes.ProgrammesPackage"
             genModel="model/programmes.genmodel"/>
    </extension>

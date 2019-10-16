@@ -50,12 +50,12 @@ public interface Specialization extends Programme {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Chosen In</em>' reference.
-	 * @see #setChosenIn(ProgrammeYear)
+	 * @see #setChosenIn(Semester)
 	 * @see programmes.ProgrammesPackage#getSpecialization_ChosenIn()
 	 * @model required="true"
 	 * @generated
 	 */
-	ProgrammeYear getChosenIn();
+	Semester getChosenIn();
 
 	/**
 	 * Sets the value of the '{@link programmes.Specialization#getChosenIn <em>Chosen In</em>}' reference.
@@ -65,6 +65,6 @@ public interface Specialization extends Programme {
 	 * @see #getChosenIn()
 	 * @generated
 	 */
-	void setChosenIn(ProgrammeYear value);
+	void setChosenIn(Semester value);
 
 } // Specialization

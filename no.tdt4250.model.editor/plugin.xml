@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated programmes -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="programmes.presentation.ProgrammesModelWizardID"
+            name="%_UI_ProgrammesModelWizard_label"
+            class="programmes.presentation.ProgrammesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ProgrammesModelFile.gif">
+         <description>%_UI_ProgrammesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated programmes -->
+      <editor
+            id="programmes.presentation.ProgrammesEditorID"
+            name="%_UI_ProgrammesEditor_label"
+            icon="icons/full/obj16/ProgrammesModelFile.gif"
+            extensions="programmes"
+            class="programmes.presentation.ProgrammesEditor"
+            contributorClass="programmes.presentation.ProgrammesActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

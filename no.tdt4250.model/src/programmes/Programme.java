@@ -18,7 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link programmes.Programme#getName <em>Name</em>}</li>
  *   <li>{@link programmes.Programme#getCode <em>Code</em>}</li>
  *   <li>{@link programmes.Programme#getSpecializations <em>Specializations</em>}</li>
- *   <li>{@link programmes.Programme#getProgrammeYears <em>Programme Years</em>}</li>
+ *   <li>{@link programmes.Programme#getProgrammeSemester <em>Programme Semester</em>}</li>
+ *   <li>{@link programmes.Programme#getCourseGroups <em>Course Groups</em>}</li>
  * </ul>
  *
  * @see programmes.ProgrammesPackage#getProgramme()
@@ -85,17 +86,29 @@ public interface Programme extends EObject {
 	EList<Specialization> getSpecializations();
 
 	/**
-	 * Returns the value of the '<em><b>Programme Years</b></em>' reference list.
-	 * The list contents are of type {@link programmes.ProgrammeYear}.
-	 * It is bidirectional and its opposite is '{@link programmes.ProgrammeYear#getProgramme <em>Programme</em>}'.
+	 * Returns the value of the '<em><b>Programme Semester</b></em>' containment reference list.
+	 * The list contents are of type {@link programmes.Semester}.
+	 * It is bidirectional and its opposite is '{@link programmes.Semester#getProgramme <em>Programme</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Programme Years</em>' reference list.
-	 * @see programmes.ProgrammesPackage#getProgramme_ProgrammeYears()
-	 * @see programmes.ProgrammeYear#getProgramme
-	 * @model opposite="programme"
+	 * @return the value of the '<em>Programme Semester</em>' containment reference list.
+	 * @see programmes.ProgrammesPackage#getProgramme_ProgrammeSemester()
+	 * @see programmes.Semester#getProgramme
+	 * @model opposite="programme" containment="true"
 	 * @generated
 	 */
-	EList<ProgrammeYear> getProgrammeYears();
+	EList<Semester> getProgrammeSemester();
+
+	/**
+	 * Returns the value of the '<em><b>Course Groups</b></em>' containment reference list.
+	 * The list contents are of type {@link programmes.CourseGroup}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Course Groups</em>' containment reference list.
+	 * @see programmes.ProgrammesPackage#getProgramme_CourseGroups()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<CourseGroup> getCourseGroups();
 
 } // Programme

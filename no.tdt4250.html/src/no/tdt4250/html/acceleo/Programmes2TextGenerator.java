@@ -24,6 +24,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
+import programmes.ProgrammesPackage;
+
 /**
  * Entry point of the 'Programmes2TextGenerator' generation module.
  *
@@ -42,7 +44,7 @@ public class Programmes2TextGenerator extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "programmes2TextGenerator" };
+    public static final String[] TEMPLATE_NAMES = { "generateHTML" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).

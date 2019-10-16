@@ -22,15 +22,6 @@ public interface ProgrammesFactory extends EFactory {
 	ProgrammesFactory eINSTANCE = programmes.impl.ProgrammesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Department</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Department</em>'.
-	 * @generated
-	 */
-	Department createDepartment();
-
-	/**
 	 * Returns a new object of class '<em>Course</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,24 +29,6 @@ public interface ProgrammesFactory extends EFactory {
 	 * @generated
 	 */
 	Course createCourse();
-
-	/**
-	 * Returns a new object of class '<em>Person</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Person</em>'.
-	 * @generated
-	 */
-	Person createPerson();
-
-	/**
-	 * Returns a new object of class '<em>Instructor</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Instructor</em>'.
-	 * @generated
-	 */
-	Instructor createInstructor();
 
 	/**
 	 * Returns a new object of class '<em>Programme</em>'.
@@ -76,67 +49,31 @@ public interface ProgrammesFactory extends EFactory {
 	Specialization createSpecialization();
 
 	/**
-	 * Returns a new object of class '<em>Programme Year</em>'.
+	 * Returns a new object of class '<em>Semester</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme Year</em>'.
+	 * @return a new object of class '<em>Semester</em>'.
 	 * @generated
 	 */
-	ProgrammeYear createProgrammeYear();
+	Semester createSemester();
 
 	/**
-	 * Returns a new object of class '<em>Year Course Reference</em>'.
+	 * Returns a new object of class '<em>Course Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Year Course Reference</em>'.
+	 * @return a new object of class '<em>Course Group</em>'.
 	 * @generated
 	 */
-	YearCourseReference createYearCourseReference();
+	CourseGroup createCourseGroup();
 
 	/**
-	 * Returns a new object of class '<em>Semester Course Group</em>'.
+	 * Returns a new object of class '<em>University</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Semester Course Group</em>'.
+	 * @return a new object of class '<em>University</em>'.
 	 * @generated
 	 */
-	SemesterCourseGroup createSemesterCourseGroup();
-
-	/**
-	 * Returns a new object of class '<em>Student</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Student</em>'.
-	 * @generated
-	 */
-	Student createStudent();
-
-	/**
-	 * Returns a new object of class '<em>Exam Attempt</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Exam Attempt</em>'.
-	 * @generated
-	 */
-	ExamAttempt createExamAttempt();
-
-	/**
-	 * Returns a new object of class '<em>Programme Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme Instance</em>'.
-	 * @generated
-	 */
-	ProgrammeInstance createProgrammeInstance();
-
-	/**
-	 * Returns a new object of class '<em>Programme Year Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Programme Year Instance</em>'.
-	 * @generated
-	 */
-	ProgrammeYearInstance createProgrammeYearInstance();
+	University createUniversity();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import programmes.Programme;
-import programmes.ProgrammeYear;
 import programmes.ProgrammesPackage;
+import programmes.Semester;
 import programmes.Specialization;
 
 /**
@@ -40,7 +40,7 @@ public class SpecializationImpl extends ProgrammeImpl implements Specialization 
 	 * @generated
 	 * @ordered
 	 */
-	protected ProgrammeYear chosenIn;
+	protected Semester chosenIn;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -110,10 +110,10 @@ public class SpecializationImpl extends ProgrammeImpl implements Specialization 
 	 * @generated
 	 */
 	@Override
-	public ProgrammeYear getChosenIn() {
+	public Semester getChosenIn() {
 		if (chosenIn != null && chosenIn.eIsProxy()) {
 			InternalEObject oldChosenIn = (InternalEObject)chosenIn;
-			chosenIn = (ProgrammeYear)eResolveProxy(oldChosenIn);
+			chosenIn = (Semester)eResolveProxy(oldChosenIn);
 			if (chosenIn != oldChosenIn) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProgrammesPackage.SPECIALIZATION__CHOSEN_IN, oldChosenIn, chosenIn));
@@ -127,7 +127,7 @@ public class SpecializationImpl extends ProgrammeImpl implements Specialization 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProgrammeYear basicGetChosenIn() {
+	public Semester basicGetChosenIn() {
 		return chosenIn;
 	}
 
@@ -137,8 +137,8 @@ public class SpecializationImpl extends ProgrammeImpl implements Specialization 
 	 * @generated
 	 */
 	@Override
-	public void setChosenIn(ProgrammeYear newChosenIn) {
-		ProgrammeYear oldChosenIn = chosenIn;
+	public void setChosenIn(Semester newChosenIn) {
+		Semester oldChosenIn = chosenIn;
 		chosenIn = newChosenIn;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.SPECIALIZATION__CHOSEN_IN, oldChosenIn, chosenIn));
@@ -217,7 +217,7 @@ public class SpecializationImpl extends ProgrammeImpl implements Specialization 
 				setSpecializesIn((Programme)newValue);
 				return;
 			case ProgrammesPackage.SPECIALIZATION__CHOSEN_IN:
-				setChosenIn((ProgrammeYear)newValue);
+				setChosenIn((Semester)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -235,7 +235,7 @@ public class SpecializationImpl extends ProgrammeImpl implements Specialization 
 				setSpecializesIn((Programme)null);
 				return;
 			case ProgrammesPackage.SPECIALIZATION__CHOSEN_IN:
-				setChosenIn((ProgrammeYear)null);
+				setChosenIn((Semester)null);
 				return;
 		}
 		super.eUnset(featureID);

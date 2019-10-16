@@ -3,17 +3,12 @@
 package programmes.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import programmes.Course;
-import programmes.Department;
-import programmes.Instructor;
 import programmes.ProgrammesPackage;
+import programmes.StudyLevel;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,8 +22,6 @@ import programmes.ProgrammesPackage;
  *   <li>{@link programmes.impl.CourseImpl#getName <em>Name</em>}</li>
  *   <li>{@link programmes.impl.CourseImpl#getCredits <em>Credits</em>}</li>
  *   <li>{@link programmes.impl.CourseImpl#getLevel <em>Level</em>}</li>
- *   <li>{@link programmes.impl.CourseImpl#getDepartment <em>Department</em>}</li>
- *   <li>{@link programmes.impl.CourseImpl#getInstructor <em>Instructor</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,7 +95,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String LEVEL_EDEFAULT = null;
+	protected static final StudyLevel LEVEL_EDEFAULT = StudyLevel.FIRST_YEAR;
 
 	/**
 	 * The cached value of the '{@link #getLevel() <em>Level</em>}' attribute.
@@ -112,17 +105,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 * @ordered
 	 */
-	protected String level = LEVEL_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getInstructor() <em>Instructor</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInstructor()
-	 * @generated
-	 * @ordered
-	 */
-	protected Instructor instructor;
+	protected StudyLevel level = LEVEL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,7 +201,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public String getLevel() {
+	public StudyLevel getLevel() {
 		return level;
 	}
 
@@ -228,167 +211,11 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 	 * @generated
 	 */
 	@Override
-	public void setLevel(String newLevel) {
-		String oldLevel = level;
-		level = newLevel;
+	public void setLevel(StudyLevel newLevel) {
+		StudyLevel oldLevel = level;
+		level = newLevel == null ? LEVEL_EDEFAULT : newLevel;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.COURSE__LEVEL, oldLevel, level));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Department getDepartment() {
-		if (eContainerFeatureID() != ProgrammesPackage.COURSE__DEPARTMENT) return null;
-		return (Department)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetDepartment(Department newDepartment, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newDepartment, ProgrammesPackage.COURSE__DEPARTMENT, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDepartment(Department newDepartment) {
-		if (newDepartment != eInternalContainer() || (eContainerFeatureID() != ProgrammesPackage.COURSE__DEPARTMENT && newDepartment != null)) {
-			if (EcoreUtil.isAncestor(this, newDepartment))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newDepartment != null)
-				msgs = ((InternalEObject)newDepartment).eInverseAdd(this, ProgrammesPackage.DEPARTMENT__COURSES, Department.class, msgs);
-			msgs = basicSetDepartment(newDepartment, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.COURSE__DEPARTMENT, newDepartment, newDepartment));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Instructor getInstructor() {
-		if (instructor != null && instructor.eIsProxy()) {
-			InternalEObject oldInstructor = (InternalEObject)instructor;
-			instructor = (Instructor)eResolveProxy(oldInstructor);
-			if (instructor != oldInstructor) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ProgrammesPackage.COURSE__INSTRUCTOR, oldInstructor, instructor));
-			}
-		}
-		return instructor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Instructor basicGetInstructor() {
-		return instructor;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetInstructor(Instructor newInstructor, NotificationChain msgs) {
-		Instructor oldInstructor = instructor;
-		instructor = newInstructor;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ProgrammesPackage.COURSE__INSTRUCTOR, oldInstructor, newInstructor);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInstructor(Instructor newInstructor) {
-		if (newInstructor != instructor) {
-			NotificationChain msgs = null;
-			if (instructor != null)
-				msgs = ((InternalEObject)instructor).eInverseRemove(this, ProgrammesPackage.INSTRUCTOR__LECTURED_COURSES, Instructor.class, msgs);
-			if (newInstructor != null)
-				msgs = ((InternalEObject)newInstructor).eInverseAdd(this, ProgrammesPackage.INSTRUCTOR__LECTURED_COURSES, Instructor.class, msgs);
-			msgs = basicSetInstructor(newInstructor, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ProgrammesPackage.COURSE__INSTRUCTOR, newInstructor, newInstructor));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ProgrammesPackage.COURSE__DEPARTMENT:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetDepartment((Department)otherEnd, msgs);
-			case ProgrammesPackage.COURSE__INSTRUCTOR:
-				if (instructor != null)
-					msgs = ((InternalEObject)instructor).eInverseRemove(this, ProgrammesPackage.INSTRUCTOR__LECTURED_COURSES, Instructor.class, msgs);
-				return basicSetInstructor((Instructor)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ProgrammesPackage.COURSE__DEPARTMENT:
-				return basicSetDepartment(null, msgs);
-			case ProgrammesPackage.COURSE__INSTRUCTOR:
-				return basicSetInstructor(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case ProgrammesPackage.COURSE__DEPARTMENT:
-				return eInternalContainer().eInverseRemove(this, ProgrammesPackage.DEPARTMENT__COURSES, Department.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -407,11 +234,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				return getCredits();
 			case ProgrammesPackage.COURSE__LEVEL:
 				return getLevel();
-			case ProgrammesPackage.COURSE__DEPARTMENT:
-				return getDepartment();
-			case ProgrammesPackage.COURSE__INSTRUCTOR:
-				if (resolve) return getInstructor();
-				return basicGetInstructor();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -435,13 +257,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 				setCredits((Double)newValue);
 				return;
 			case ProgrammesPackage.COURSE__LEVEL:
-				setLevel((String)newValue);
-				return;
-			case ProgrammesPackage.COURSE__DEPARTMENT:
-				setDepartment((Department)newValue);
-				return;
-			case ProgrammesPackage.COURSE__INSTRUCTOR:
-				setInstructor((Instructor)newValue);
+				setLevel((StudyLevel)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -467,12 +283,6 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case ProgrammesPackage.COURSE__LEVEL:
 				setLevel(LEVEL_EDEFAULT);
 				return;
-			case ProgrammesPackage.COURSE__DEPARTMENT:
-				setDepartment((Department)null);
-				return;
-			case ProgrammesPackage.COURSE__INSTRUCTOR:
-				setInstructor((Instructor)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -492,11 +302,7 @@ public class CourseImpl extends MinimalEObjectImpl.Container implements Course {
 			case ProgrammesPackage.COURSE__CREDITS:
 				return credits != CREDITS_EDEFAULT;
 			case ProgrammesPackage.COURSE__LEVEL:
-				return LEVEL_EDEFAULT == null ? level != null : !LEVEL_EDEFAULT.equals(level);
-			case ProgrammesPackage.COURSE__DEPARTMENT:
-				return getDepartment() != null;
-			case ProgrammesPackage.COURSE__INSTRUCTOR:
-				return instructor != null;
+				return level != LEVEL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
