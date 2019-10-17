@@ -1,0 +1,73 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module generateHTML.
+ */]
+[module generateHTML('http://www.eclipse.org/emf/2002/Ecore', 'platform:/plugin/no.tdt4250.model/model/programmes.ecore')]
+[**
+ * I wanted to use this to get the course group of a course in a specific program. But acceleo throws an error whenever i want to use a query.
+ * [import no::tdt4250::model::html::service::courseGroup/]
+
+[**
+ * The documentation of the template generateHTML.
+ * @param anUniversity
+ */]
+[template public generateHTML(anUniversity : University)]
+[comment @main/]
+[file (anUniversity.name.concat('.html'), false, 'UTF-8')]
+<html>
+	<head>
+		<title>Programmes for [anUniversity.name/]</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<style>
+			.container {
+				width: 70%;
+				margin: 0 auto;
+			}
+		</style>	
+	</head>
+	<body>
+		<div class="container">
+			<h1>Programmes for [anUniversity.name/]<h1>
+			[for (programme: Programme | anUniversity.studyProgrammes)]
+				[generateProgramme(programme)/]
+			[/for]
+		</div>
+	</body>
+</html>
+[/file]
+[/template]
+
+[template public generateProgramme(programme: Programme)]
+<div class="programme">
+	<h2>[programme.name/] ([programme.code/])</h2>
+	<hr/>
+	[for (specialization: Specialization | programme.specializations)]
+		[generateSpecialization(specialization, 1)/]
+	[/for]
+</div>
+[/template]
+
+[template public generateSpecialization(specialization: Specialization, level: EInt)]
+<div class="specialization">
+	<h[level + 2/]>[specialization.name/] ([specialization.code/])</h[level + 2/]>
+	[for (semester: Semester | specialization.programmeSemester->sortedBy(year))]
+		[generateSemester(semester, specialization)/]
+	[/for]
+	<hr/>
+	[for (specialization: Specialization | specialization.specializations)]
+		[generateSpecialization(specialization, level + 1)/]
+	[/for]
+</div>
+[/template]
+
+[template public generateSemester(semester: Semester, programme: Programme)]
+<div class="semester">
+	<h4>[semester.semesterType/] [semester.year/]</h4>
+	<table class="table">
+		<tr><th>code</th><th>name</th><th>ECTS</th></tr>
+		[for (course: Course | semester.courses)]
+		<tr><td>[course.code/]</td><td>[course.name/]</td><td>[course.credits/]</td></tr>
+		[/for]
+	</table>
+</div>
+[/template]

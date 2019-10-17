@@ -64,6 +64,20 @@
         name="Software"
         code="MSIT-SWE"
         chosenIn="//@studyProgrammes.0/@programmeSemester.0">
+      <programmeSemester
+          courses="//@courses.16 //@courses.17 //@courses.18 //@courses.19 //@courses.20 //@courses.21"
+          semesterType="Spring"
+          year="2020"/>
+      <programmeSemester
+          courses="//@courses.22"
+          year="2020"/>
+      <programmeSemester
+          courses="//@courses.10 //@courses.11 //@courses.12 //@courses.13 //@courses.14 //@courses.15"
+          year="2019"/>
+      <programmeSemester
+          courses="//@courses.22"
+          semesterType="Spring"
+          year="2021"/>
       <courseGroups
           name="O"
           courses="//@courses.10 //@courses.17 //@courses.18 //@courses.22"/>
@@ -92,19 +106,7 @@
         code="MSIT-AI"
         chosenIn="//@studyProgrammes.0/@programmeSemester.0"/>
     <programmeSemester
-        courses="//@courses.10 //@courses.11 //@courses.12 //@courses.13 //@courses.14 //@courses.15"
         year="2019"/>
-    <programmeSemester
-        courses="//@courses.16 //@courses.17 //@courses.18 //@courses.19 //@courses.20 //@courses.21"
-        semesterType="Spring"
-        year="2020"/>
-    <programmeSemester
-        courses="//@courses.22"
-        year="2020"/>
-    <programmeSemester
-        courses="//@courses.22"
-        semesterType="Spring"
-        year="2021"/>
   </studyProgrammes>
   <courses code="TDT4136"
       name="Introduksjon til kunstig intelligens"
