@@ -5,7 +5,8 @@
 [module generateHTML('http://www.eclipse.org/emf/2002/Ecore', 'platform:/plugin/no.tdt4250.model/model/programmes.ecore')]
 [**
  * I wanted to use this to get the course group of a course in a specific program. But acceleo throws an error whenever i want to use a query.
- * [import no::tdt4250::model::html::service::courseGroup/]
+ * /] 
+[**import no::tdt4250::model::html::service::courseGroup/]
 
 [**
  * The documentation of the template generateHTML.
@@ -64,10 +65,25 @@
 <div class="semester">
 	<h4>[semester.semesterType/] [semester.year/]</h4>
 	<table class="table">
-		<tr><th>code</th><th>name</th><th>ECTS</th></tr>
+		<tr><th>code</th><th>name</th><th>ECTS</th><th>group</th></tr>
 		[for (course: Course | semester.courses)]
-		<tr><td>[course.code/]</td><td>[course.name/]</td><td>[course.credits/]</td></tr>
+		<tr><td>[course.code/]</td><td>[course.name/]</td><td>[course.credits/]</td><td>[displayCourseGroup(programme, course)/]</td></tr>
 		[/for]
 	</table>
 </div>
 [/template]
+
+[template public displayCourseGroup(prog: Programme, course: Course)]
+	[for (cg: CourseGroup | prog.courseGroups)]
+		[for (c: Course | cg.courses)]
+			[if c = course]
+				[cg.name/]
+			[/if]
+		[/for]
+	[/for]
+[/template]
+
+
+[query public courseGroup(course: Course, programme: Programme): CourseGroup = 
+	programme.courseGroups->any(g : CourseGroup | g->includes(course))
+/]

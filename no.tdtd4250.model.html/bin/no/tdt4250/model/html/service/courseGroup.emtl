@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
-  <mtl:Module name="courseGroup" nsURI="no::tdt4250::model::html::service::courseGroup" startHeaderPosition="29" endHeaderPosition="353">
+  <mtl:Module name="courseGroup" nsURI="no::tdt4250::model::html::service::courseGroup" startHeaderPosition="29" endHeaderPosition="383">
     <input>
       <takesTypesFrom href="http://www.eclipse.org/emf/2002/Ecore#/"/>
     </input>
@@ -19,7 +19,7 @@
         <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/5">
           <eType xsi:type="ecore:EClass" href="platform:/plugin/no.tdt4250.model/model/programmes.ecore#//Course"/>
         </source>
-        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="CourseGroupService">
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="no.tdt4250.model.html.service.CourseGroupService">
           <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
         </argument>
         <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="getCourseGroupOfCourse(Course, Programme)">
@@ -136,7 +136,7 @@
   <ecore:EAnnotation source="positions">
     <eAnnotations source="positions.0" references="/0/getCourseGroupOfCourse">
       <details key="start" value="153"/>
-      <details key="end" value="355"/>
+      <details key="end" value="385"/>
       <details key="line" value="5"/>
     </eAnnotations>
     <eAnnotations source="positions.1" references="/0/getCourseGroupOfCourse/aCourse">
@@ -151,7 +151,7 @@
     </eAnnotations>
     <eAnnotations source="positions.3" references="/0/getCourseGroupOfCourse/%">
       <details key="start" value="249"/>
-      <details key="end" value="353"/>
+      <details key="end" value="383"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.4" references="/0/getCourseGroupOfCourse/%/self">
@@ -161,27 +161,27 @@
     </eAnnotations>
     <eAnnotations source="positions.5" references="/0/getCourseGroupOfCourse/%/%">
       <details key="start" value="256"/>
-      <details key="end" value="276"/>
+      <details key="end" value="306"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.6" references="/0/getCourseGroupOfCourse/%/%.1">
-      <details key="start" value="278"/>
-      <details key="end" value="321"/>
+      <details key="start" value="308"/>
+      <details key="end" value="351"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.7" references="/0/getCourseGroupOfCourse/%/%.2">
-      <details key="start" value="323"/>
-      <details key="end" value="352"/>
+      <details key="start" value="353"/>
+      <details key="end" value="382"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.8" references="/0/getCourseGroupOfCourse/%/%.2/%/aCourse">
-      <details key="start" value="332"/>
-      <details key="end" value="339"/>
+      <details key="start" value="362"/>
+      <details key="end" value="369"/>
       <details key="line" value="0"/>
     </eAnnotations>
     <eAnnotations source="positions.9" references="/0/getCourseGroupOfCourse/%/%.2/%.1/aProgramme">
-      <details key="start" value="341"/>
-      <details key="end" value="351"/>
+      <details key="start" value="371"/>
+      <details key="end" value="381"/>
       <details key="line" value="0"/>
     </eAnnotations>
   </ecore:EAnnotation>

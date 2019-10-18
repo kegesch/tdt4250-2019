@@ -23,6 +23,9 @@ import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.ocl.ecore.EcorePackage;
+
+import programmes.ProgrammesPackage;
 
 /**
  * Entry point of the 'GenerateHTML' generation module.
@@ -335,13 +338,16 @@ public class GenerateHTML extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
         if (!isInWorkspace(org.eclipse.emf.ecore.EcorePackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.emf.ecore.EcorePackage.eINSTANCE.getNsURI(), org.eclipse.emf.ecore.EcorePackage.eINSTANCE);
+        }
+        if (!isInWorkspace(ProgrammesPackage.class)) {
+        	resourceSet.getPackageRegistry().put(ProgrammesPackage.eINSTANCE.getNsURI(), ProgrammesPackage.eINSTANCE);
         }
         
         /*

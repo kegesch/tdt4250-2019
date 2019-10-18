@@ -3,4 +3,4 @@
 
 
 [query public getCourseGroupOfCourse (aCourse: Course, aProgramme : Programme) : CourseGroup = 
-invoke('CourseGroupService', 'getCourseGroupOfCourse(Course, Programme)', Sequence{aCourse, aProgramme})/]
+invoke('no.tdt4250.model.html.service.CourseGroupService', 'getCourseGroupOfCourse(Course, Programme)', Sequence{aCourse, aProgramme})/]
